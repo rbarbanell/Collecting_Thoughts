@@ -1,0 +1,15 @@
+---
+title: "Becca Barbanell : Data Portfolio"
+format: 
+  html: 
+    smooth-scroll: true
+listing:
+  contents: posts
+  sort: "date desc"
+  type: grid
+  categories: true
+  sort-ui: false
+  filter-ui: true
+page-layout: full
+title-block-banner: false
+---
