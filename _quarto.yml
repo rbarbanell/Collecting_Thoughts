@@ -1,0 +1,35 @@
+project:
+  type: website
+
+website:
+  comments: 
+    utterances: 
+      repo: quarto-dev/quarto-web
+      theme: gruvbox-dark
+  title: "Inquiring Minds Want to Know"
+  navbar:
+    right:
+      - href: index.qmd
+        text: Home
+      - href: posts.qmd
+        text: Data Profolio
+      - href: dangdesign.qmd
+        text: Dang's Design
+      - icon: github
+        href: https://github.com//rbarbanell
+      - icon: linkedin
+        href: https://www.linkedin.com/in/rebeccabarbanell/
+      - href: Rebecca_Resume.pdf
+        text: Resume
+    
+
+format:
+ html:
+    theme: sandstone
+    mainfont: courier new 
+    css: styles.css
+    code-fold: true
+    code-summary: "Check out the Code!"
+
+
+
