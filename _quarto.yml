@@ -13,8 +13,9 @@ website:
         text: Home
       - href: posts.qmd
         text: Data Profolio
-      - href: dangdesign.qmd
-        text: Dang's Design
+        menu: 
+          - text: Dang's Design
+            href: dangdesign.qmd
       - icon: github
         href: https://github.com//rbarbanell
       - icon: linkedin
