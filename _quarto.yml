@@ -13,9 +13,13 @@ website:
         text: Home
       - href: posts.qmd
         text: Data Profolio
+      - text: Side Project
         menu: 
           - text: Dang's Design
             href: dangdesign.qmd
+          - text: Kid's Book
+            href: buildingOM.qmd
+            
       - icon: github
         href: https://github.com//rbarbanell
       - icon: linkedin
