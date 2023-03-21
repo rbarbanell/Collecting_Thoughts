@@ -1,0 +1,16 @@
+{
+  "hash": "b4844118d1b95d575cb53b0ec527149f",
+  "result": {
+    "markdown": "---\n\ntitle: \"Tidy Tuesday: Reality of being Alone\"\nauthor: \"Becca Barbanell\"\ndate: \"2023-03-20\"\ncategories: [Tidy Tuesday, Reality TV]\nimage: \"alonelogo.jpg\"\ncomments: \n    utterances: \n      repo: quarto-dev/quarto-web\n      theme: gruvbox-dark\n      issue-term: title\n\n---\n\n\n\n\n# On Average Days Lasted\n\n39 days is the average days lasted on the show alone \n\n::: {.cell}\n\n```{.r .cell-code}\n#| message: false\n#| #| label: fig-alonegender\n#| fig-cap: \"The difference in median of females vs. males\"\n#| column: margin\n\n#survivalists%>% \n#summarise(num_patients = n(),)\n\n#table(survivalists$gender)\n#table(survivalists$age)\nagegen<- lm(days_lasted~gender ,survivalists)\n#summary(agegen)\n\nalone<- survivalists%>%\n  mutate(gender = ifelse(gender ==\"Female\",1,0))\n\ngen_avg<-survivalists%>%\n  select(gender, days_lasted)%>%\n  group_by(gender)%>%\n  summarise(med_last = median(days_lasted))\n  \n#gen_avg\n\n  ggplot(gen_avg,aes(gender,med_last,fill=gender))+\n  geom_bar(stat=\"identity\") +\n  theme_minimal()+\n    ylab(\"Median of days someone last\")+\n  labs(\n        title=\"The difference in median of females vs. males\",\n        subtitle = \"How many days they lasted in the show Alone\",\n        x=\" male and females lasted in days\")\n```\n\n::: {.cell-output-display}\n![](index_files/figure-html/unnamed-chunk-1-1.png){width=672}\n:::\n:::",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

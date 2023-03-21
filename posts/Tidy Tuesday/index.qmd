@@ -1,5 +1,6 @@
 ---
-title: "Tidy Tuesday : Reality of being Alone"
+
+title: "Tidy Tuesday: Reality of being Alone"
 author: "Becca Barbanell"
 date: "2023-03-20"
 categories: [Tidy Tuesday, Reality TV]
@@ -9,9 +10,9 @@ comments:
       repo: quarto-dev/quarto-web
       theme: gruvbox-dark
       issue-term: title
+
 ---
 
-![History Channel, Alone (TV series) logo](alonelogo.jpg)
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -25,13 +26,19 @@ survivalists <- readr::read_csv('https://raw.githubusercontent.com/rfordatascien
 
 39 days is the average days lasted on the show alone 
 ```{r}
-survivalists%>% 
-summarise(num_patients = n(),)
 
-table(survivalists$gender)
-table(survivalists$age)
+#| message: false
+#| #| label: fig-alonegender
+#| fig-cap: "The difference in median of females vs. males"
+#| column: margin
+
+#survivalists%>% 
+#summarise(num_patients = n(),)
+
+#table(survivalists$gender)
+#table(survivalists$age)
 agegen<- lm(days_lasted~gender ,survivalists)
-summary(agegen)
+#summary(agegen)
 
 alone<- survivalists%>%
   mutate(gender = ifelse(gender =="Female",1,0))
@@ -41,7 +48,7 @@ gen_avg<-survivalists%>%
   group_by(gender)%>%
   summarise(med_last = median(days_lasted))
   
-gen_avg
+#gen_avg
 
   ggplot(gen_avg,aes(gender,med_last,fill=gender))+
   geom_bar(stat="identity") +
