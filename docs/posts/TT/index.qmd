@@ -2,7 +2,7 @@
 title: "Tidy Tuesday : Reality of being Alone"
 author: "Becca Barbanell"
 date: "2023-03-20"
-categories: [RShiny, Tidy Tuesday, Reality TV]
+categories: [Tidy Tuesday, Reality TV]
 image: "alonelogo.jpg"
 comments: 
     utterances: 
@@ -10,3 +10,43 @@ comments:
       theme: gruvbox-dark
       issue-term: title
 ---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# I want to know the avg days survived between gender, then with age. 
+library(tidyverse)
+survivalists <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-01-24/survivalists.csv')
+
+```
+
+# On Average Days Lasted
+
+39 days is the average days lasted on the show alone 
+```{r}
+survivalists%>% 
+summarise(num_patients = n(),)
+
+table(survivalists$gender)
+table(survivalists$age)
+agegen<- lm(days_lasted~gender ,survivalists)
+summary(agegen)
+
+alone<- survivalists%>%
+  mutate(gender = ifelse(gender =="Female",1,0))
+
+gen_avg<-survivalists%>%
+  select(gender, days_lasted)%>%
+  group_by(gender)%>%
+  summarise(med_last = median(days_lasted))
+  
+gen_avg
+
+  ggplot(gen_avg,aes(gender,med_last,fill=gender))+
+  geom_bar(stat="identity") +
+  theme_minimal()+
+    ylab("Median of days someone last")+
+  labs(
+        title="The difference in median of females vs. males",
+        subtitle = "How many days they lasted in the show Alone",
+        x=" male and females lasted in days")
+  ```
