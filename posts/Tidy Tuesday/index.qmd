@@ -1,6 +1,5 @@
 ---
-
-title: "Tidy Tuesday: Reality of being Alone"
+title: "Tidy Tuesday : Reality of being Alone "
 author: "Becca Barbanell"
 date: "2023-03-20"
 categories: [Tidy Tuesday, Reality TV]
@@ -10,9 +9,15 @@ comments:
       repo: quarto-dev/quarto-web
       theme: gruvbox-dark
       issue-term: title
-
 ---
 
+# What is Tidy Tuesday?
+
+Tidy Tuesday is a weekly social data project in the R programming language community, created by R for Data Science authors Hadley Wickham and Mara Averick. The project involves posting a new dataset on the Tidy Tuesday GitHub repository every Tuesday, along with a set of questions or challenges related to the data. The aim of Tidy Tuesday is to provide a fun and collaborative way for R users to improve their data analysis and visualization skills, and to share their work with the broader community. Participants are encouraged to use the principles of tidy data and the tools of the tidyverse package ecosystem to explore and communicate insights from the data. Tidy Tuesday is open to everyone, regardless of their skill level or background, and has become a popular way for R users to connect and learn from each other.
+
+# What data I decided to use for one of the Tidy Tuesday?
+
+Alone is a reality television series that airs on the History Channel. The show follows a group of contestants who are left in a remote wilderness location and must survive using only their skills and the resources they find around them. The last person standing wins a grand prize of $500,000. The series has been praised for its unique approach to reality television, as it focuses on the contestants' survival skills rather than interpersonal drama. The show has been on the air since 2015.
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -27,10 +32,6 @@ survivalists <- readr::read_csv('https://raw.githubusercontent.com/rfordatascien
 39 days is the average days lasted on the show alone 
 ```{r}
 
-#| message: false
-#| #| label: fig-alonegender
-#| fig-cap: "The difference in median of females vs. males"
-#| column: margin
 
 #survivalists%>% 
 #summarise(num_patients = n(),)
@@ -55,7 +56,9 @@ gen_avg<-survivalists%>%
   theme_minimal()+
     ylab("Median of days someone last")+
   labs(
-        title="The difference in median of females vs. males",
+        title="The difference in  of females vs. males",
         subtitle = "How many days they lasted in the show Alone",
         x=" male and females lasted in days")
-  ```
+```
+
+
