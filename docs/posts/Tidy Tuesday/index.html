@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.2.335">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -236,7 +236,565 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="what-data-i-decided-to-use-for-one-of-the-tidy-tuesday" class="level1">
 <h1>What data I decided to use for one of the Tidy Tuesday?</h1>
-<p>In a Tidy Tuesday project, the Alone data set was provided, which contains information about the participants and their progress in the Alone TV series. The data set includes 8 seasons of the show, with each season consisting of a different set of contestants who are dropped off in a remote wilderness location and must survive alone. The data set includes information such as the contestant’s name, age, gender, occupation, location, survival equipment, and duration of their stay. The project provided a valuable opportunity for me to practice their data wrangling, visualization, and analysis skills using real-world data in a fun and engaging way.</p>
+<p>The Tidy Tuesday I used was the Alone data set, which contains information about the participants and their progress in the Alone TV series. The data set includes 8 seasons of the show, with each season consisting of a different set of contestants who are dropped off in a remote wilderness location and must survive alone. The data set includes information such as the contestant’s name, age, gender, occupation, location, survival equipment, and duration of their stay. The project provided a valuable opportunity for me to practice their data wrangling, visualization, and analysis skills using real-world data in a fun and engaging way.</p>
+</section>
+<section id="data-set-and-the-columns-i-decided-to-focus-on." class="level1">
+<h1>Data set and the columns I decided to focus on.</h1>
+<div class="cell">
+<details>
+<summary>Check out the Code!</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>alone<span class="sc">%&gt;%</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">reframe</span>(name,gender,season,reason_category,days_lasted,result, medically_evacuated,profession)<span class="sc">%&gt;%</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>()<span class="sc">%&gt;%</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Alone dataset"</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">subtitle =</span> <span class="st">"seasons 1-9"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(<span class="at">style =</span> <span class="fu">list</span>(<span class="fu">cell_fill</span>(<span class="st">"#db735c"</span>),<span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>)),</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">location =</span> <span class="fu">cells_body</span>(<span class="at">columns =</span> gender))<span class="sc">%&gt;%</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(<span class="at">style =</span> <span class="fu">list</span>(<span class="fu">cell_fill</span>(<span class="st">"#EFA86E"</span>),<span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>)),</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">location =</span> <span class="fu">cells_body</span>(<span class="at">columns =</span> season))<span class="sc">%&gt;%</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(<span class="at">style =</span> <span class="fu">list</span>(<span class="fu">cell_fill</span>(<span class="st">"#9A8A76"</span>),<span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>)),</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>            <span class="at">location =</span> <span class="fu">cells_body</span>(<span class="at">columns =</span> reason_category))<span class="sc">%&gt;%</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(<span class="at">style =</span> <span class="fu">list</span>(<span class="fu">cell_fill</span>(<span class="st">"#F3C57B"</span>),<span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>)),</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>            <span class="at">location =</span> <span class="fu">cells_body</span>(<span class="at">columns =</span> days_lasted))<span class="sc">%&gt;%</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(<span class="at">style =</span> <span class="fu">list</span>(<span class="fu">cell_fill</span>(<span class="st">"#7A6752"</span>),<span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>)),</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>            <span class="at">location =</span> <span class="fu">cells_body</span>(<span class="at">columns =</span> result))<span class="sc">%&gt;%</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(<span class="at">style =</span> <span class="fu">list</span>(<span class="fu">cell_fill</span>(<span class="st">"#2A91A2"</span>),<span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>)),</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>            <span class="at">location =</span> <span class="fu">cells_body</span>(<span class="at">columns =</span> profession))<span class="sc">%&gt;%</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(<span class="at">style =</span> <span class="fu">list</span>(<span class="fu">cell_fill</span>(<span class="st">"#87F28A"</span>),<span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>)),</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>            <span class="at">location =</span> <span class="fu">cells_body</span>(<span class="at">columns =</span> medically_evacuated))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+
+<div id="fokoyuzacg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+:where(#fokoyuzacg) .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+:where(#fokoyuzacg) .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#fokoyuzacg) .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+:where(#fokoyuzacg) .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+:where(#fokoyuzacg) .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+:where(#fokoyuzacg) .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#fokoyuzacg) .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#fokoyuzacg) .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+:where(#fokoyuzacg) .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+:where(#fokoyuzacg) .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+:where(#fokoyuzacg) .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+:where(#fokoyuzacg) .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+:where(#fokoyuzacg) .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+:where(#fokoyuzacg) .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+:where(#fokoyuzacg) .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+:where(#fokoyuzacg) .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+:where(#fokoyuzacg) .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+:where(#fokoyuzacg) .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#fokoyuzacg) .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+:where(#fokoyuzacg) .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+:where(#fokoyuzacg) .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#fokoyuzacg) .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+:where(#fokoyuzacg) .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+:where(#fokoyuzacg) .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#fokoyuzacg) .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#fokoyuzacg) .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+:where(#fokoyuzacg) .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+:where(#fokoyuzacg) .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#fokoyuzacg) .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#fokoyuzacg) .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#fokoyuzacg) .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#fokoyuzacg) .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#fokoyuzacg) .gt_left {
+  text-align: left;
+}
+
+:where(#fokoyuzacg) .gt_center {
+  text-align: center;
+}
+
+:where(#fokoyuzacg) .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+:where(#fokoyuzacg) .gt_font_normal {
+  font-weight: normal;
+}
+
+:where(#fokoyuzacg) .gt_font_bold {
+  font-weight: bold;
+}
+
+:where(#fokoyuzacg) .gt_font_italic {
+  font-style: italic;
+}
+
+:where(#fokoyuzacg) .gt_super {
+  font-size: 65%;
+}
+
+:where(#fokoyuzacg) .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+:where(#fokoyuzacg) .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+:where(#fokoyuzacg) .gt_indent_1 {
+  text-indent: 5px;
+}
+
+:where(#fokoyuzacg) .gt_indent_2 {
+  text-indent: 10px;
+}
+
+:where(#fokoyuzacg) .gt_indent_3 {
+  text-indent: 15px;
+}
+
+:where(#fokoyuzacg) .gt_indent_4 {
+  text-indent: 20px;
+}
+
+:where(#fokoyuzacg) .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table">
+  <thead class="gt_header">
+    <tr>
+      <td colspan="8" class="gt_heading gt_title gt_font_normal" style="">Alone dataset</td>
+    </tr>
+    <tr>
+      <td colspan="8" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="">seasons 1-9</td>
+    </tr>
+  </thead>
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="name">name</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="gender">gender</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="season">season</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="reason_category">reason_category</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="days_lasted">days_lasted</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="result">result</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="medically_evacuated">medically_evacuated</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="profession">profession</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="name" class="gt_row gt_left">Alan Kay</td>
+<td headers="gender" class="gt_row gt_left" style="background-color: #DB735C; font-weight: bold;">Male</td>
+<td headers="season" class="gt_row gt_right" style="background-color: #EFA86E; font-weight: bold;">1</td>
+<td headers="reason_category" class="gt_row gt_left" style="background-color: #9A8A76; font-weight: bold;">NA</td>
+<td headers="days_lasted" class="gt_row gt_right" style="background-color: #F3C57B; font-weight: bold;">56</td>
+<td headers="result" class="gt_row gt_right" style="background-color: #7A6752; font-weight: bold;">1</td>
+<td headers="medically_evacuated" class="gt_row gt_center" style="background-color: #87F28A; font-weight: bold;">FALSE</td>
+<td headers="profession" class="gt_row gt_left" style="background-color: #2A91A2; font-weight: bold;">Corrections Officer</td></tr>
+    <tr><td headers="name" class="gt_row gt_left">Sam Larson</td>
+<td headers="gender" class="gt_row gt_left" style="background-color: #DB735C; font-weight: bold;">Male</td>
+<td headers="season" class="gt_row gt_right" style="background-color: #EFA86E; font-weight: bold;">1</td>
+<td headers="reason_category" class="gt_row gt_left" style="background-color: #9A8A76; font-weight: bold;">Family / personal</td>
+<td headers="days_lasted" class="gt_row gt_right" style="background-color: #F3C57B; font-weight: bold;">55</td>
+<td headers="result" class="gt_row gt_right" style="background-color: #7A6752; font-weight: bold;">2</td>
+<td headers="medically_evacuated" class="gt_row gt_center" style="background-color: #87F28A; font-weight: bold;">FALSE</td>
+<td headers="profession" class="gt_row gt_left" style="background-color: #2A91A2; font-weight: bold;">Outdoor Gear Retailer</td></tr>
+    <tr><td headers="name" class="gt_row gt_left">Mitch Mitchell</td>
+<td headers="gender" class="gt_row gt_left" style="background-color: #DB735C; font-weight: bold;">Male</td>
+<td headers="season" class="gt_row gt_right" style="background-color: #EFA86E; font-weight: bold;">1</td>
+<td headers="reason_category" class="gt_row gt_left" style="background-color: #9A8A76; font-weight: bold;">Family / personal</td>
+<td headers="days_lasted" class="gt_row gt_right" style="background-color: #F3C57B; font-weight: bold;">43</td>
+<td headers="result" class="gt_row gt_right" style="background-color: #7A6752; font-weight: bold;">3</td>
+<td headers="medically_evacuated" class="gt_row gt_center" style="background-color: #87F28A; font-weight: bold;">FALSE</td>
+<td headers="profession" class="gt_row gt_left" style="background-color: #2A91A2; font-weight: bold;">Butcher</td></tr>
+    <tr><td headers="name" class="gt_row gt_left">Lucas Miller</td>
+<td headers="gender" class="gt_row gt_left" style="background-color: #DB735C; font-weight: bold;">Male</td>
+<td headers="season" class="gt_row gt_right" style="background-color: #EFA86E; font-weight: bold;">1</td>
+<td headers="reason_category" class="gt_row gt_left" style="background-color: #9A8A76; font-weight: bold;">Family / personal</td>
+<td headers="days_lasted" class="gt_row gt_right" style="background-color: #F3C57B; font-weight: bold;">39</td>
+<td headers="result" class="gt_row gt_right" style="background-color: #7A6752; font-weight: bold;">4</td>
+<td headers="medically_evacuated" class="gt_row gt_center" style="background-color: #87F28A; font-weight: bold;">FALSE</td>
+<td headers="profession" class="gt_row gt_left" style="background-color: #2A91A2; font-weight: bold;">Survivalist and Wildlife Therapist/Natural Healing</td></tr>
+    <tr><td headers="name" class="gt_row gt_left">Dustin Feher</td>
+<td headers="gender" class="gt_row gt_left" style="background-color: #DB735C; font-weight: bold;">Male</td>
+<td headers="season" class="gt_row gt_right" style="background-color: #EFA86E; font-weight: bold;">1</td>
+<td headers="reason_category" class="gt_row gt_left" style="background-color: #9A8A76; font-weight: bold;">Family / personal</td>
+<td headers="days_lasted" class="gt_row gt_right" style="background-color: #F3C57B; font-weight: bold;">8</td>
+<td headers="result" class="gt_row gt_right" style="background-color: #7A6752; font-weight: bold;">5</td>
+<td headers="medically_evacuated" class="gt_row gt_center" style="background-color: #87F28A; font-weight: bold;">FALSE</td>
+<td headers="profession" class="gt_row gt_left" style="background-color: #2A91A2; font-weight: bold;">Carpenter</td></tr>
+    <tr><td headers="name" class="gt_row gt_left">Brant McGee</td>
+<td headers="gender" class="gt_row gt_left" style="background-color: #DB735C; font-weight: bold;">Male</td>
+<td headers="season" class="gt_row gt_right" style="background-color: #EFA86E; font-weight: bold;">1</td>
+<td headers="reason_category" class="gt_row gt_left" style="background-color: #9A8A76; font-weight: bold;">Medical / health</td>
+<td headers="days_lasted" class="gt_row gt_right" style="background-color: #F3C57B; font-weight: bold;">6</td>
+<td headers="result" class="gt_row gt_right" style="background-color: #7A6752; font-weight: bold;">6</td>
+<td headers="medically_evacuated" class="gt_row gt_center" style="background-color: #87F28A; font-weight: bold;">FALSE</td>
+<td headers="profession" class="gt_row gt_left" style="background-color: #2A91A2; font-weight: bold;">US Army Guard and Former US Coast Guard</td></tr>
+    <tr><td headers="name" class="gt_row gt_left">Wayne Russell</td>
+<td headers="gender" class="gt_row gt_left" style="background-color: #DB735C; font-weight: bold;">Male</td>
+<td headers="season" class="gt_row gt_right" style="background-color: #EFA86E; font-weight: bold;">1</td>
+<td headers="reason_category" class="gt_row gt_left" style="background-color: #9A8A76; font-weight: bold;">Family / personal</td>
+<td headers="days_lasted" class="gt_row gt_right" style="background-color: #F3C57B; font-weight: bold;">4</td>
+<td headers="result" class="gt_row gt_right" style="background-color: #7A6752; font-weight: bold;">7</td>
+<td headers="medically_evacuated" class="gt_row gt_center" style="background-color: #87F28A; font-weight: bold;">FALSE</td>
+<td headers="profession" class="gt_row gt_left" style="background-color: #2A91A2; font-weight: bold;">Research Assistant</td></tr>
+    <tr><td headers="name" class="gt_row gt_left">Joe Robinet</td>
+<td headers="gender" class="gt_row gt_left" style="background-color: #DB735C; font-weight: bold;">Male</td>
+<td headers="season" class="gt_row gt_right" style="background-color: #EFA86E; font-weight: bold;">1</td>
+<td headers="reason_category" class="gt_row gt_left" style="background-color: #9A8A76; font-weight: bold;">Loss of inventory</td>
+<td headers="days_lasted" class="gt_row gt_right" style="background-color: #F3C57B; font-weight: bold;">4</td>
+<td headers="result" class="gt_row gt_right" style="background-color: #7A6752; font-weight: bold;">8</td>
+<td headers="medically_evacuated" class="gt_row gt_center" style="background-color: #87F28A; font-weight: bold;">FALSE</td>
+<td headers="profession" class="gt_row gt_left" style="background-color: #2A91A2; font-weight: bold;">Carpenter</td></tr>
+    <tr><td headers="name" class="gt_row gt_left">Chris Weatherman</td>
+<td headers="gender" class="gt_row gt_left" style="background-color: #DB735C; font-weight: bold;">Male</td>
+<td headers="season" class="gt_row gt_right" style="background-color: #EFA86E; font-weight: bold;">1</td>
+<td headers="reason_category" class="gt_row gt_left" style="background-color: #9A8A76; font-weight: bold;">Family / personal</td>
+<td headers="days_lasted" class="gt_row gt_right" style="background-color: #F3C57B; font-weight: bold;">1</td>
+<td headers="result" class="gt_row gt_right" style="background-color: #7A6752; font-weight: bold;">9</td>
+<td headers="medically_evacuated" class="gt_row gt_center" style="background-color: #87F28A; font-weight: bold;">FALSE</td>
+<td headers="profession" class="gt_row gt_left" style="background-color: #2A91A2; font-weight: bold;">Author</td></tr>
+    <tr><td headers="name" class="gt_row gt_left">Josh Chavez</td>
+<td headers="gender" class="gt_row gt_left" style="background-color: #DB735C; font-weight: bold;">Male</td>
+<td headers="season" class="gt_row gt_right" style="background-color: #EFA86E; font-weight: bold;">1</td>
+<td headers="reason_category" class="gt_row gt_left" style="background-color: #9A8A76; font-weight: bold;">Family / personal</td>
+<td headers="days_lasted" class="gt_row gt_right" style="background-color: #F3C57B; font-weight: bold;">0</td>
+<td headers="result" class="gt_row gt_right" style="background-color: #7A6752; font-weight: bold;">10</td>
+<td headers="medically_evacuated" class="gt_row gt_center" style="background-color: #87F28A; font-weight: bold;">FALSE</td>
+<td headers="profession" class="gt_row gt_left" style="background-color: #2A91A2; font-weight: bold;">Law Enforcement</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="data-exploration." class="level1">
+<h1>Data exploration.</h1>
+<p>While exploring the quantifing aspect of the data set I first noticed there were almost 3 times as much gendered males then female. Even though there is an unbalance in gender I was able to see that on average that gendered females on average lasted longer (in days) then gendered males.</p>
+<p>Further exploring, I decided to work survival rates between gendered females and males by either medically evacuated, left for medical health, personal, or family reasons. I found minor significants in the survival rate of (….. ……)</p>
+<div class="cell">
+
+</div>
+<p>Lastly, since was not satisfied with my exploration I thought that I would drop gender,age,and where contestant lived and decided to bin them by categorized the professions into white-collar, outdoor survivalists, blue-collar tradesmen, armed forces, and others, mostly entrepreneurs. As I know this cause some bias, and I made sure to do the best of my abilities I could, with the research and global knowledge I have.</p>
 </section>
 <section id="on-average-days-lasted" class="level1">
 <h1>On Average Days Lasted</h1>
@@ -244,37 +802,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <details>
 <summary>Check out the Code!</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#survivalists%&gt;% </span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#summarise(num_patients = n(),)</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#table(survivalists$gender)</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#table(survivalists$age)</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>agegen<span class="ot">&lt;-</span> <span class="fu">lm</span>(days_lasted<span class="sc">~</span>gender ,survivalists)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(agegen)</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>alone<span class="ot">&lt;-</span> survivalists<span class="sc">%&gt;%</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">gender =</span> <span class="fu">ifelse</span>(gender <span class="sc">==</span><span class="st">"Female"</span>,<span class="dv">1</span>,<span class="dv">0</span>))</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>gen_avg<span class="ot">&lt;-</span>survivalists<span class="sc">%&gt;%</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(gender, days_lasted)<span class="sc">%&gt;%</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(gender)<span class="sc">%&gt;%</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">med_last =</span> <span class="fu">median</span>(days_lasted))</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">#gen_avg</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(gen_avg,<span class="fu">aes</span>(gender,med_last,<span class="at">fill=</span>gender))<span class="sc">+</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"identity"</span>) <span class="sc">+</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">"Median of days someone last"</span>)<span class="sc">+</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">title=</span><span class="st">"The difference in  of females vs. males"</span>,</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>        <span class="at">subtitle =</span> <span class="st">"How many days they lasted in the show Alone"</span>,</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>        <span class="at">x=</span><span class="st">" male and females lasted in days"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#survivalists%&gt;% </span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#summarise(num_patients = n(),)</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#table(survivalists$gender)</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#table(survivalists$age)</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>agegen<span class="ot">&lt;-</span> <span class="fu">lm</span>(days_lasted<span class="sc">~</span>gender ,survivalists)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(agegen)</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>alone<span class="ot">&lt;-</span> survivalists<span class="sc">%&gt;%</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">gender =</span> <span class="fu">ifelse</span>(gender <span class="sc">==</span><span class="st">"Female"</span>,<span class="dv">1</span>,<span class="dv">0</span>))</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>gen_avg<span class="ot">&lt;-</span>survivalists<span class="sc">%&gt;%</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(gender, days_lasted)<span class="sc">%&gt;%</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(gender)<span class="sc">%&gt;%</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">med_last =</span> <span class="fu">median</span>(days_lasted))</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co">#gen_avg</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(gen_avg,<span class="fu">aes</span>(gender,med_last,<span class="at">fill=</span>gender))<span class="sc">+</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">"Median of days someone last"</span>)<span class="sc">+</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">title=</span><span class="st">"The difference in  of females vs. males"</span>,</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>        <span class="at">subtitle =</span> <span class="st">"How many days they lasted in the show Alone"</span>,</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>        <span class="at">x=</span><span class="st">" male and females lasted in days"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>After exploring the Alone Tidy Tuesday data set, I conducted an analysis to determine the survival rate of male and female participants. I examined the reasons why contestants were either medically evacuated or left for medical health or personal family reasons, and checked if there was any significant difference in the arrival rate between males and females. However, I did not find any interesting findings related to survival rate.</p>
+<p>Therefore, I decided to investigate the professions of the contestants and see if there were any significant differences in the survival rate among different professions. I categorized the professions into white-collar, outdoor survivalists, blue-collar tradesmen, armed forces, and others, mostly entrepreneurs. I found that outdoor survivalists and blue-collar tradesmen were more likely to survive longer than armed forces and white-collar workers. This was an interesting finding as it confirmed some assumptions that people might have about survival skills, and it was exciting to have an analysis that could prove these assumptions.</p>
+<p>During this data exploration, I was aware of the potential biases that could arise from categorizing the professions, so I tried to make sure that I did it in the most ethical way possible. When there were things that I didn’t know, I put them into the “Other” category to avoid any unintentional biases. Overall, this project provided a great opportunity for me to use my data wrangling, visualization, and analysis skills, and I learned a lot from this experience.</p>
 
 
 </section>
