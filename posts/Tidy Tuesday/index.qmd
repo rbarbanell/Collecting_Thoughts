@@ -17,11 +17,19 @@ devtools::install_github('Mikata-Project/ggthemr', force = TRUE)
 library(tidyverse)
 library(ggthemr)
 library(gt)
+library(tidyverse)
+library(skimr)
+library(survival)
+library(survminer)
+library(fitdistrplus)
+library(visR)
 survivalists <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-01-24/survivalists.csv')
 
 seasons <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-01-24/seasons.csv')
 
 alone<-merge(survivalists,seasons, by = "season", all.y = TRUE)
+
+ggthemr('dust')
 
 ```
 
@@ -38,7 +46,6 @@ The Tidy Tuesday I used was the Alone data set, which contains information about
 
 alone%>%
   slice(1:10)%>%
-  reframe(name,gender,season,reason_category,days_lasted,result, medically_evacuated,profession)%>%
   gt()%>%
   tab_header(title = "Alone dataset",
              subtitle = "seasons 1-9")%>%
@@ -88,32 +95,208 @@ Lastly, since was not satisfied with my exploration I thought that I would drop 
 ```{r}
 
 
-#survivalists%>% 
-#summarise(num_patients = n(),)
+ggplot(alone, aes(days_lasted, medically_evacuated ))+
+  geom_col()+
+  facet_wrap(~gender)
 
-#table(survivalists$gender)
-#table(survivalists$age)
-agegen<- lm(days_lasted~gender ,survivalists)
-#summary(agegen)
+```
 
-alone<- survivalists%>%
-  mutate(gender = ifelse(gender =="Female",1,0))
 
-gen_avg<-survivalists%>%
-  select(gender, days_lasted)%>%
-  group_by(gender)%>%
-  summarise(med_last = median(days_lasted))
-  
-#gen_avg
+```{r}
+#what do you consider survival?
+#medical evacuated?
+#Medical
 
-  ggplot(gen_avg,aes(gender,med_last,fill=gender))+
-  geom_bar(stat="identity") +
-  theme_minimal()+
-    ylab("Median of days someone last")+
+ggthemr('dust') 
+
+alone1 = alone%>%
+  mutate(status = ifelse(medically_evacuated == "TRUE",1,0))
+
+al = alone1 %>%
+    mutate(left=days_lasted,right=ifelse(status==1,days_lasted,NA))
+
+
+survObject=Surv(al$left,al$right,type="interval2")
+
+km=survfit(survObject~al$gender) # over all, give table. 
+#summary(km)
+
+mod1<-ggsurvplot(fit=km, data=al,risk.table = F,conf.int=F,
+                 surv.median.line = "hv",
+legend="right",
+legend.title = "Gender",
+ggtheme = theme_minimal()) +
   labs(
-        title="The difference in  of females vs. males",
-        subtitle = "How many days they lasted in the show Alone",
-        x=" male and females lasted in days")
+        title="Survival time until survivalist needed medical exacuation",
+        x="Days in which survivalist lasted in days"
+    ) 
+
+
+```
+
+
+```{r}
+
+alone2 = alone%>%
+    mutate(status = ifelse(reason_category == "Medical / health",1,0))
+
+al2 = alone2 %>%
+    mutate(left=days_lasted,right=ifelse(status==1,days_lasted,NA))
+
+
+survObject2=Surv(al2$left,al2$right,type="interval2")
+
+km2=survfit(survObject2~al2$gender) # over all, give table. 
+#summary(km2)
+
+mod2<-ggsurvplot(fit=km2, data=al2,risk.table = F,conf.int=F,surv.median.line = "hv",
+legend="right",legend.title = "Gender",ggtheme = theme_minimal()) +
+  labs(
+        title="Survival time until Survivalist left because of a medical and or health issue",
+        x="Days in which survivalist lasted in days"
+    ) 
+
+
+```
+
+```{r}
+
+alone3 = alone%>%
+    mutate(status = ifelse(reason_category == "Family / personal",1,0))
+
+al3 = alone3 %>%
+    mutate(left=days_lasted,right=ifelse(status==1,days_lasted,NA))
+
+
+survObject3=Surv(al3$left,al3$right,type="interval2")
+
+km3=survfit(survObject3~al3$gender) # over all, give table. 
+#summary(km3)
+
+mod3<-ggsurvplot(fit=km3, data=al3,risk.table = F,conf.int=F,surv.median.line = "hv",
+legend="right",legend.title = "Gender",ggtheme = theme_minimal())+ labs(
+        title="Survival time until Survivalist left for Family or personal reasons",
+        x="Days in which survivalist lasted in days"
+    )
+ 
+
+
+```
+
+
+```{r}
+mod1
+mod2
+mod3
+```
+
+```{r}
+library(ggplot2)
+library(extrafont)
+
+
+alone%>%
+ggplot(aes(as.factor(result),days_lasted, fill=gender))+
+  geom_col()+
+  facet_wrap(~gender)+
+    ylim(0, 110)
+
+
+check <- alone%>%
+  mutate(result = as.factor(result))
+
+  
+check%>%
+  ggplot(aes(result, days_lasted, fill =gender))+
+  geom_bar(stat = "identity",position = "identity")+
+  coord_flip()
+
+```
+
+```{r}
+alonedf<-alone2%>%
+  mutate(profcat =
+ case_when(alone2$profession %in% c( "Corrections Officer",
+"US Army Guard and Former US Coast Guard",
+"Writer and Former Missionary",
+"Former US Sniper",
+"Law Enforcement and Former Air Force",
+"Former Wildland Firefighter",
+"Former US Army",
+"Retired Green Beret",
+"SERE Specialist",
+"Search and Rescue K9 Handler",
+"Sniper & Survival Skills Instructor",
+"Retired Military/Homesteader",
+"Prescribed Fire Practitioner","Law Enforcement") ~ "armforces",
+ alone2$profession %in% c( "Research Assistant",
+"Author",
+"Survivalist and Wildlife Therapist/Natural Healing",
+"Anthropologist",
+"Biologist & Forrester",
+"Herbalist",
+"Accountant",
+"High School Teacher",
+"Environmental Scientist",
+"Psychotherapist",
+"Industrial Project Manager",
+"Accountant",
+"Biologist",
+"Educational Consultant",
+"Physician",
+"Community Leadership")~ "whitecollar",
+alone2$profession %in% c("Butcher",
+"Carpenter",
+"Electrician",
+"Boat builder",
+"Drywaller",
+"Retired Shipping Driver",
+"Outdoor Educator",
+"Builder",
+"Fisherman",
+"Construction Foreman",
+"Equipment Operator",
+"Blacksmith",
+"Construction",
+"Traditional Bowyer",
+"Tool Maker",
+"Prehistoric Leather Specialist",
+"Professional Bowyer & Hunter",
+"Hunting Guide",
+"Oil Rig Roughneck",
+"Alpaca Shearer, Treehouse builder",
+"Commercial Fisherman",
+"Hunting and Packgoat Guide")~"bluetrades",
+ alone2$profession %in% c("Survivalist and Wildlife Therapist/Natural Healing",
+"Aboriginal Skills Instructor",
+"Survival Instructor",
+"Homesteader & Carpenter",
+"Bushcraft Instructor",
+"Trapper",
+"Wilderness Skills Instructor",
+"Bushcraft Instructor", 
+"Outdoor Educator",
+"Wilderness Living Skills Instructor",
+"Ancestral Skills Teacher ",
+"Wilderness Guide",
+"Homesteader",
+"Primitive Technology Instructor",
+"Ancestral Living Skills Instructor",
+"Winter Wilderness Expedition Operator",
+"Primitive Skills Instructor",
+"Primitive Skills School Owner",
+"Homesteader",
+"Wilderness Survival Instructor",
+"Outdoor Professional",
+"Wilderness/Primitive Skills Instructor",
+"Wilderness Survival Instructor",
+"Wilderness Expedition Guide"
+)~"survoutdoor", TRUE ~"other"))
+
+ggplot(alonedf, aes(alonedf$days_lasted,alonedf$profcat))+
+  geom_col()
+  
+table(alonedf$profcat)
 ```
 
 # Conclusion
