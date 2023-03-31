@@ -39,7 +39,6 @@ Tidy Tuesday is a weekly social data project in the R programming language commu
 
 # What data I decided to use for one of the Tidy Tuesday?
 
-<<<<<<< HEAD
 The Tidy Tuesday I used was the Alone data set, which contains information about the participants and their progress in the Alone TV series. The data set includes 8 seasons of the show, with each season consisting of a different set of contestants who are dropped off in a remote wilderness location and must survive alone. The data set includes information such as the contestant's name, age, gender, occupation, location, survival equipment, and duration of their stay.  The project provided a valuable opportunity for me to practice their data wrangling, visualization, and analysis skills using real-world data in a fun and engaging way.
 
 # Data set and the columns I decided to focus on.
@@ -64,13 +63,10 @@ alone%>%
             location = cells_body(columns = profession))%>%
   tab_style(style = list(cell_fill("#87F28A"),cell_text(weight = "bold")),
             location = cells_body(columns = medically_evacuated))
-=======
+```
 In a Tidy Tuesday project, the Alone data set was provided, which contains information about the participants and their progress in the Alone TV series. The data set includes 8 seasons of the show, with each season consisting of a different set of contestants who are dropped off in a remote wilderness location and must survive alone. The data set includes information such as the contestant's name, age, gender, occupation, location, survival equipment, and duration of their stay.  The project provided a valuable opportunity for me to practice their data wrangling, visualization, and analysis skills using real-world data in a fun and engaging way.
 
->>>>>>> 962a05108621173c308aeafbbdb268c37f80124e
 
-
-```
 
 
 
@@ -87,6 +83,9 @@ While exploring the quantifing aspect of the data set I first noticed there were
 Further exploring, I decided to work survival rates between gendered females and males by either medically evacuated, left for medical health, personal, or family reasons. I found minor significants in the survival rate of (.....
 ......)
 ```{r}
+#how many gendered females vs males in each season
+
+table(alone$gender,alone$season)
 
 ```
 
@@ -298,10 +297,12 @@ alone2$profession %in% c("Butcher",
 "Wilderness Expedition Guide"
 )~"survoutdoor", TRUE ~"other"))
 
-ggplot(alonedf, aes(alonedf$days_lasted,alonedf$profcat))+
+table(alonedf$profcat)
+
+ggplot(alonedf, aes(days_lasted,profcat))+
   geom_col()
   
-table(alonedf$profcat)
+
 ```
 
 # Conclusion
