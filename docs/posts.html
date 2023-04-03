@@ -70,9 +70,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -186,43 +186,51 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="listing-actions-group">
     <div class="input-group input-group-sm quarto-listing-filter">
       <span class="input-group-text"><i class="bi bi-search"></i></span>
       <input type="text" class="search form-control" placeholder="Filter">
     </div>
 </div>
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1678858927394" data-listing-reading-time-sort="0">
-<a href="./posts/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-img-bg" style="height: 150px;">
-&nbsp;
-</div>
-<div class="card-body post-contents">
-<div class="card-text listing-description">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1678858927394" data-listing-reading-time-sort="0">
+<div class="thumbnail">
+<a href="./posts/index.html">
+<div class="thumbnail-image">
 
 </div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
+</a><p><a href="./posts/index.html"></a></p>
+</div>
+<div class="body">
+<a href="./posts/index.html">
+<h3 class="no-anchor listing-title">
+</h3>
+<div class="listing-subtitle">
 
 </div>
-</div>
-</div>
+<div class="listing-description">
+
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Tidy Tuesday,Reality TV" data-listing-date-sort="1679295600000" data-listing-file-modified-sort="1680289643799" data-listing-reading-time-sort="6.855">
-<a href="./posts/Tidy Tuesday/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/Tidy Tuesday/alonelogo.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
+<div class="metadata">
+<a href="./posts/index.html"> </a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="Tidy Tuesday,Reality TV" data-listing-date-sort="1679295600000" data-listing-file-modified-sort="1680308331218" data-listing-reading-time-sort="7.045">
+<div class="thumbnail">
+<p><a href="./posts/Tidy Tuesday/index.html"> <img src="./posts/Tidy Tuesday/alonelogo.jpg" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/Tidy Tuesday/index.html">
+<h3 class="no-anchor listing-title">
 Tidy Tuesday : Reality of being Alone
-</h5>
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Tidy Tuesday'); return false;">
 Tidy Tuesday
@@ -231,31 +239,36 @@ Tidy Tuesday
 Reality TV
 </div>
 </div>
-<div class="card-text listing-description">
+<a href="./posts/Tidy Tuesday/index.html">
+<div class="listing-description">
 Tidy Tuesday is a weekly social data project in the R programming language community, created by R for Data Science authors Hadley Wickham and Mara Averick. The project…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Becca Barbanell
-</div>
-<div class="listing-date">
-Mar 20, 2023
-</div>
-</div>
-</div>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="RShiny,Archeology,Database,Scotland,Neoglithic" data-listing-date-sort="1677484800000" data-listing-file-modified-sort="1678858927374" data-listing-reading-time-sort="0.1">
-<a href="./posts/NOB/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/NOB/17a.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
+<div class="metadata">
+<a href="./posts/Tidy Tuesday/index.html">
+<div class="listing-date">
+Mar 20, 2023
+</div>
+<div class="listing-author">
+Becca Barbanell
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="RShiny,Archeology,Database,Scotland,Neoglithic" data-listing-date-sort="1677484800000" data-listing-file-modified-sort="1678858927374" data-listing-reading-time-sort="0.1">
+<div class="thumbnail">
+<p><a href="./posts/NOB/index.html"> <img src="./posts/NOB/17a.jpg" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/NOB/index.html">
+<h3 class="no-anchor listing-title">
 Ness of Brodgar a Neoglithic Archeology Site in Orkney Scotland
-</h5>
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('RShiny'); return false;">
 RShiny
@@ -273,31 +286,36 @@ Scotland
 Neoglithic
 </div>
 </div>
-<div class="card-text listing-description">
+<a href="./posts/NOB/index.html">
+<div class="listing-description">
 
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Becca Barbanell
-</div>
-<div class="listing-date">
-Feb 27, 2023
-</div>
-</div>
-</div>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="3" data-categories="RShiny,Sports" data-listing-date-sort="1675065600000" data-listing-file-modified-sort="1678858927392" data-listing-reading-time-sort="9.625">
-<a href="./posts/Who_is_the_goat/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/Who_is_the_goat/three.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
+<div class="metadata">
+<a href="./posts/NOB/index.html">
+<div class="listing-date">
+Feb 27, 2023
+</div>
+<div class="listing-author">
+Becca Barbanell
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-categories="RShiny,Sports" data-listing-date-sort="1675065600000" data-listing-file-modified-sort="1678858927392" data-listing-reading-time-sort="9.625">
+<div class="thumbnail">
+<p><a href="./posts/Who_is_the_goat/index.html"> <img src="./posts/Who_is_the_goat/three.jpg" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/Who_is_the_goat/index.html">
+<h3 class="no-anchor listing-title">
 The Quest for the GOAT
-</h5>
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('RShiny'); return false;">
 RShiny
@@ -306,20 +324,22 @@ RShiny
 Sports
 </div>
 </div>
-<div class="card-text listing-description">
+<a href="./posts/Who_is_the_goat/index.html">
+<div class="listing-description">
 For decades armchair athletes have been debating, who is the the greatest basketball player of all time: <em>LeBron James</em>, <em>Kobe Bryant</em> or <em>Michael Jordan</em>.
 </div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Becca Barbanell &amp; Jennifer Rana
+</a>
 </div>
+<div class="metadata">
+<a href="./posts/Who_is_the_goat/index.html">
 <div class="listing-date">
 Jan 30, 2023
 </div>
-</div>
-</div>
+<div class="listing-author">
+Becca Barbanell &amp; Jennifer Rana
 </div>
 </a>
+</div>
 </div>
 </div>
 <div class="listing-no-matching d-none">

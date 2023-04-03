@@ -43,7 +43,7 @@ The Tidy Tuesday I decided to investigate is the Alone data set.This dataset con
 
 # First, let me show you the data.
 
-I decided to highlight the columns in which I choose to investigate.
+Highlighted are the columns that I used during my data analysis.
 
 ```{r}
 
@@ -85,7 +85,7 @@ alone%>%
 
 # Data exploration.
 
-I found that age,gender, and where someone was located did not have any significance during the first round of exploring.I then decided to narrow down my scope to find out the survival rate between gender and professions. 
+I found that age, gender, and where someone was located did not have any significance during the first round of exploring. I then decided to narrow down my scope to find out the survival rate between gender and professions. 
 
 
 ## point out
@@ -99,15 +99,15 @@ table(alone$gender,alone$season)
 However, even though there is an unbalance in gender I was able to use the column to for survival analysis, and find the average days lasted for both genders. 
 
 
-# On Average Days Lasted
+# Gender, how well they did each season and their days lasted, as well as what place they recived (results)
 
 
 ```{r}
 library(ggplot2)
-library(extrafont)
+library(gridExtra)
 
 
-alone%>%
+plot1<-alone%>%
   mutate(season = as.factor(season))%>%
   ggplot(aes(season, days_lasted, fill = gender))+
   facet_wrap(~gender, scales = "free_x")+
@@ -117,13 +117,22 @@ alone%>%
  
 
   
-alone%>%
+plot2<-alone%>%
   mutate(result = as.factor(result))%>%
   ggplot(aes(result, days_lasted, fill = gender))+
   facet_wrap(~gender, scales = "free_x")+
    geom_bar(stat = "identity", position = "dodge",alpha = 0.35) 
 
+
+grid.arrange(plot1,plot2)
+
 ```
+* Since there were no gendered females on season 1, there is no results. 
+
+
+
+
+# Survival Rate
 
 ```{r}
 
@@ -143,7 +152,7 @@ km=survfit(survObject~al$gender) # over all, give table.
 mod1<-ggsurvplot(fit=km, data=al,risk.table = F,conf.int=F,
                  surv.median.line = "hv",
 legend="right",
-legend.title = "Gender",
+legend.title = "Gender",legend.labs = c("female","male"),
 ggtheme = theme_minimal()) +
   labs(
         title="Survival time until survivalist needed medical exacuation",
@@ -174,7 +183,7 @@ km2=survfit(survObject2~al2$gender) # over all, give table.
 #summary(km2)
 
 mod2<-ggsurvplot(fit=km2, data=al2,risk.table = F,conf.int=F,surv.median.line = "hv",
-legend="right",legend.title = "Gender",ggtheme = theme_minimal()) +
+legend="right",legend.title = "Gender",legend.labs = c("female","male"),ggtheme = theme_minimal()) +
   labs(
         title="Survival time until Survivalist left because of a medical and or health issue",
         x="Days in which survivalist lasted in days"
@@ -198,7 +207,7 @@ km3=survfit(survObject3~al3$gender) # over all, give table.
 #summary(km3)
 
 mod3<-ggsurvplot(fit=km3, data=al3,risk.table = F,conf.int=F,surv.median.line = "hv",
-legend="right",legend.title = "Gender",ggtheme = theme_minimal())+ labs(
+legend="right",legend.title = "Gender",legend.labs = c("female","male"),ggtheme = theme_minimal())+ labs(
         title="Survival time until Survivalist left for Family or personal reasons",
         x="Days in which survivalist lasted in days"
     )
