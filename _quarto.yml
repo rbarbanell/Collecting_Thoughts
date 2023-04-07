@@ -32,10 +32,17 @@ website:
 format:
  html:
     theme: sandstone
-    mainfont: courier new 
+    light: sandstone
+    mainfont: system-ui
+    fontsize: 0.9em
+    linestretch: 1.7
     css: styles.css
     code-fold: true
     code-summary: "Check out the Code!"
+    toc: true
+    toc-location: right
+    html-math-method: katex
+    page-layout: full
 
 
 

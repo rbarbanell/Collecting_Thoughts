@@ -9,6 +9,11 @@ comments:
       repo: quarto-dev/quarto-web
       theme: gruvbox-dark
       issue-term: title
+html:    
+    toc: true
+    toc-location: right
+    html-math-method: katex
+    page-layout: full
 ---
 
 ```{r setup, include=FALSE}
