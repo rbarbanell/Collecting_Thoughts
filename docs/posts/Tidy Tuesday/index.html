@@ -230,14 +230,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul>
   <li><a href="#what-is-tidy-tuesday" id="toc-what-is-tidy-tuesday" class="nav-link active" data-scroll-target="#what-is-tidy-tuesday">What is Tidy Tuesday?</a></li>
   <li><a href="#what-data-i-decided-to-use-for-one-of-the-tidy-tuesday" id="toc-what-data-i-decided-to-use-for-one-of-the-tidy-tuesday" class="nav-link" data-scroll-target="#what-data-i-decided-to-use-for-one-of-the-tidy-tuesday">What data I decided to use for one of the Tidy Tuesday?</a></li>
-  <li><a href="#first-let-me-show-you-the-data." id="toc-first-let-me-show-you-the-data." class="nav-link" data-scroll-target="#first-let-me-show-you-the-data.">First, let me show you the data.</a></li>
-  <li><a href="#data-exploration." id="toc-data-exploration." class="nav-link" data-scroll-target="#data-exploration.">Data exploration.</a>
+  <li><a href="#peering-into-the-data-frame" id="toc-peering-into-the-data-frame" class="nav-link" data-scroll-target="#peering-into-the-data-frame">Peering into the Data Frame</a></li>
+  <li><a href="#data-exploration" id="toc-data-exploration" class="nav-link" data-scroll-target="#data-exploration">Data exploration</a>
   <ul class="collapse">
   <li><a href="#point-out" id="toc-point-out" class="nav-link" data-scroll-target="#point-out">point out</a></li>
   </ul></li>
-  <li><a href="#gender-how-well-they-did-each-season-and-their-days-lasted-as-well-as-what-place-they-recived-results" id="toc-gender-how-well-they-did-each-season-and-their-days-lasted-as-well-as-what-place-they-recived-results" class="nav-link" data-scroll-target="#gender-how-well-they-did-each-season-and-their-days-lasted-as-well-as-what-place-they-recived-results">Gender, how well they did each season and their days lasted, as well as what place they recived (results)</a></li>
-  <li><a href="#survival-rate" id="toc-survival-rate" class="nav-link" data-scroll-target="#survival-rate">Survival Rate</a></li>
+  <li><a href="#bar-plot-gender-v-season-gender-v-rank" id="toc-bar-plot-gender-v-season-gender-v-rank" class="nav-link" data-scroll-target="#bar-plot-gender-v-season-gender-v-rank">Bar plot Gender v Season, Gender v Rank</a></li>
+  <li><a href="#survival-rate" id="toc-survival-rate" class="nav-link" data-scroll-target="#survival-rate">Survival Rate</a>
+  <ul class="collapse">
+  <li><a href="#findings" id="toc-findings" class="nav-link" data-scroll-target="#findings">Findings</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -247,85 +250,83 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<section id="what-is-tidy-tuesday" class="level1">
-<h1>What is Tidy Tuesday?</h1>
+<section id="what-is-tidy-tuesday" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-tidy-tuesday">What is Tidy Tuesday?</h2>
 <p>Tidy Tuesday is a weekly social data project in the R programming language community, created by R for Data Science authors Hadley Wickham and Mara Averick. The project involves posting a new dataset on the Tidy Tuesday gitHub repository every Tuesday, along with a set of questions or challenges related to the data. The aim of Tidy Tuesday is to provide a fun and collaborative way for R users to improve their data analysis and visualization skills, and to share their work with the broader community.</p>
 </section>
-<section id="what-data-i-decided-to-use-for-one-of-the-tidy-tuesday" class="level1">
-<h1>What data I decided to use for one of the Tidy Tuesday?</h1>
+<section id="what-data-i-decided-to-use-for-one-of-the-tidy-tuesday" class="level2">
+<h2 class="anchored" data-anchor-id="what-data-i-decided-to-use-for-one-of-the-tidy-tuesday">What data I decided to use for one of the Tidy Tuesday?</h2>
 <p>The Tidy Tuesday I decided to investigate is the Alone data set.This dataset contains information about the participants and their progress in the Alone TV series. The data set includes 8 seasons of the show, with each season consisting of a different set of contestants who are dropped off in a remote wilderness location and must survive alone. The data set includes information such as the contestant’s name, age, gender, occupation, location, survival equipment, and duration of their stay. The project provided a valuable opportunity for me to practice their data wrangling, visualization, and analysis skills using real-world data in a fun and engaging way.</p>
 </section>
-<section id="first-let-me-show-you-the-data." class="level1">
-<h1>First, let me show you the data.</h1>
-<p>Highlighted are the columns that I used during my data analysis.</p>
+<section id="peering-into-the-data-frame" class="level2">
+<h2 class="anchored" data-anchor-id="peering-into-the-data-frame">Peering into the Data Frame</h2>
+<p>The columns that are highlighted is what I used during my data analysis.</p>
 <div class="cell">
 <details>
 <summary>Check out the Code!</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>alone<span class="sc">%&gt;%</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)<span class="sc">%&gt;%</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>()<span class="sc">%&gt;%</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">table.width =</span> <span class="fu">pct</span>(<span class="dv">100</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Alone dataset"</span>,</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">subtitle =</span> <span class="st">"seasons 1-9"</span>)<span class="sc">%&gt;%</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(<span class="at">style =</span> <span class="fu">list</span>(<span class="fu">cell_fill</span>(color </span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ot">=</span> <span class="st">"#db735c"</span>,<span class="at">alpha =</span> .<span class="dv">35</span>),<span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>)),</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">location =</span> <span class="fu">cells_body</span>(<span class="at">columns =</span> gender))<span class="sc">%&gt;%</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(<span class="at">style =</span> <span class="fu">list</span>(<span class="fu">cell_fill</span>(<span class="at">color =</span><span class="st">"#EFA86E"</span>,<span class="at">alpha =</span> .<span class="dv">35</span>),<span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>)),</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>            <span class="at">location =</span> <span class="fu">cells_body</span>(<span class="at">columns =</span> season))<span class="sc">%&gt;%</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(<span class="at">style =</span> <span class="fu">list</span>(<span class="fu">cell_fill</span>(<span class="at">color =</span><span class="st">"#9A8A76"</span>,<span class="at">alpha =</span> .<span class="dv">35</span>),<span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>)),</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>            <span class="at">location =</span> <span class="fu">cells_body</span>(<span class="at">columns =</span> reason_category))<span class="sc">%&gt;%</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(<span class="at">style =</span> <span class="fu">list</span>(<span class="fu">cell_fill</span>(<span class="at">color =</span><span class="st">"#F3C57B"</span>,<span class="at">alpha =</span> .<span class="dv">35</span>),<span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>)),</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>            <span class="at">location =</span> <span class="fu">cells_body</span>(<span class="at">columns =</span> days_lasted))<span class="sc">%&gt;%</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(<span class="at">style =</span> <span class="fu">list</span>(<span class="fu">cell_fill</span>(<span class="at">color =</span><span class="st">"#7A6752"</span>,<span class="at">alpha =</span> .<span class="dv">35</span>),<span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>)),</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>            <span class="at">location =</span> <span class="fu">cells_body</span>(<span class="at">columns =</span> result))<span class="sc">%&gt;%</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(<span class="at">style =</span> <span class="fu">list</span>(<span class="fu">cell_fill</span>(<span class="at">color =</span><span class="st">"#2A91A2"</span>,<span class="at">alpha =</span> .<span class="dv">35</span>),<span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>)),</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>            <span class="at">location =</span> <span class="fu">cells_body</span>(<span class="at">columns =</span> profession))<span class="sc">%&gt;%</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(<span class="at">style =</span> <span class="fu">list</span>(<span class="fu">cell_fill</span>(<span class="at">color =</span><span class="st">"#87F28A"</span>,<span class="at">alpha =</span> .<span class="dv">35</span>),<span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>)),</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>            <span class="at">location =</span> <span class="fu">cells_body</span>(<span class="at">columns =</span> medically_evacuated))<span class="sc">%&gt;%</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_source_note</span>(<span class="at">source_note =</span> <span class="st">"fig. 1"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_text</span>(</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>      <span class="at">color =</span> <span class="st">"#A9A9A9"</span>,</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>      <span class="at">size =</span> <span class="st">"small"</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_source_notes</span>()</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>dust <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"#555555"</span>,<span class="st">"#db735c"</span>, <span class="st">"#EFA86E"</span>, <span class="st">"#9A8A76"</span> ,<span class="st">"#F3C57B"</span> ,<span class="st">"#7A6752"</span>, <span class="st">"#2A91A2"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>alone<span class="sc">%&gt;%</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>()<span class="sc">%&gt;%</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>   <span class="fu">gt_theme_pff</span>(<span class="at">divider =</span> name, <span class="at">rank_col =</span> season )<span class="sc">%&gt;%</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>   <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Alone dataset"</span>,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">subtitle =</span> <span class="st">"seasons 1-9"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(<span class="at">style =</span> <span class="fu">list</span>(<span class="fu">cell_fill</span>(color </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ot">=</span> <span class="st">"#db735c"</span>,<span class="at">alpha =</span> .<span class="dv">35</span>),<span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>)),</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>            <span class="at">location =</span> <span class="fu">cells_body</span>(<span class="at">columns =</span> gender))<span class="sc">%&gt;%</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(<span class="at">style =</span> <span class="fu">list</span>(<span class="fu">cell_fill</span>(<span class="at">color =</span><span class="st">"#EFA86E"</span>,<span class="at">alpha =</span> .<span class="dv">35</span>),<span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>)),</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>            <span class="at">location =</span> <span class="fu">cells_body</span>(<span class="at">columns =</span> season))<span class="sc">%&gt;%</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(<span class="at">style =</span> <span class="fu">list</span>(<span class="fu">cell_fill</span>(<span class="at">color =</span><span class="st">"#9A8A76"</span>,<span class="at">alpha =</span> .<span class="dv">35</span>),<span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>)),</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>            <span class="at">location =</span> <span class="fu">cells_body</span>(<span class="at">columns =</span> reason_category))<span class="sc">%&gt;%</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(<span class="at">style =</span> <span class="fu">list</span>(<span class="fu">cell_fill</span>(<span class="at">color =</span><span class="st">"#F3C57B"</span>,<span class="at">alpha =</span> .<span class="dv">35</span>),<span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>)),</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>            <span class="at">location =</span> <span class="fu">cells_body</span>(<span class="at">columns =</span> days_lasted))<span class="sc">%&gt;%</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(<span class="at">style =</span> <span class="fu">list</span>(<span class="fu">cell_fill</span>(<span class="at">color =</span><span class="st">"#7A6752"</span>,<span class="at">alpha =</span> .<span class="dv">35</span>),<span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>)),</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>            <span class="at">location =</span> <span class="fu">cells_body</span>(<span class="at">columns =</span> result))<span class="sc">%&gt;%</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(<span class="at">style =</span> <span class="fu">list</span>(<span class="fu">cell_fill</span>(<span class="at">color =</span><span class="st">"#2A91A2"</span>,<span class="at">alpha =</span> .<span class="dv">35</span>),<span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>)),</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>            <span class="at">location =</span> <span class="fu">cells_body</span>(<span class="at">columns =</span> profession))<span class="sc">%&gt;%</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(<span class="at">style =</span> <span class="fu">list</span>(<span class="fu">cell_fill</span>(<span class="at">color =</span><span class="st">"#87F28A"</span>,<span class="at">alpha =</span> .<span class="dv">35</span>),<span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>)),</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>            <span class="at">location =</span> <span class="fu">cells_body</span>(<span class="at">columns =</span> medically_evacuated))<span class="sc">%&gt;%</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_source_note</span>(<span class="at">source_note =</span> <span class="st">"fig. 1"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(<span class="at">style =</span> <span class="fu">cell_text</span>(<span class="at">size =</span> <span class="st">"small"</span>),<span class="at">locations =</span> <span class="fu">cells_source_notes</span>()</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 
-<div id="takpqujkqm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+<div id="vuoeajnyqi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+html {
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#takpqujkqm) .gt_table {
+:where(#vuoeajnyqi) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
   margin-right: auto;
   color: #333333;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: normal;
   font-style: normal;
   background-color: #FFFFFF;
-  width: 100%;
+  width: auto;
   border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
+  border-top-width: 3px;
+  border-top-color: rgba(255, 255, 255, 0);
   border-right-style: none;
   border-right-width: 2px;
   border-right-color: #D3D3D3;
   border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
+  border-bottom-width: 1px;
+  border-bottom-color: #D3D3D3;
   border-left-style: none;
   border-left-width: 2px;
   border-left-color: #D3D3D3;
 }
 
-:where(#takpqujkqm) .gt_heading {
+:where(#vuoeajnyqi) .gt_heading {
   background-color: #FFFFFF;
-  text-align: center;
+  text-align: left;
   border-bottom-color: #FFFFFF;
   border-left-style: none;
   border-left-width: 1px;
@@ -335,15 +336,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-:where(#takpqujkqm) .gt_caption {
+:where(#vuoeajnyqi) .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-:where(#takpqujkqm) .gt_title {
+:where(#vuoeajnyqi) .gt_title {
   color: #333333;
-  font-size: 125%;
-  font-weight: initial;
+  font-size: 30px;
+  font-weight: bold;
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 5px;
@@ -352,9 +353,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-width: 0;
 }
 
-:where(#takpqujkqm) .gt_subtitle {
+:where(#vuoeajnyqi) .gt_subtitle {
   color: #333333;
-  font-size: 85%;
+  font-size: 16px;
   font-weight: initial;
   padding-top: 0;
   padding-bottom: 6px;
@@ -364,19 +365,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-width: 0;
 }
 
-:where(#takpqujkqm) .gt_bottom_border {
+:where(#vuoeajnyqi) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#takpqujkqm) .gt_col_headings {
+:where(#vuoeajnyqi) .gt_col_headings {
   border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
+  border-top-width: 3px;
+  border-top-color: rgba(255, 255, 255, 0);
   border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
+  border-bottom-width: 3px;
+  border-bottom-color: rgba(255, 255, 255, 0);
   border-left-style: none;
   border-left-width: 1px;
   border-left-color: #D3D3D3;
@@ -385,12 +386,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-:where(#takpqujkqm) .gt_col_heading {
+:where(#vuoeajnyqi) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
   border-left-style: none;
   border-left-width: 1px;
   border-left-color: #D3D3D3;
@@ -398,55 +399,55 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-width: 1px;
   border-right-color: #D3D3D3;
   vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
+  padding-top: 6px;
+  padding-bottom: 7px;
   padding-left: 5px;
   padding-right: 5px;
   overflow-x: hidden;
 }
 
-:where(#takpqujkqm) .gt_column_spanner_outer {
+:where(#vuoeajnyqi) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
   padding-top: 0;
   padding-bottom: 0;
   padding-left: 4px;
   padding-right: 4px;
 }
 
-:where(#takpqujkqm) .gt_column_spanner_outer:first-child {
+:where(#vuoeajnyqi) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#takpqujkqm) .gt_column_spanner_outer:last-child {
+:where(#vuoeajnyqi) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#takpqujkqm) .gt_column_spanner {
+:where(#vuoeajnyqi) .gt_column_spanner {
   border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
+  border-bottom-width: 3px;
+  border-bottom-color: rgba(255, 255, 255, 0);
   vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 6px;
+  padding-bottom: 6px;
   overflow-x: hidden;
   display: inline-block;
   width: 100%;
 }
 
-:where(#takpqujkqm) .gt_group_heading {
+:where(#vuoeajnyqi) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
   padding-right: 5px;
   color: #333333;
   background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -463,12 +464,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   text-align: left;
 }
 
-:where(#takpqujkqm) .gt_empty_group_heading {
+:where(#vuoeajnyqi) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
+  font-size: 80%;
+  font-weight: bolder;
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -478,23 +479,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: middle;
 }
 
-:where(#takpqujkqm) .gt_from_md > :first-child {
+:where(#vuoeajnyqi) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#takpqujkqm) .gt_from_md > :last-child {
+:where(#vuoeajnyqi) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#takpqujkqm) .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
+:where(#vuoeajnyqi) .gt_row {
+  padding-top: 6px;
+  padding-bottom: 6px;
   padding-left: 5px;
   padding-right: 5px;
   margin: 10px;
   border-top-style: solid;
   border-top-width: 1px;
-  border-top-color: #D3D3D3;
+  border-top-color: rgba(255, 255, 255, 0);
   border-left-style: none;
   border-left-width: 1px;
   border-left-color: #D3D3D3;
@@ -505,12 +506,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-:where(#takpqujkqm) .gt_stub {
+:where(#vuoeajnyqi) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
   border-right-style: solid;
   border-right-width: 2px;
   border-right-color: #D3D3D3;
@@ -518,7 +519,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-:where(#takpqujkqm) .gt_stub_row_group {
+:where(#vuoeajnyqi) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -532,11 +533,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: top;
 }
 
-:where(#takpqujkqm) .gt_row_group_first td {
+:where(#vuoeajnyqi) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#takpqujkqm) .gt_summary_row {
+:where(#vuoeajnyqi) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -546,16 +547,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-:where(#takpqujkqm) .gt_first_summary_row {
+:where(#vuoeajnyqi) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#takpqujkqm) .gt_first_summary_row.thick {
+:where(#vuoeajnyqi) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#takpqujkqm) .gt_last_summary_row {
+:where(#vuoeajnyqi) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -565,7 +566,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-:where(#takpqujkqm) .gt_grand_summary_row {
+:where(#vuoeajnyqi) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -575,7 +576,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-:where(#takpqujkqm) .gt_first_grand_summary_row {
+:where(#vuoeajnyqi) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -585,11 +586,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-color: #D3D3D3;
 }
 
-:where(#takpqujkqm) .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
+:where(#vuoeajnyqi) .gt_striped {
+  background-color: #F5F5F5;
 }
 
-:where(#takpqujkqm) .gt_table_body {
+:where(#vuoeajnyqi) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -598,7 +599,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-:where(#takpqujkqm) .gt_footnotes {
+:where(#vuoeajnyqi) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -612,7 +613,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-:where(#takpqujkqm) .gt_footnote {
+:where(#vuoeajnyqi) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -621,7 +622,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-:where(#takpqujkqm) .gt_sourcenotes {
+:where(#vuoeajnyqi) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -635,7 +636,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-:where(#takpqujkqm) .gt_sourcenote {
+:where(#vuoeajnyqi) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -643,64 +644,64 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-:where(#takpqujkqm) .gt_left {
+:where(#vuoeajnyqi) .gt_left {
   text-align: left;
 }
 
-:where(#takpqujkqm) .gt_center {
+:where(#vuoeajnyqi) .gt_center {
   text-align: center;
 }
 
-:where(#takpqujkqm) .gt_right {
+:where(#vuoeajnyqi) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#takpqujkqm) .gt_font_normal {
+:where(#vuoeajnyqi) .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#takpqujkqm) .gt_font_bold {
+:where(#vuoeajnyqi) .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#takpqujkqm) .gt_font_italic {
+:where(#vuoeajnyqi) .gt_font_italic {
   font-style: italic;
 }
 
-:where(#takpqujkqm) .gt_super {
+:where(#vuoeajnyqi) .gt_super {
   font-size: 65%;
 }
 
-:where(#takpqujkqm) .gt_footnote_marks {
+:where(#vuoeajnyqi) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#takpqujkqm) .gt_asterisk {
+:where(#vuoeajnyqi) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#takpqujkqm) .gt_indent_1 {
+:where(#vuoeajnyqi) .gt_indent_1 {
   text-indent: 5px;
 }
 
-:where(#takpqujkqm) .gt_indent_2 {
+:where(#vuoeajnyqi) .gt_indent_2 {
   text-indent: 10px;
 }
 
-:where(#takpqujkqm) .gt_indent_3 {
+:where(#vuoeajnyqi) .gt_indent_3 {
   text-indent: 15px;
 }
 
-:where(#takpqujkqm) .gt_indent_4 {
+:where(#vuoeajnyqi) .gt_indent_4 {
   text-indent: 20px;
 }
 
-:where(#takpqujkqm) .gt_indent_5 {
+:where(#vuoeajnyqi) .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -715,34 +716,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </thead>
   <thead class="gt_col_headings">
     <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="season">season</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="name">name</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="age">age</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="gender">gender</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="city">city</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="state">state</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="country.x">country.x</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="result">result</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="days_lasted">days_lasted</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="medically_evacuated">medically_evacuated</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="reason_tapped_out">reason_tapped_out</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="reason_category">reason_category</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="team">team</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="day_linked_up">day_linked_up</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="profession">profession</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="url">url</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="version">version</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="location">location</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="country.y">country.y</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="n_survivors">n_survivors</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="lat">lat</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="lon">lon</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="date_drop_off">date_drop_off</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="background-color: #585D63; color: #FFFFFF; font-size: 10px; font-weight: bold; border-bottom-width: 2.5px; border-bottom-style: solid; border-bottom-color: #585d63;" scope="col" id="season">season</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="border-left-width: 2px; border-left-style: solid; border-left-color: #212426; background-color: #585D63; color: #FFFFFF; font-size: 10px; font-weight: bold; border-bottom-width: 2.5px; border-bottom-style: solid; border-bottom-color: #585d63;" scope="col" id="name">name</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #585D63; color: #FFFFFF; font-size: 10px; font-weight: bold; border-bottom-width: 2.5px; border-bottom-style: solid; border-bottom-color: #585d63;" scope="col" id="age">age</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #585D63; color: #FFFFFF; font-size: 10px; font-weight: bold; border-bottom-width: 2.5px; border-bottom-style: solid; border-bottom-color: #585d63;" scope="col" id="gender">gender</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #585D63; color: #FFFFFF; font-size: 10px; font-weight: bold; border-bottom-width: 2.5px; border-bottom-style: solid; border-bottom-color: #585d63;" scope="col" id="city">city</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #585D63; color: #FFFFFF; font-size: 10px; font-weight: bold; border-bottom-width: 2.5px; border-bottom-style: solid; border-bottom-color: #585d63;" scope="col" id="state">state</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #585D63; color: #FFFFFF; font-size: 10px; font-weight: bold; border-bottom-width: 2.5px; border-bottom-style: solid; border-bottom-color: #585d63;" scope="col" id="country.x">country.x</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #585D63; color: #FFFFFF; font-size: 10px; font-weight: bold; border-bottom-width: 2.5px; border-bottom-style: solid; border-bottom-color: #585d63;" scope="col" id="result">result</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #585D63; color: #FFFFFF; font-size: 10px; font-weight: bold; border-bottom-width: 2.5px; border-bottom-style: solid; border-bottom-color: #585d63;" scope="col" id="days_lasted">days_lasted</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="background-color: #585D63; color: #FFFFFF; font-size: 10px; font-weight: bold; border-bottom-width: 2.5px; border-bottom-style: solid; border-bottom-color: #585d63;" scope="col" id="medically_evacuated">medically_evacuated</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #585D63; color: #FFFFFF; font-size: 10px; font-weight: bold; border-bottom-width: 2.5px; border-bottom-style: solid; border-bottom-color: #585d63;" scope="col" id="reason_tapped_out">reason_tapped_out</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #585D63; color: #FFFFFF; font-size: 10px; font-weight: bold; border-bottom-width: 2.5px; border-bottom-style: solid; border-bottom-color: #585d63;" scope="col" id="reason_category">reason_category</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #585D63; color: #FFFFFF; font-size: 10px; font-weight: bold; border-bottom-width: 2.5px; border-bottom-style: solid; border-bottom-color: #585d63;" scope="col" id="team">team</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #585D63; color: #FFFFFF; font-size: 10px; font-weight: bold; border-bottom-width: 2.5px; border-bottom-style: solid; border-bottom-color: #585d63;" scope="col" id="day_linked_up">day_linked_up</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #585D63; color: #FFFFFF; font-size: 10px; font-weight: bold; border-bottom-width: 2.5px; border-bottom-style: solid; border-bottom-color: #585d63;" scope="col" id="profession">profession</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #585D63; color: #FFFFFF; font-size: 10px; font-weight: bold; border-bottom-width: 2.5px; border-bottom-style: solid; border-bottom-color: #585d63;" scope="col" id="url">url</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #585D63; color: #FFFFFF; font-size: 10px; font-weight: bold; border-bottom-width: 2.5px; border-bottom-style: solid; border-bottom-color: #585d63;" scope="col" id="version">version</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #585D63; color: #FFFFFF; font-size: 10px; font-weight: bold; border-bottom-width: 2.5px; border-bottom-style: solid; border-bottom-color: #585d63;" scope="col" id="location">location</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #585D63; color: #FFFFFF; font-size: 10px; font-weight: bold; border-bottom-width: 2.5px; border-bottom-style: solid; border-bottom-color: #585d63;" scope="col" id="country.y">country.y</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #585D63; color: #FFFFFF; font-size: 10px; font-weight: bold; border-bottom-width: 2.5px; border-bottom-style: solid; border-bottom-color: #585d63;" scope="col" id="n_survivors">n_survivors</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #585D63; color: #FFFFFF; font-size: 10px; font-weight: bold; border-bottom-width: 2.5px; border-bottom-style: solid; border-bottom-color: #585d63;" scope="col" id="lat">lat</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #585D63; color: #FFFFFF; font-size: 10px; font-weight: bold; border-bottom-width: 2.5px; border-bottom-style: solid; border-bottom-color: #585d63;" scope="col" id="lon">lon</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #585D63; color: #FFFFFF; font-size: 10px; font-weight: bold; border-bottom-width: 2.5px; border-bottom-style: solid; border-bottom-color: #585d63;" scope="col" id="date_drop_off">date_drop_off</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
-    <tr><td headers="season" class="gt_row gt_right" style="background-color: rgba(239,168,110,0.35); font-weight: bold;">1</td>
-<td headers="name" class="gt_row gt_left">Alan Kay</td>
+    <tr><td headers="season" class="gt_row gt_center" style="background-color: rgba(239,168,110,0.35); border-left-width: 1px; border-left-style: solid; border-left-color: #e4e8ec; border-right-width: 1px; border-right-style: solid; border-right-color: #e4e8ec; border-top-width: 1px; border-top-style: solid; border-top-color: #e4e8ec; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #e4e8ec; font-weight: bold;">1</td>
+<td headers="name" class="gt_row gt_left" style="border-left-width: 2px; border-left-style: solid; border-left-color: lightgrey;">Alan Kay</td>
 <td headers="age" class="gt_row gt_right">40</td>
 <td headers="gender" class="gt_row gt_left" style="background-color: rgba(219,115,92,0.35); font-weight: bold;">Male</td>
 <td headers="city" class="gt_row gt_left">Blairsville</td>
@@ -764,31 +765,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td headers="lat" class="gt_row gt_right">50.72444</td>
 <td headers="lon" class="gt_row gt_right">-127.4981</td>
 <td headers="date_drop_off" class="gt_row gt_right">NA</td></tr>
-    <tr><td headers="season" class="gt_row gt_right" style="background-color: rgba(239,168,110,0.35); font-weight: bold;">1</td>
-<td headers="name" class="gt_row gt_left">Sam Larson</td>
-<td headers="age" class="gt_row gt_right">22</td>
-<td headers="gender" class="gt_row gt_left" style="background-color: rgba(219,115,92,0.35); font-weight: bold;">Male</td>
-<td headers="city" class="gt_row gt_left">Lincoln</td>
-<td headers="state" class="gt_row gt_left">Nebraska</td>
-<td headers="country.x" class="gt_row gt_left">United States</td>
-<td headers="result" class="gt_row gt_right" style="background-color: rgba(122,103,82,0.35); font-weight: bold;">2</td>
-<td headers="days_lasted" class="gt_row gt_right" style="background-color: rgba(243,197,123,0.35); font-weight: bold;">55</td>
-<td headers="medically_evacuated" class="gt_row gt_center" style="background-color: rgba(135,242,138,0.35); font-weight: bold;">FALSE</td>
-<td headers="reason_tapped_out" class="gt_row gt_left">Lost the mind game</td>
-<td headers="reason_category" class="gt_row gt_left" style="background-color: rgba(154,138,118,0.35); font-weight: bold;">Family / personal</td>
-<td headers="team" class="gt_row gt_left">NA</td>
-<td headers="day_linked_up" class="gt_row gt_right">NA</td>
-<td headers="profession" class="gt_row gt_left" style="background-color: rgba(42,145,162,0.35); font-weight: bold;">Outdoor Gear Retailer</td>
-<td headers="url" class="gt_row gt_left">sam-larson</td>
-<td headers="version" class="gt_row gt_left">US</td>
-<td headers="location" class="gt_row gt_left">Quatsino</td>
-<td headers="country.y" class="gt_row gt_left">Canada</td>
-<td headers="n_survivors" class="gt_row gt_right">10</td>
-<td headers="lat" class="gt_row gt_right">50.72444</td>
-<td headers="lon" class="gt_row gt_right">-127.4981</td>
-<td headers="date_drop_off" class="gt_row gt_right">NA</td></tr>
-    <tr><td headers="season" class="gt_row gt_right" style="background-color: rgba(239,168,110,0.35); font-weight: bold;">1</td>
-<td headers="name" class="gt_row gt_left">Mitch Mitchell</td>
+    <tr><td headers="season" class="gt_row gt_center gt_striped" style="background-color: rgba(239,168,110,0.35); border-left-width: 1px; border-left-style: solid; border-left-color: #e4e8ec; border-right-width: 1px; border-right-style: solid; border-right-color: #e4e8ec; border-top-width: 1px; border-top-style: solid; border-top-color: #e4e8ec; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #e4e8ec; font-weight: bold;">1</td>
+<td headers="name" class="gt_row gt_left gt_striped" style="border-left-width: 2px; border-left-style: solid; border-left-color: lightgrey;">Sam Larson</td>
+<td headers="age" class="gt_row gt_right gt_striped">22</td>
+<td headers="gender" class="gt_row gt_left gt_striped" style="background-color: rgba(219,115,92,0.35); font-weight: bold;">Male</td>
+<td headers="city" class="gt_row gt_left gt_striped">Lincoln</td>
+<td headers="state" class="gt_row gt_left gt_striped">Nebraska</td>
+<td headers="country.x" class="gt_row gt_left gt_striped">United States</td>
+<td headers="result" class="gt_row gt_right gt_striped" style="background-color: rgba(122,103,82,0.35); font-weight: bold;">2</td>
+<td headers="days_lasted" class="gt_row gt_right gt_striped" style="background-color: rgba(243,197,123,0.35); font-weight: bold;">55</td>
+<td headers="medically_evacuated" class="gt_row gt_center gt_striped" style="background-color: rgba(135,242,138,0.35); font-weight: bold;">FALSE</td>
+<td headers="reason_tapped_out" class="gt_row gt_left gt_striped">Lost the mind game</td>
+<td headers="reason_category" class="gt_row gt_left gt_striped" style="background-color: rgba(154,138,118,0.35); font-weight: bold;">Family / personal</td>
+<td headers="team" class="gt_row gt_left gt_striped">NA</td>
+<td headers="day_linked_up" class="gt_row gt_right gt_striped">NA</td>
+<td headers="profession" class="gt_row gt_left gt_striped" style="background-color: rgba(42,145,162,0.35); font-weight: bold;">Outdoor Gear Retailer</td>
+<td headers="url" class="gt_row gt_left gt_striped">sam-larson</td>
+<td headers="version" class="gt_row gt_left gt_striped">US</td>
+<td headers="location" class="gt_row gt_left gt_striped">Quatsino</td>
+<td headers="country.y" class="gt_row gt_left gt_striped">Canada</td>
+<td headers="n_survivors" class="gt_row gt_right gt_striped">10</td>
+<td headers="lat" class="gt_row gt_right gt_striped">50.72444</td>
+<td headers="lon" class="gt_row gt_right gt_striped">-127.4981</td>
+<td headers="date_drop_off" class="gt_row gt_right gt_striped">NA</td></tr>
+    <tr><td headers="season" class="gt_row gt_center" style="background-color: rgba(239,168,110,0.35); border-left-width: 1px; border-left-style: solid; border-left-color: #e4e8ec; border-right-width: 1px; border-right-style: solid; border-right-color: #e4e8ec; border-top-width: 1px; border-top-style: solid; border-top-color: #e4e8ec; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #e4e8ec; font-weight: bold;">1</td>
+<td headers="name" class="gt_row gt_left" style="border-left-width: 2px; border-left-style: solid; border-left-color: lightgrey;">Mitch Mitchell</td>
 <td headers="age" class="gt_row gt_right">34</td>
 <td headers="gender" class="gt_row gt_left" style="background-color: rgba(219,115,92,0.35); font-weight: bold;">Male</td>
 <td headers="city" class="gt_row gt_left">Bellingham</td>
@@ -810,31 +811,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td headers="lat" class="gt_row gt_right">50.72444</td>
 <td headers="lon" class="gt_row gt_right">-127.4981</td>
 <td headers="date_drop_off" class="gt_row gt_right">NA</td></tr>
-    <tr><td headers="season" class="gt_row gt_right" style="background-color: rgba(239,168,110,0.35); font-weight: bold;">1</td>
-<td headers="name" class="gt_row gt_left">Lucas Miller</td>
-<td headers="age" class="gt_row gt_right">32</td>
-<td headers="gender" class="gt_row gt_left" style="background-color: rgba(219,115,92,0.35); font-weight: bold;">Male</td>
-<td headers="city" class="gt_row gt_left">Quasqueton</td>
-<td headers="state" class="gt_row gt_left">Iowa</td>
-<td headers="country.x" class="gt_row gt_left">United States</td>
-<td headers="result" class="gt_row gt_right" style="background-color: rgba(122,103,82,0.35); font-weight: bold;">4</td>
-<td headers="days_lasted" class="gt_row gt_right" style="background-color: rgba(243,197,123,0.35); font-weight: bold;">39</td>
-<td headers="medically_evacuated" class="gt_row gt_center" style="background-color: rgba(135,242,138,0.35); font-weight: bold;">FALSE</td>
-<td headers="reason_tapped_out" class="gt_row gt_left">Felt content with what he had done</td>
-<td headers="reason_category" class="gt_row gt_left" style="background-color: rgba(154,138,118,0.35); font-weight: bold;">Family / personal</td>
-<td headers="team" class="gt_row gt_left">NA</td>
-<td headers="day_linked_up" class="gt_row gt_right">NA</td>
-<td headers="profession" class="gt_row gt_left" style="background-color: rgba(42,145,162,0.35); font-weight: bold;">Survivalist and Wildlife Therapist/Natural Healing</td>
-<td headers="url" class="gt_row gt_left">lucas-miller</td>
-<td headers="version" class="gt_row gt_left">US</td>
-<td headers="location" class="gt_row gt_left">Quatsino</td>
-<td headers="country.y" class="gt_row gt_left">Canada</td>
-<td headers="n_survivors" class="gt_row gt_right">10</td>
-<td headers="lat" class="gt_row gt_right">50.72444</td>
-<td headers="lon" class="gt_row gt_right">-127.4981</td>
-<td headers="date_drop_off" class="gt_row gt_right">NA</td></tr>
-    <tr><td headers="season" class="gt_row gt_right" style="background-color: rgba(239,168,110,0.35); font-weight: bold;">1</td>
-<td headers="name" class="gt_row gt_left">Dustin Feher</td>
+    <tr><td headers="season" class="gt_row gt_center gt_striped" style="background-color: rgba(239,168,110,0.35); border-left-width: 1px; border-left-style: solid; border-left-color: #e4e8ec; border-right-width: 1px; border-right-style: solid; border-right-color: #e4e8ec; border-top-width: 1px; border-top-style: solid; border-top-color: #e4e8ec; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #e4e8ec; font-weight: bold;">1</td>
+<td headers="name" class="gt_row gt_left gt_striped" style="border-left-width: 2px; border-left-style: solid; border-left-color: lightgrey;">Lucas Miller</td>
+<td headers="age" class="gt_row gt_right gt_striped">32</td>
+<td headers="gender" class="gt_row gt_left gt_striped" style="background-color: rgba(219,115,92,0.35); font-weight: bold;">Male</td>
+<td headers="city" class="gt_row gt_left gt_striped">Quasqueton</td>
+<td headers="state" class="gt_row gt_left gt_striped">Iowa</td>
+<td headers="country.x" class="gt_row gt_left gt_striped">United States</td>
+<td headers="result" class="gt_row gt_right gt_striped" style="background-color: rgba(122,103,82,0.35); font-weight: bold;">4</td>
+<td headers="days_lasted" class="gt_row gt_right gt_striped" style="background-color: rgba(243,197,123,0.35); font-weight: bold;">39</td>
+<td headers="medically_evacuated" class="gt_row gt_center gt_striped" style="background-color: rgba(135,242,138,0.35); font-weight: bold;">FALSE</td>
+<td headers="reason_tapped_out" class="gt_row gt_left gt_striped">Felt content with what he had done</td>
+<td headers="reason_category" class="gt_row gt_left gt_striped" style="background-color: rgba(154,138,118,0.35); font-weight: bold;">Family / personal</td>
+<td headers="team" class="gt_row gt_left gt_striped">NA</td>
+<td headers="day_linked_up" class="gt_row gt_right gt_striped">NA</td>
+<td headers="profession" class="gt_row gt_left gt_striped" style="background-color: rgba(42,145,162,0.35); font-weight: bold;">Survivalist and Wildlife Therapist/Natural Healing</td>
+<td headers="url" class="gt_row gt_left gt_striped">lucas-miller</td>
+<td headers="version" class="gt_row gt_left gt_striped">US</td>
+<td headers="location" class="gt_row gt_left gt_striped">Quatsino</td>
+<td headers="country.y" class="gt_row gt_left gt_striped">Canada</td>
+<td headers="n_survivors" class="gt_row gt_right gt_striped">10</td>
+<td headers="lat" class="gt_row gt_right gt_striped">50.72444</td>
+<td headers="lon" class="gt_row gt_right gt_striped">-127.4981</td>
+<td headers="date_drop_off" class="gt_row gt_right gt_striped">NA</td></tr>
+    <tr><td headers="season" class="gt_row gt_center" style="background-color: rgba(239,168,110,0.35); border-left-width: 1px; border-left-style: solid; border-left-color: #e4e8ec; border-right-width: 1px; border-right-style: solid; border-right-color: #e4e8ec; border-top-width: 1px; border-top-style: solid; border-top-color: #e4e8ec; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #e4e8ec; font-weight: bold;">1</td>
+<td headers="name" class="gt_row gt_left" style="border-left-width: 2px; border-left-style: solid; border-left-color: lightgrey;">Dustin Feher</td>
 <td headers="age" class="gt_row gt_right">37</td>
 <td headers="gender" class="gt_row gt_left" style="background-color: rgba(219,115,92,0.35); font-weight: bold;">Male</td>
 <td headers="city" class="gt_row gt_left">Pittsburgh</td>
@@ -856,31 +857,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td headers="lat" class="gt_row gt_right">50.72444</td>
 <td headers="lon" class="gt_row gt_right">-127.4981</td>
 <td headers="date_drop_off" class="gt_row gt_right">NA</td></tr>
-    <tr><td headers="season" class="gt_row gt_right" style="background-color: rgba(239,168,110,0.35); font-weight: bold;">1</td>
-<td headers="name" class="gt_row gt_left">Brant McGee</td>
-<td headers="age" class="gt_row gt_right">44</td>
-<td headers="gender" class="gt_row gt_left" style="background-color: rgba(219,115,92,0.35); font-weight: bold;">Male</td>
-<td headers="city" class="gt_row gt_left">Albemarle</td>
-<td headers="state" class="gt_row gt_left">North Carolina</td>
-<td headers="country.x" class="gt_row gt_left">United States</td>
-<td headers="result" class="gt_row gt_right" style="background-color: rgba(122,103,82,0.35); font-weight: bold;">6</td>
-<td headers="days_lasted" class="gt_row gt_right" style="background-color: rgba(243,197,123,0.35); font-weight: bold;">6</td>
-<td headers="medically_evacuated" class="gt_row gt_center" style="background-color: rgba(135,242,138,0.35); font-weight: bold;">FALSE</td>
-<td headers="reason_tapped_out" class="gt_row gt_left">Consuming salt water</td>
-<td headers="reason_category" class="gt_row gt_left" style="background-color: rgba(154,138,118,0.35); font-weight: bold;">Medical / health</td>
-<td headers="team" class="gt_row gt_left">NA</td>
-<td headers="day_linked_up" class="gt_row gt_right">NA</td>
-<td headers="profession" class="gt_row gt_left" style="background-color: rgba(42,145,162,0.35); font-weight: bold;">US Army Guard and Former US Coast Guard</td>
-<td headers="url" class="gt_row gt_left">brant-mcgee</td>
-<td headers="version" class="gt_row gt_left">US</td>
-<td headers="location" class="gt_row gt_left">Quatsino</td>
-<td headers="country.y" class="gt_row gt_left">Canada</td>
-<td headers="n_survivors" class="gt_row gt_right">10</td>
-<td headers="lat" class="gt_row gt_right">50.72444</td>
-<td headers="lon" class="gt_row gt_right">-127.4981</td>
-<td headers="date_drop_off" class="gt_row gt_right">NA</td></tr>
-    <tr><td headers="season" class="gt_row gt_right" style="background-color: rgba(239,168,110,0.35); font-weight: bold;">1</td>
-<td headers="name" class="gt_row gt_left">Wayne Russell</td>
+    <tr><td headers="season" class="gt_row gt_center gt_striped" style="background-color: rgba(239,168,110,0.35); border-left-width: 1px; border-left-style: solid; border-left-color: #e4e8ec; border-right-width: 1px; border-right-style: solid; border-right-color: #e4e8ec; border-top-width: 1px; border-top-style: solid; border-top-color: #e4e8ec; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #e4e8ec; font-weight: bold;">1</td>
+<td headers="name" class="gt_row gt_left gt_striped" style="border-left-width: 2px; border-left-style: solid; border-left-color: lightgrey;">Brant McGee</td>
+<td headers="age" class="gt_row gt_right gt_striped">44</td>
+<td headers="gender" class="gt_row gt_left gt_striped" style="background-color: rgba(219,115,92,0.35); font-weight: bold;">Male</td>
+<td headers="city" class="gt_row gt_left gt_striped">Albemarle</td>
+<td headers="state" class="gt_row gt_left gt_striped">North Carolina</td>
+<td headers="country.x" class="gt_row gt_left gt_striped">United States</td>
+<td headers="result" class="gt_row gt_right gt_striped" style="background-color: rgba(122,103,82,0.35); font-weight: bold;">6</td>
+<td headers="days_lasted" class="gt_row gt_right gt_striped" style="background-color: rgba(243,197,123,0.35); font-weight: bold;">6</td>
+<td headers="medically_evacuated" class="gt_row gt_center gt_striped" style="background-color: rgba(135,242,138,0.35); font-weight: bold;">FALSE</td>
+<td headers="reason_tapped_out" class="gt_row gt_left gt_striped">Consuming salt water</td>
+<td headers="reason_category" class="gt_row gt_left gt_striped" style="background-color: rgba(154,138,118,0.35); font-weight: bold;">Medical / health</td>
+<td headers="team" class="gt_row gt_left gt_striped">NA</td>
+<td headers="day_linked_up" class="gt_row gt_right gt_striped">NA</td>
+<td headers="profession" class="gt_row gt_left gt_striped" style="background-color: rgba(42,145,162,0.35); font-weight: bold;">US Army Guard and Former US Coast Guard</td>
+<td headers="url" class="gt_row gt_left gt_striped">brant-mcgee</td>
+<td headers="version" class="gt_row gt_left gt_striped">US</td>
+<td headers="location" class="gt_row gt_left gt_striped">Quatsino</td>
+<td headers="country.y" class="gt_row gt_left gt_striped">Canada</td>
+<td headers="n_survivors" class="gt_row gt_right gt_striped">10</td>
+<td headers="lat" class="gt_row gt_right gt_striped">50.72444</td>
+<td headers="lon" class="gt_row gt_right gt_striped">-127.4981</td>
+<td headers="date_drop_off" class="gt_row gt_right gt_striped">NA</td></tr>
+    <tr><td headers="season" class="gt_row gt_center" style="background-color: rgba(239,168,110,0.35); border-left-width: 1px; border-left-style: solid; border-left-color: #e4e8ec; border-right-width: 1px; border-right-style: solid; border-right-color: #e4e8ec; border-top-width: 1px; border-top-style: solid; border-top-color: #e4e8ec; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #e4e8ec; font-weight: bold;">1</td>
+<td headers="name" class="gt_row gt_left" style="border-left-width: 2px; border-left-style: solid; border-left-color: lightgrey;">Wayne Russell</td>
 <td headers="age" class="gt_row gt_right">46</td>
 <td headers="gender" class="gt_row gt_left" style="background-color: rgba(219,115,92,0.35); font-weight: bold;">Male</td>
 <td headers="city" class="gt_row gt_left">Saint John</td>
@@ -902,31 +903,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td headers="lat" class="gt_row gt_right">50.72444</td>
 <td headers="lon" class="gt_row gt_right">-127.4981</td>
 <td headers="date_drop_off" class="gt_row gt_right">NA</td></tr>
-    <tr><td headers="season" class="gt_row gt_right" style="background-color: rgba(239,168,110,0.35); font-weight: bold;">1</td>
-<td headers="name" class="gt_row gt_left">Joe Robinet</td>
-<td headers="age" class="gt_row gt_right">24</td>
-<td headers="gender" class="gt_row gt_left" style="background-color: rgba(219,115,92,0.35); font-weight: bold;">Male</td>
-<td headers="city" class="gt_row gt_left">Windsor</td>
-<td headers="state" class="gt_row gt_left">Ontario</td>
-<td headers="country.x" class="gt_row gt_left">Canada</td>
-<td headers="result" class="gt_row gt_right" style="background-color: rgba(122,103,82,0.35); font-weight: bold;">8</td>
-<td headers="days_lasted" class="gt_row gt_right" style="background-color: rgba(243,197,123,0.35); font-weight: bold;">4</td>
-<td headers="medically_evacuated" class="gt_row gt_center" style="background-color: rgba(135,242,138,0.35); font-weight: bold;">FALSE</td>
-<td headers="reason_tapped_out" class="gt_row gt_left">Loss of ferro rod</td>
-<td headers="reason_category" class="gt_row gt_left" style="background-color: rgba(154,138,118,0.35); font-weight: bold;">Loss of inventory</td>
-<td headers="team" class="gt_row gt_left">NA</td>
-<td headers="day_linked_up" class="gt_row gt_right">NA</td>
-<td headers="profession" class="gt_row gt_left" style="background-color: rgba(42,145,162,0.35); font-weight: bold;">Carpenter</td>
-<td headers="url" class="gt_row gt_left">joe-robinet</td>
-<td headers="version" class="gt_row gt_left">US</td>
-<td headers="location" class="gt_row gt_left">Quatsino</td>
-<td headers="country.y" class="gt_row gt_left">Canada</td>
-<td headers="n_survivors" class="gt_row gt_right">10</td>
-<td headers="lat" class="gt_row gt_right">50.72444</td>
-<td headers="lon" class="gt_row gt_right">-127.4981</td>
-<td headers="date_drop_off" class="gt_row gt_right">NA</td></tr>
-    <tr><td headers="season" class="gt_row gt_right" style="background-color: rgba(239,168,110,0.35); font-weight: bold;">1</td>
-<td headers="name" class="gt_row gt_left">Chris Weatherman</td>
+    <tr><td headers="season" class="gt_row gt_center gt_striped" style="background-color: rgba(239,168,110,0.35); border-left-width: 1px; border-left-style: solid; border-left-color: #e4e8ec; border-right-width: 1px; border-right-style: solid; border-right-color: #e4e8ec; border-top-width: 1px; border-top-style: solid; border-top-color: #e4e8ec; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #e4e8ec; font-weight: bold;">1</td>
+<td headers="name" class="gt_row gt_left gt_striped" style="border-left-width: 2px; border-left-style: solid; border-left-color: lightgrey;">Joe Robinet</td>
+<td headers="age" class="gt_row gt_right gt_striped">24</td>
+<td headers="gender" class="gt_row gt_left gt_striped" style="background-color: rgba(219,115,92,0.35); font-weight: bold;">Male</td>
+<td headers="city" class="gt_row gt_left gt_striped">Windsor</td>
+<td headers="state" class="gt_row gt_left gt_striped">Ontario</td>
+<td headers="country.x" class="gt_row gt_left gt_striped">Canada</td>
+<td headers="result" class="gt_row gt_right gt_striped" style="background-color: rgba(122,103,82,0.35); font-weight: bold;">8</td>
+<td headers="days_lasted" class="gt_row gt_right gt_striped" style="background-color: rgba(243,197,123,0.35); font-weight: bold;">4</td>
+<td headers="medically_evacuated" class="gt_row gt_center gt_striped" style="background-color: rgba(135,242,138,0.35); font-weight: bold;">FALSE</td>
+<td headers="reason_tapped_out" class="gt_row gt_left gt_striped">Loss of ferro rod</td>
+<td headers="reason_category" class="gt_row gt_left gt_striped" style="background-color: rgba(154,138,118,0.35); font-weight: bold;">Loss of inventory</td>
+<td headers="team" class="gt_row gt_left gt_striped">NA</td>
+<td headers="day_linked_up" class="gt_row gt_right gt_striped">NA</td>
+<td headers="profession" class="gt_row gt_left gt_striped" style="background-color: rgba(42,145,162,0.35); font-weight: bold;">Carpenter</td>
+<td headers="url" class="gt_row gt_left gt_striped">joe-robinet</td>
+<td headers="version" class="gt_row gt_left gt_striped">US</td>
+<td headers="location" class="gt_row gt_left gt_striped">Quatsino</td>
+<td headers="country.y" class="gt_row gt_left gt_striped">Canada</td>
+<td headers="n_survivors" class="gt_row gt_right gt_striped">10</td>
+<td headers="lat" class="gt_row gt_right gt_striped">50.72444</td>
+<td headers="lon" class="gt_row gt_right gt_striped">-127.4981</td>
+<td headers="date_drop_off" class="gt_row gt_right gt_striped">NA</td></tr>
+    <tr><td headers="season" class="gt_row gt_center" style="background-color: rgba(239,168,110,0.35); border-left-width: 1px; border-left-style: solid; border-left-color: #e4e8ec; border-right-width: 1px; border-right-style: solid; border-right-color: #e4e8ec; border-top-width: 1px; border-top-style: solid; border-top-color: #e4e8ec; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #e4e8ec; font-weight: bold;">1</td>
+<td headers="name" class="gt_row gt_left" style="border-left-width: 2px; border-left-style: solid; border-left-color: lightgrey;">Chris Weatherman</td>
 <td headers="age" class="gt_row gt_right">41</td>
 <td headers="gender" class="gt_row gt_left" style="background-color: rgba(219,115,92,0.35); font-weight: bold;">Male</td>
 <td headers="city" class="gt_row gt_left">Umatilla</td>
@@ -948,33 +949,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td headers="lat" class="gt_row gt_right">50.72444</td>
 <td headers="lon" class="gt_row gt_right">-127.4981</td>
 <td headers="date_drop_off" class="gt_row gt_right">NA</td></tr>
-    <tr><td headers="season" class="gt_row gt_right" style="background-color: rgba(239,168,110,0.35); font-weight: bold;">1</td>
-<td headers="name" class="gt_row gt_left">Josh Chavez</td>
-<td headers="age" class="gt_row gt_right">31</td>
-<td headers="gender" class="gt_row gt_left" style="background-color: rgba(219,115,92,0.35); font-weight: bold;">Male</td>
-<td headers="city" class="gt_row gt_left">Jackson</td>
-<td headers="state" class="gt_row gt_left">Ohio</td>
-<td headers="country.x" class="gt_row gt_left">United States</td>
-<td headers="result" class="gt_row gt_right" style="background-color: rgba(122,103,82,0.35); font-weight: bold;">10</td>
-<td headers="days_lasted" class="gt_row gt_right" style="background-color: rgba(243,197,123,0.35); font-weight: bold;">0</td>
-<td headers="medically_evacuated" class="gt_row gt_center" style="background-color: rgba(135,242,138,0.35); font-weight: bold;">FALSE</td>
-<td headers="reason_tapped_out" class="gt_row gt_left">Fear of bears</td>
-<td headers="reason_category" class="gt_row gt_left" style="background-color: rgba(154,138,118,0.35); font-weight: bold;">Family / personal</td>
-<td headers="team" class="gt_row gt_left">NA</td>
-<td headers="day_linked_up" class="gt_row gt_right">NA</td>
-<td headers="profession" class="gt_row gt_left" style="background-color: rgba(42,145,162,0.35); font-weight: bold;">Law Enforcement</td>
-<td headers="url" class="gt_row gt_left">meet-josh-chavez-from-the-history-series-alone-find-out-more-at-history-com</td>
-<td headers="version" class="gt_row gt_left">US</td>
-<td headers="location" class="gt_row gt_left">Quatsino</td>
-<td headers="country.y" class="gt_row gt_left">Canada</td>
-<td headers="n_survivors" class="gt_row gt_right">10</td>
-<td headers="lat" class="gt_row gt_right">50.72444</td>
-<td headers="lon" class="gt_row gt_right">-127.4981</td>
-<td headers="date_drop_off" class="gt_row gt_right">NA</td></tr>
+    <tr><td headers="season" class="gt_row gt_center gt_striped" style="background-color: rgba(239,168,110,0.35); border-left-width: 1px; border-left-style: solid; border-left-color: #e4e8ec; border-right-width: 1px; border-right-style: solid; border-right-color: #e4e8ec; border-top-width: 1px; border-top-style: solid; border-top-color: #e4e8ec; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #e4e8ec; font-weight: bold;">1</td>
+<td headers="name" class="gt_row gt_left gt_striped" style="border-left-width: 2px; border-left-style: solid; border-left-color: lightgrey;">Josh Chavez</td>
+<td headers="age" class="gt_row gt_right gt_striped">31</td>
+<td headers="gender" class="gt_row gt_left gt_striped" style="background-color: rgba(219,115,92,0.35); font-weight: bold;">Male</td>
+<td headers="city" class="gt_row gt_left gt_striped">Jackson</td>
+<td headers="state" class="gt_row gt_left gt_striped">Ohio</td>
+<td headers="country.x" class="gt_row gt_left gt_striped">United States</td>
+<td headers="result" class="gt_row gt_right gt_striped" style="background-color: rgba(122,103,82,0.35); font-weight: bold;">10</td>
+<td headers="days_lasted" class="gt_row gt_right gt_striped" style="background-color: rgba(243,197,123,0.35); font-weight: bold;">0</td>
+<td headers="medically_evacuated" class="gt_row gt_center gt_striped" style="background-color: rgba(135,242,138,0.35); font-weight: bold;">FALSE</td>
+<td headers="reason_tapped_out" class="gt_row gt_left gt_striped">Fear of bears</td>
+<td headers="reason_category" class="gt_row gt_left gt_striped" style="background-color: rgba(154,138,118,0.35); font-weight: bold;">Family / personal</td>
+<td headers="team" class="gt_row gt_left gt_striped">NA</td>
+<td headers="day_linked_up" class="gt_row gt_right gt_striped">NA</td>
+<td headers="profession" class="gt_row gt_left gt_striped" style="background-color: rgba(42,145,162,0.35); font-weight: bold;">Law Enforcement</td>
+<td headers="url" class="gt_row gt_left gt_striped">meet-josh-chavez-from-the-history-series-alone-find-out-more-at-history-com</td>
+<td headers="version" class="gt_row gt_left gt_striped">US</td>
+<td headers="location" class="gt_row gt_left gt_striped">Quatsino</td>
+<td headers="country.y" class="gt_row gt_left gt_striped">Canada</td>
+<td headers="n_survivors" class="gt_row gt_right gt_striped">10</td>
+<td headers="lat" class="gt_row gt_right gt_striped">50.72444</td>
+<td headers="lon" class="gt_row gt_right gt_striped">-127.4981</td>
+<td headers="date_drop_off" class="gt_row gt_right gt_striped">NA</td></tr>
   </tbody>
   <tfoot class="gt_sourcenotes">
     <tr>
-      <td class="gt_sourcenote" style="color: #A9A9A9; font-size: small;" colspan="23">fig. 1</td>
+      <td class="gt_sourcenote" style="font-size: small;" colspan="23">fig. 1</td>
     </tr>
   </tfoot>
   
@@ -983,256 +984,187 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
-<section id="data-exploration." class="level1">
-<h1>Data exploration.</h1>
+<section id="data-exploration" class="level2">
+<h2 class="anchored" data-anchor-id="data-exploration">Data exploration</h2>
 <p>I found that age, gender, and where someone was located did not have any significance during the first round of exploring. I then decided to narrow down my scope to find out the survival rate between gender and professions.</p>
-<section id="point-out" class="level2">
-<h2 class="anchored" data-anchor-id="point-out">point out</h2>
-<ul>
-<li>While exploring the quantifying aspect of the data set I first noticed there were almost 3 times as much gendered males then female. In fig.2 the columns represent the seasons and the rows represent how many males and females participated.</li>
-</ul>
+<section id="point-out" class="level3">
+<h3 class="anchored" data-anchor-id="point-out">point out</h3>
 <div class="cell">
 <details>
 <summary>Check out the Code!</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(alone<span class="sc">$</span>gender,alone<span class="sc">$</span>season)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>tb <span class="ot">&lt;-</span> <span class="fu">table</span>(alone<span class="sc">$</span>gender,alone<span class="sc">$</span>season)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(<span class="fu">dimnames</span>(tb))<span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Gender"</span>, <span class="st">"Seasons"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>tb</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>        
-          1  2  3  4  5  6  7  8  9
+<pre><code>        Seasons
+Gender    1  2  3  4  5  6  7  8  9
   Female  0  3  3  1  3  3  2  3  2
   Male   10  7  7 13  7  7  8  7  8</code></pre>
 </div>
 </div>
-<p>However, even though there is an unbalance in gender I was able to use the column to for survival analysis, and find the average days lasted for both genders.</p>
+<ul>
+<li><p>While exploring the quantifying aspect of the data set I first noticed there were almost 3 times as much gendered males then female.</p></li>
+<li><p>However, even though there is an unbalance in gender I was able to use the data by bar charts and survival analysis.</p></li>
+</ul>
 </section>
 </section>
-<section id="gender-how-well-they-did-each-season-and-their-days-lasted-as-well-as-what-place-they-recived-results" class="level1">
-<h1>Gender, how well they did each season and their days lasted, as well as what place they recived (results)</h1>
+<section id="bar-plot-gender-v-season-gender-v-rank" class="level2">
+<h2 class="anchored" data-anchor-id="bar-plot-gender-v-season-gender-v-rank">Bar plot Gender v Season, Gender v Rank</h2>
 <div class="cell">
 <details>
 <summary>Check out the Code!</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'gridExtra'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:dplyr':
-
-    combine</code></pre>
-</div>
-<details>
-<summary>Check out the Code!</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>plot1<span class="ot">&lt;-</span>alone<span class="sc">%&gt;%</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">season =</span> <span class="fu">as.factor</span>(season))<span class="sc">%&gt;%</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(season, days_lasted, <span class="at">fill =</span> gender))<span class="sc">+</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>gender, <span class="at">scales =</span> <span class="st">"free_x"</span>)<span class="sc">+</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>,<span class="at">alpha =</span> <span class="fl">0.35</span>) </span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>plot2<span class="ot">&lt;-</span>alone<span class="sc">%&gt;%</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">result =</span> <span class="fu">as.factor</span>(result))<span class="sc">%&gt;%</span></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(result, days_lasted, <span class="at">fill =</span> gender))<span class="sc">+</span></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>gender, <span class="at">scales =</span> <span class="st">"free_x"</span>)<span class="sc">+</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>,<span class="at">alpha =</span> <span class="fl">0.35</span>) </span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(plot1,plot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plot1<span class="ot">&lt;-</span>alone<span class="sc">%&gt;%</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">season =</span> <span class="fu">as.factor</span>(season))<span class="sc">%&gt;%</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(season, days_lasted, <span class="at">fill =</span> gender))<span class="sc">+</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>gender, <span class="at">scales =</span> <span class="st">"free_x"</span>)<span class="sc">+</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>,<span class="at">alpha =</span> <span class="fl">0.35</span>) </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>plot2<span class="ot">&lt;-</span>alone<span class="sc">%&gt;%</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">result =</span> <span class="fu">as.factor</span>(result))<span class="sc">%&gt;%</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(result, days_lasted, <span class="at">fill =</span> gender))<span class="sc">+</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>gender, <span class="at">scales =</span> <span class="st">"free_x"</span>)<span class="sc">+</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>,<span class="at">alpha =</span> <span class="fl">0.35</span>) </span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(plot1,plot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">fig.&nbsp;3: Since there were no gendered females on season 1, there is no results.</figcaption><p></p>
+</figure>
 </div>
 </div>
-<ul>
-<li>Since there were no gendered females on season 1, there is no results.</li>
-</ul>
+</div>
 </section>
 <section id="survival-rate" class="level1">
 <h1>Survival Rate</h1>
+<p>Further exploring, I decided to work survival rates between gendered females and males using a <a href="https://bookdown.org/mpfoley1973/survival/km.html">Kaplan-Meier Curve</a> to show the survival rate of gender by either medically evacuated, left for medical health, and for personal or family reasons. I found an significance in the survival rate of leaving for family and personal reasons by gendered males. The probability of males survival is lower due to family and person reasons than gendered females.</p>
 <div class="cell">
 <details>
 <summary>Check out the Code!</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>alone1 <span class="ot">=</span> alone<span class="sc">%&gt;%</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">status =</span> <span class="fu">ifelse</span>(medically_evacuated <span class="sc">==</span> <span class="st">"TRUE"</span>,<span class="dv">1</span>,<span class="dv">0</span>))</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>al <span class="ot">=</span> alone1 <span class="sc">%&gt;%</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">left=</span>days_lasted,<span class="at">right=</span><span class="fu">ifelse</span>(status<span class="sc">==</span><span class="dv">1</span>,days_lasted,<span class="cn">NA</span>))</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>survObject<span class="ot">=</span><span class="fu">Surv</span>(al<span class="sc">$</span>left,al<span class="sc">$</span>right,<span class="at">type=</span><span class="st">"interval2"</span>)</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>km<span class="ot">=</span><span class="fu">survfit</span>(survObject<span class="sc">~</span>al<span class="sc">$</span>gender) <span class="co"># over all, give table. </span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(km)</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>mod1<span class="ot">&lt;-</span><span class="fu">ggsurvplot</span>(<span class="at">fit=</span>km, <span class="at">data=</span>al,<span class="at">risk.table =</span> F,<span class="at">conf.int=</span>F,</span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>                 <span class="at">surv.median.line =</span> <span class="st">"hv"</span>,</span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="at">legend=</span><span class="st">"right"</span>,</span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="at">legend.title =</span> <span class="st">"Gender"</span>,<span class="at">legend.labs =</span> <span class="fu">c</span>(<span class="st">"female"</span>,<span class="st">"male"</span>),</span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="at">ggtheme =</span> <span class="fu">theme_minimal</span>()) <span class="sc">+</span></span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">title=</span><span class="st">"Survival time until survivalist needed medical exacuation"</span>,</span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">x=</span><span class="st">"Days in which survivalist lasted in days"</span></span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>    ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<p>Further exploring, I decided to work survival rates between gendered females and males by either medically evacuated, left for medical health, personal, or family reasons. I found minor significants in the survival rate of (….. ……)</p>
-<p>Lastly, since was not satisfied with my exploration I thought that I would drop gender,age,and where contestant lived and decided to bin them by categorized the professions into white-collar, outdoor survivalists, blue-collar tradesmen, armed forces, and others, mostly entrepreneurs. As I know this cause some bias, and I made sure to do the best of my abilities I could, with the research and global knowledge I have</p>
-<div class="cell">
-<details>
-<summary>Check out the Code!</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>alone2 <span class="ot">=</span> alone<span class="sc">%&gt;%</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">status =</span> <span class="fu">ifelse</span>(reason_category <span class="sc">==</span> <span class="st">"Medical / health"</span>,<span class="dv">1</span>,<span class="dv">0</span>))</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>al2 <span class="ot">=</span> alone2 <span class="sc">%&gt;%</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">left=</span>days_lasted,<span class="at">right=</span><span class="fu">ifelse</span>(status<span class="sc">==</span><span class="dv">1</span>,days_lasted,<span class="cn">NA</span>))</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>survObject2<span class="ot">=</span><span class="fu">Surv</span>(al2<span class="sc">$</span>left,al2<span class="sc">$</span>right,<span class="at">type=</span><span class="st">"interval2"</span>)</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>km2<span class="ot">=</span><span class="fu">survfit</span>(survObject2<span class="sc">~</span>al2<span class="sc">$</span>gender) <span class="co"># over all, give table. </span></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(km2)</span></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>mod2<span class="ot">&lt;-</span><span class="fu">ggsurvplot</span>(<span class="at">fit=</span>km2, <span class="at">data=</span>al2,<span class="at">risk.table =</span> F,<span class="at">conf.int=</span>F,<span class="at">surv.median.line =</span> <span class="st">"hv"</span>,</span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="at">legend=</span><span class="st">"right"</span>,<span class="at">legend.title =</span> <span class="st">"Gender"</span>,<span class="at">legend.labs =</span> <span class="fu">c</span>(<span class="st">"female"</span>,<span class="st">"male"</span>),<span class="at">ggtheme =</span> <span class="fu">theme_minimal</span>()) <span class="sc">+</span></span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">title=</span><span class="st">"Survival time until Survivalist left because of a medical and or health issue"</span>,</span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">x=</span><span class="st">"Days in which survivalist lasted in days"</span></span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>    ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="cell">
-<details>
-<summary>Check out the Code!</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>alone3 <span class="ot">=</span> alone<span class="sc">%&gt;%</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">status =</span> <span class="fu">ifelse</span>(reason_category <span class="sc">==</span> <span class="st">"Family / personal"</span>,<span class="dv">1</span>,<span class="dv">0</span>))</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>al3 <span class="ot">=</span> alone3 <span class="sc">%&gt;%</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">left=</span>days_lasted,<span class="at">right=</span><span class="fu">ifelse</span>(status<span class="sc">==</span><span class="dv">1</span>,days_lasted,<span class="cn">NA</span>))</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>survObject3<span class="ot">=</span><span class="fu">Surv</span>(al3<span class="sc">$</span>left,al3<span class="sc">$</span>right,<span class="at">type=</span><span class="st">"interval2"</span>)</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>km3<span class="ot">=</span><span class="fu">survfit</span>(survObject3<span class="sc">~</span>al3<span class="sc">$</span>gender) <span class="co"># over all, give table. </span></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(km3)</span></span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>mod3<span class="ot">&lt;-</span><span class="fu">ggsurvplot</span>(<span class="at">fit=</span>km3, <span class="at">data=</span>al3,<span class="at">risk.table =</span> F,<span class="at">conf.int=</span>F,<span class="at">surv.median.line =</span> <span class="st">"hv"</span>,</span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="at">legend=</span><span class="st">"right"</span>,<span class="at">legend.title =</span> <span class="st">"Gender"</span>,<span class="at">legend.labs =</span> <span class="fu">c</span>(<span class="st">"female"</span>,<span class="st">"male"</span>),<span class="at">ggtheme =</span> <span class="fu">theme_minimal</span>())<span class="sc">+</span> <span class="fu">labs</span>(</span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">title=</span><span class="st">"Survival time until Survivalist left for Family or personal reasons"</span>,</span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">x=</span><span class="st">"Days in which survivalist lasted in days"</span></span>
-<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="cell">
-<details>
-<summary>Check out the Code!</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>mod1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>alone3 <span class="ot">=</span> alone<span class="sc">%&gt;%</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">status =</span> <span class="fu">ifelse</span>(reason_category <span class="sc">==</span> <span class="st">"Family / personal"</span>,<span class="dv">1</span>,<span class="dv">0</span>))</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>al3 <span class="ot">=</span> alone3 <span class="sc">%&gt;%</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">left=</span>days_lasted,<span class="at">right=</span><span class="fu">ifelse</span>(status<span class="sc">==</span><span class="dv">1</span>,days_lasted,<span class="cn">NA</span>))</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>survObject3<span class="ot">=</span><span class="fu">Surv</span>(al3<span class="sc">$</span>left,al3<span class="sc">$</span>right,<span class="at">type=</span><span class="st">"interval2"</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>km3<span class="ot">=</span><span class="fu">survfit</span>(survObject3<span class="sc">~</span>al3<span class="sc">$</span>gender) <span class="co"># over all, give table. </span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(km3)</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>mod3<span class="ot">&lt;-</span><span class="fu">ggsurvplot</span>(<span class="at">fit=</span>km3, <span class="at">data=</span>al3,<span class="at">risk.table =</span> F,<span class="at">conf.int=</span>F,<span class="at">surv.median.line =</span> <span class="st">"hv"</span>,</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="at">legend=</span><span class="st">"right"</span>,<span class="at">legend.title =</span> <span class="st">"Gender"</span>,<span class="at">legend.labs =</span> <span class="fu">c</span>(<span class="st">"female"</span>,<span class="st">"male"</span>),<span class="at">ggtheme =</span> <span class="fu">theme_minimal</span>())<span class="sc">+</span> <span class="fu">labs</span>(</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">title=</span><span class="st">"Survival time until Survivalist left for Family or personal reasons"</span>,</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">x=</span><span class="st">"Days in which survivalist lasted in days"</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>mod3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
-</div>
-<details>
-<summary>Check out the Code!</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>mod2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-7-2.png" class="img-fluid" width="672"></p>
-</div>
-<details>
-<summary>Check out the Code!</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>mod3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-7-3.png" class="img-fluid" width="672"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">fig.&nbsp;4: Survival rate of gender and reason for leaving: family or personal</figcaption><p></p>
+</figure>
 </div>
 </div>
+</div>
+<p>Lastly, since was not satisfied with my exploration I thought that I would drop gender,age,and where contestant lived and decided to bin them by categorized the professions into white-collar, outdoor survivalists, blue-collar tradesmen, armed forces, and others, mostly entrepreneurs. As I know this cause some bias, and I made sure to do the best of my abilities I could, with the research and global knowledge I have.</p>
 <div class="cell">
 <details>
 <summary>Check out the Code!</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>alonedf<span class="ot">&lt;-</span>alone2<span class="sc">%&gt;%</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">profcat =</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a> <span class="fu">case_when</span>(alone2<span class="sc">$</span>profession <span class="sc">%in%</span> <span class="fu">c</span>( <span class="st">"Corrections Officer"</span>,</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="st">"US Army Guard and Former US Coast Guard"</span>,</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="st">"Writer and Former Missionary"</span>,</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="st">"Former US Sniper"</span>,</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="st">"Law Enforcement and Former Air Force"</span>,</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="st">"Former Wildland Firefighter"</span>,</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="st">"Former US Army"</span>,</span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="st">"Retired Green Beret"</span>,</span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="st">"SERE Specialist"</span>,</span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="st">"Search and Rescue K9 Handler"</span>,</span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="st">"Sniper &amp; Survival Skills Instructor"</span>,</span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="st">"Retired Military/Homesteader"</span>,</span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="st">"Prescribed Fire Practitioner"</span>,<span class="st">"Law Enforcement"</span>) <span class="sc">~</span> <span class="st">"armforces"</span>,</span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a> alone2<span class="sc">$</span>profession <span class="sc">%in%</span> <span class="fu">c</span>( <span class="st">"Research Assistant"</span>,</span>
-<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a><span class="st">"Author"</span>,</span>
-<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a><span class="st">"Survivalist and Wildlife Therapist/Natural Healing"</span>,</span>
-<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a><span class="st">"Anthropologist"</span>,</span>
-<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a><span class="st">"Biologist &amp; Forrester"</span>,</span>
-<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a><span class="st">"Herbalist"</span>,</span>
-<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a><span class="st">"Accountant"</span>,</span>
-<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a><span class="st">"High School Teacher"</span>,</span>
-<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a><span class="st">"Environmental Scientist"</span>,</span>
-<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a><span class="st">"Psychotherapist"</span>,</span>
-<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a><span class="st">"Industrial Project Manager"</span>,</span>
-<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a><span class="st">"Accountant"</span>,</span>
-<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a><span class="st">"Biologist"</span>,</span>
-<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a><span class="st">"Educational Consultant"</span>,</span>
-<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a><span class="st">"Physician"</span>,</span>
-<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a><span class="st">"Community Leadership"</span>)<span class="sc">~</span> <span class="st">"whitecollar"</span>,</span>
-<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a>alone2<span class="sc">$</span>profession <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Butcher"</span>,</span>
-<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a><span class="st">"Carpenter"</span>,</span>
-<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a><span class="st">"Electrician"</span>,</span>
-<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a><span class="st">"Boat builder"</span>,</span>
-<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a><span class="st">"Drywaller"</span>,</span>
-<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a><span class="st">"Retired Shipping Driver"</span>,</span>
-<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a><span class="st">"Outdoor Educator"</span>,</span>
-<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a><span class="st">"Builder"</span>,</span>
-<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a><span class="st">"Fisherman"</span>,</span>
-<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a><span class="st">"Construction Foreman"</span>,</span>
-<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a><span class="st">"Equipment Operator"</span>,</span>
-<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a><span class="st">"Blacksmith"</span>,</span>
-<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a><span class="st">"Construction"</span>,</span>
-<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a><span class="st">"Traditional Bowyer"</span>,</span>
-<span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a><span class="st">"Tool Maker"</span>,</span>
-<span id="cb14-47"><a href="#cb14-47" aria-hidden="true" tabindex="-1"></a><span class="st">"Prehistoric Leather Specialist"</span>,</span>
-<span id="cb14-48"><a href="#cb14-48" aria-hidden="true" tabindex="-1"></a><span class="st">"Professional Bowyer &amp; Hunter"</span>,</span>
-<span id="cb14-49"><a href="#cb14-49" aria-hidden="true" tabindex="-1"></a><span class="st">"Hunting Guide"</span>,</span>
-<span id="cb14-50"><a href="#cb14-50" aria-hidden="true" tabindex="-1"></a><span class="st">"Oil Rig Roughneck"</span>,</span>
-<span id="cb14-51"><a href="#cb14-51" aria-hidden="true" tabindex="-1"></a><span class="st">"Alpaca Shearer, Treehouse builder"</span>,</span>
-<span id="cb14-52"><a href="#cb14-52" aria-hidden="true" tabindex="-1"></a><span class="st">"Commercial Fisherman"</span>,</span>
-<span id="cb14-53"><a href="#cb14-53" aria-hidden="true" tabindex="-1"></a><span class="st">"Hunting and Packgoat Guide"</span>)<span class="sc">~</span><span class="st">"bluetrades"</span>,</span>
-<span id="cb14-54"><a href="#cb14-54" aria-hidden="true" tabindex="-1"></a> alone2<span class="sc">$</span>profession <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Survivalist and Wildlife Therapist/Natural Healing"</span>,</span>
-<span id="cb14-55"><a href="#cb14-55" aria-hidden="true" tabindex="-1"></a><span class="st">"Aboriginal Skills Instructor"</span>,</span>
-<span id="cb14-56"><a href="#cb14-56" aria-hidden="true" tabindex="-1"></a><span class="st">"Survival Instructor"</span>,</span>
-<span id="cb14-57"><a href="#cb14-57" aria-hidden="true" tabindex="-1"></a><span class="st">"Homesteader &amp; Carpenter"</span>,</span>
-<span id="cb14-58"><a href="#cb14-58" aria-hidden="true" tabindex="-1"></a><span class="st">"Bushcraft Instructor"</span>,</span>
-<span id="cb14-59"><a href="#cb14-59" aria-hidden="true" tabindex="-1"></a><span class="st">"Trapper"</span>,</span>
-<span id="cb14-60"><a href="#cb14-60" aria-hidden="true" tabindex="-1"></a><span class="st">"Wilderness Skills Instructor"</span>,</span>
-<span id="cb14-61"><a href="#cb14-61" aria-hidden="true" tabindex="-1"></a><span class="st">"Bushcraft Instructor"</span>, </span>
-<span id="cb14-62"><a href="#cb14-62" aria-hidden="true" tabindex="-1"></a><span class="st">"Outdoor Educator"</span>,</span>
-<span id="cb14-63"><a href="#cb14-63" aria-hidden="true" tabindex="-1"></a><span class="st">"Wilderness Living Skills Instructor"</span>,</span>
-<span id="cb14-64"><a href="#cb14-64" aria-hidden="true" tabindex="-1"></a><span class="st">"Ancestral Skills Teacher "</span>,</span>
-<span id="cb14-65"><a href="#cb14-65" aria-hidden="true" tabindex="-1"></a><span class="st">"Wilderness Guide"</span>,</span>
-<span id="cb14-66"><a href="#cb14-66" aria-hidden="true" tabindex="-1"></a><span class="st">"Homesteader"</span>,</span>
-<span id="cb14-67"><a href="#cb14-67" aria-hidden="true" tabindex="-1"></a><span class="st">"Primitive Technology Instructor"</span>,</span>
-<span id="cb14-68"><a href="#cb14-68" aria-hidden="true" tabindex="-1"></a><span class="st">"Ancestral Living Skills Instructor"</span>,</span>
-<span id="cb14-69"><a href="#cb14-69" aria-hidden="true" tabindex="-1"></a><span class="st">"Winter Wilderness Expedition Operator"</span>,</span>
-<span id="cb14-70"><a href="#cb14-70" aria-hidden="true" tabindex="-1"></a><span class="st">"Primitive Skills Instructor"</span>,</span>
-<span id="cb14-71"><a href="#cb14-71" aria-hidden="true" tabindex="-1"></a><span class="st">"Primitive Skills School Owner"</span>,</span>
-<span id="cb14-72"><a href="#cb14-72" aria-hidden="true" tabindex="-1"></a><span class="st">"Homesteader"</span>,</span>
-<span id="cb14-73"><a href="#cb14-73" aria-hidden="true" tabindex="-1"></a><span class="st">"Wilderness Survival Instructor"</span>,</span>
-<span id="cb14-74"><a href="#cb14-74" aria-hidden="true" tabindex="-1"></a><span class="st">"Outdoor Professional"</span>,</span>
-<span id="cb14-75"><a href="#cb14-75" aria-hidden="true" tabindex="-1"></a><span class="st">"Wilderness/Primitive Skills Instructor"</span>,</span>
-<span id="cb14-76"><a href="#cb14-76" aria-hidden="true" tabindex="-1"></a><span class="st">"Wilderness Survival Instructor"</span>,</span>
-<span id="cb14-77"><a href="#cb14-77" aria-hidden="true" tabindex="-1"></a><span class="st">"Wilderness Expedition Guide"</span></span>
-<span id="cb14-78"><a href="#cb14-78" aria-hidden="true" tabindex="-1"></a>)<span class="sc">~</span><span class="st">"survoutdoor"</span>, <span class="cn">TRUE</span> <span class="sc">~</span><span class="st">"other"</span>))</span>
-<span id="cb14-79"><a href="#cb14-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-80"><a href="#cb14-80" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(alonedf<span class="sc">$</span>profcat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>alonedf<span class="ot">&lt;-</span>alone2<span class="sc">%&gt;%</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">left=</span>days_lasted,<span class="at">right=</span><span class="fu">ifelse</span>(status<span class="sc">==</span><span class="dv">1</span>,days_lasted,<span class="cn">NA</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">profcat =</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a> <span class="fu">case_when</span>(alone2<span class="sc">$</span>profession <span class="sc">%in%</span> <span class="fu">c</span>( <span class="st">"Corrections Officer"</span>,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="st">"US Army Guard and Former US Coast Guard"</span>,</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="st">"Writer and Former Missionary"</span>,</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="st">"Former US Sniper"</span>,</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="st">"Law Enforcement and Former Air Force"</span>,</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="st">"Former Wildland Firefighter"</span>,</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="st">"Former US Army"</span>,</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="st">"Retired Green Beret"</span>,</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="st">"SERE Specialist"</span>,</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="st">"Search and Rescue K9 Handler"</span>,</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="st">"Sniper &amp; Survival Skills Instructor"</span>,</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="st">"Retired Military/Homesteader"</span>,</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="st">"Prescribed Fire Practitioner"</span>,<span class="st">"Law Enforcement"</span>) <span class="sc">~</span> <span class="st">"armforces"</span>,</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a> alone2<span class="sc">$</span>profession <span class="sc">%in%</span> <span class="fu">c</span>( <span class="st">"Research Assistant"</span>,</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="st">"Author"</span>,</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="st">"Survivalist and Wildlife Therapist/Natural Healing"</span>,</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="st">"Anthropologist"</span>,</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="st">"Biologist &amp; Forrester"</span>,</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="st">"Herbalist"</span>,</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="st">"Accountant"</span>,</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a><span class="st">"High School Teacher"</span>,</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a><span class="st">"Environmental Scientist"</span>,</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a><span class="st">"Psychotherapist"</span>,</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="st">"Industrial Project Manager"</span>,</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a><span class="st">"Accountant"</span>,</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a><span class="st">"Biologist"</span>,</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a><span class="st">"Educational Consultant"</span>,</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a><span class="st">"Physician"</span>,</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a><span class="st">"Community Leadership"</span>)<span class="sc">~</span> <span class="st">"whitecollar"</span>,</span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>alone2<span class="sc">$</span>profession <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Butcher"</span>,</span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a><span class="st">"Carpenter"</span>,</span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a><span class="st">"Electrician"</span>,</span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a><span class="st">"Boat builder"</span>,</span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a><span class="st">"Drywaller"</span>,</span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a><span class="st">"Retired Shipping Driver"</span>,</span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a><span class="st">"Outdoor Educator"</span>,</span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a><span class="st">"Builder"</span>,</span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a><span class="st">"Fisherman"</span>,</span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a><span class="st">"Construction Foreman"</span>,</span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a><span class="st">"Equipment Operator"</span>,</span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a><span class="st">"Blacksmith"</span>,</span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a><span class="st">"Construction"</span>,</span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a><span class="st">"Traditional Bowyer"</span>,</span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a><span class="st">"Tool Maker"</span>,</span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a><span class="st">"Prehistoric Leather Specialist"</span>,</span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a><span class="st">"Professional Bowyer &amp; Hunter"</span>,</span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a><span class="st">"Hunting Guide"</span>,</span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a><span class="st">"Oil Rig Roughneck"</span>,</span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a><span class="st">"Alpaca Shearer, Treehouse builder"</span>,</span>
+<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a><span class="st">"Commercial Fisherman"</span>,</span>
+<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a><span class="st">"Hunting and Packgoat Guide"</span>)<span class="sc">~</span><span class="st">"bluetrades"</span>,</span>
+<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a> alone2<span class="sc">$</span>profession <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Survivalist and Wildlife Therapist/Natural Healing"</span>,</span>
+<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a><span class="st">"Aboriginal Skills Instructor"</span>,</span>
+<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a><span class="st">"Survival Instructor"</span>,</span>
+<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a><span class="st">"Homesteader &amp; Carpenter"</span>,</span>
+<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a><span class="st">"Bushcraft Instructor"</span>,</span>
+<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a><span class="st">"Trapper"</span>,</span>
+<span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a><span class="st">"Wilderness Skills Instructor"</span>,</span>
+<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a><span class="st">"Bushcraft Instructor"</span>, </span>
+<span id="cb6-63"><a href="#cb6-63" aria-hidden="true" tabindex="-1"></a><span class="st">"Outdoor Educator"</span>,</span>
+<span id="cb6-64"><a href="#cb6-64" aria-hidden="true" tabindex="-1"></a><span class="st">"Wilderness Living Skills Instructor"</span>,</span>
+<span id="cb6-65"><a href="#cb6-65" aria-hidden="true" tabindex="-1"></a><span class="st">"Ancestral Skills Teacher "</span>,</span>
+<span id="cb6-66"><a href="#cb6-66" aria-hidden="true" tabindex="-1"></a><span class="st">"Wilderness Guide"</span>,</span>
+<span id="cb6-67"><a href="#cb6-67" aria-hidden="true" tabindex="-1"></a><span class="st">"Homesteader"</span>,</span>
+<span id="cb6-68"><a href="#cb6-68" aria-hidden="true" tabindex="-1"></a><span class="st">"Primitive Technology Instructor"</span>,</span>
+<span id="cb6-69"><a href="#cb6-69" aria-hidden="true" tabindex="-1"></a><span class="st">"Ancestral Living Skills Instructor"</span>,</span>
+<span id="cb6-70"><a href="#cb6-70" aria-hidden="true" tabindex="-1"></a><span class="st">"Winter Wilderness Expedition Operator"</span>,</span>
+<span id="cb6-71"><a href="#cb6-71" aria-hidden="true" tabindex="-1"></a><span class="st">"Primitive Skills Instructor"</span>,</span>
+<span id="cb6-72"><a href="#cb6-72" aria-hidden="true" tabindex="-1"></a><span class="st">"Primitive Skills School Owner"</span>,</span>
+<span id="cb6-73"><a href="#cb6-73" aria-hidden="true" tabindex="-1"></a><span class="st">"Homesteader"</span>,</span>
+<span id="cb6-74"><a href="#cb6-74" aria-hidden="true" tabindex="-1"></a><span class="st">"Wilderness Survival Instructor"</span>,</span>
+<span id="cb6-75"><a href="#cb6-75" aria-hidden="true" tabindex="-1"></a><span class="st">"Outdoor Professional"</span>,</span>
+<span id="cb6-76"><a href="#cb6-76" aria-hidden="true" tabindex="-1"></a><span class="st">"Wilderness/Primitive Skills Instructor"</span>,</span>
+<span id="cb6-77"><a href="#cb6-77" aria-hidden="true" tabindex="-1"></a><span class="st">"Wilderness Survival Instructor"</span>,</span>
+<span id="cb6-78"><a href="#cb6-78" aria-hidden="true" tabindex="-1"></a><span class="st">"Wilderness Expedition Guide"</span></span>
+<span id="cb6-79"><a href="#cb6-79" aria-hidden="true" tabindex="-1"></a>)<span class="sc">~</span><span class="st">"survoutdoor"</span>, <span class="cn">TRUE</span> <span class="sc">~</span><span class="st">"other"</span>))</span>
+<span id="cb6-80"><a href="#cb6-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-81"><a href="#cb6-81" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(alonedf<span class="sc">$</span>profcat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -1241,21 +1173,58 @@ Attaching package: 'gridExtra'</code></pre>
 </div>
 <details>
 <summary>Check out the Code!</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(alonedf, <span class="fu">aes</span>(days_lasted,profcat))<span class="sc">+</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(alonedf, <span class="fu">aes</span>(<span class="at">x =</span> days_lasted,<span class="at">y=</span>profcat))<span class="sc">+</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">facet_wrap</span>(<span class="sc">~</span>gender, <span class="at">scales =</span> <span class="st">"free_x"</span>)<span class="sc">+</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>,<span class="at">alpha =</span> <span class="fl">0.35</span>)<span class="sc">+</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Profession"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">fig.&nbsp;5: Bar chart/Survival rate of professions and days lasted</figcaption><p></p>
+</figure>
 </div>
 </div>
+<details>
+<summary>Check out the Code!</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>km4 <span class="ot">=</span> <span class="fu">survfit</span>(survObject3<span class="sc">~</span>alonedf<span class="sc">$</span>profcat)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>mod4 <span class="ot">&lt;-</span> <span class="fu">ggsurvplot</span>(<span class="at">fit=</span>km4, <span class="at">data=</span>alonedf,<span class="at">risk.table =</span> F,<span class="at">conf.int=</span>F,<span class="at">surv.median.line =</span> <span class="st">"hv"</span>,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="at">legend=</span><span class="st">"right"</span>,<span class="at">legend.title =</span> <span class="st">"Profession"</span>,<span class="at">legend.labs =</span> <span class="fu">c</span>(<span class="st">"Arm Forces"</span>,<span class="st">"Blue/trades"</span>,<span class="st">"other"</span>,<span class="st">"surv/outdoor"</span>,<span class="st">"white collar"</span>),<span class="at">ggtheme =</span> <span class="fu">theme_minimal</span>())<span class="sc">+</span> <span class="fu">labs</span>(</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">title=</span><span class="st">"Survival time until Survivalist left"</span>,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">subtitle =</span> <span class="st">"categorized by their professions"</span>,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">x=</span><span class="st">"Days in which survivalist lasted in days"</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    )  </span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>mod4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-7-2.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">fig.&nbsp;5: Bar chart/Survival rate of professions and days lasted</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="findings" class="level2">
+<h2 class="anchored" data-anchor-id="findings">Findings</h2>
+<ul>
+<li><p>Gendered females have a higher probability of surviving longer than identified males for reasons of missing family or personal reason.</p></li>
+<li><p>Professions that are Blue Collar, Trades or Survivalist ended up lasting longer than White color or Previously in the army or in armed forces.</p>
+<ul>
+<li>There could be more discussion on why armed forces professions are less likely to survive alone.</li>
+</ul></li>
+</ul>
 </section>
-<section id="conclusion" class="level1">
-<h1>Conclusion</h1>
-<p>After exploring the Alone Tidy Tuesday data set, I conducted an analysis to determine the survival rate of male and female participants. I examined the reasons why contestants were either medically evacuated or left for medical health or personal family reasons, and checked if there was any significant difference in the arrival rate between males and females. However, I did not find any interesting findings related to survival rate.</p>
-<p>Therefore, I decided to investigate the professions of the contestants and see if there were any significant differences in the survival rate among different professions. I categorized the professions into white-collar, outdoor survivalists, blue-collar tradesmen, armed forces, and others, mostly entrepreneurs. I found that outdoor survivalists and blue-collar tradesmen were more likely to survive longer than armed forces and white-collar workers. This was an interesting finding as it confirmed some assumptions that people might have about survival skills, and it was exciting to have an analysis that could prove these assumptions.</p>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>After exploring the Alone Tidy Tuesday data set, I conducted an analysis to determine the survival rate of male and female participants. I examined the reasons why contestants were either medically evacuated or left for medical health or personal family reasons, and checked if there was any significant difference in the arrival rate between males and females. I did find that the is a 50% chance that gender females last longer then males (approx. 60 days) due to family or personal reason. I found this insightful and full of potential discussions. Please comment bellow to discuss more in detail.</p>
+<p>Furthermore, I decided to investigate the professions of the contestants and see if there were any significant differences in the survival rate among different professions. I categorized the professions into white-collar, outdoor survivalists, blue-collar tradesmen, armed forces, and others, mostly entrepreneurs. I found that outdoor survivalists and blue-collar tradesmen were more likely to survive longer than armed forces and white-collar workers. This was an interesting finding as it confirmed some assumptions that people might have about survival skills, and it was exciting to have an analysis that could prove these assumptions.</p>
 <p>During this data exploration, I was aware of the potential biases that could arise from categorizing the professions, so I tried to make sure that I did it in the most ethical way possible. When there were things that I didn’t know, I put them into the “Other” category to avoid any unintentional biases. Overall, this project provided a great opportunity for me to use my data wrangling, visualization, and analysis skills, and I learned a lot from this experience.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

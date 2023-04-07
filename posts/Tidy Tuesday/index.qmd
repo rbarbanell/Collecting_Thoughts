@@ -20,6 +20,8 @@ html:
 knitr::opts_chunk$set(echo = TRUE)
 devtools::install_github('Mikata-Project/ggthemr', force = TRUE)
 library(tidyverse)
+library(gridExtra)
+library(ggplot2)
 library(ggthemr)
 library(gt)
 library(tidyverse)
@@ -28,6 +30,7 @@ library(survival)
 library(survminer)
 library(fitdistrplus)
 library(visR)
+library(gtExtras)
 survivalists <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-01-24/survivalists.csv')
 
 seasons <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-01-24/seasons.csv')
@@ -36,27 +39,30 @@ alone<-merge(survivalists,seasons, by = "season", all.y = TRUE)
 
 ggthemr('dust')
 
+
+
 ```
 
-# What is Tidy Tuesday?
+## What is Tidy Tuesday?
 
 Tidy Tuesday is a weekly social data project in the R programming language community, created by R for Data Science authors Hadley Wickham and Mara Averick. The project involves posting a new dataset on the Tidy Tuesday gitHub repository every Tuesday, along with a set of questions or challenges related to the data. The aim of Tidy Tuesday is to provide a fun and collaborative way for R users to improve their data analysis and visualization skills, and to share their work with the broader community.
 
-# What data I decided to use for one of the Tidy Tuesday?
+## What data I decided to use for one of the Tidy Tuesday?
 
 The Tidy Tuesday I decided to investigate is the Alone data set.This dataset contains information about the participants and their progress in the Alone TV series. The data set includes 8 seasons of the show, with each season consisting of a different set of contestants who are dropped off in a remote wilderness location and must survive alone. The data set includes information such as the contestant's name, age, gender, occupation, location, survival equipment, and duration of their stay.  The project provided a valuable opportunity for me to practice their data wrangling, visualization, and analysis skills using real-world data in a fun and engaging way.
 
-# First, let me show you the data.
+## Peering into the Data Frame
 
-Highlighted are the columns that I used during my data analysis.
+The columns that are highlighted is what I used during my data analysis.
 
 ```{r}
+dust = c("#555555","#db735c", "#EFA86E", "#9A8A76" ,"#F3C57B" ,"#7A6752", "#2A91A2")
 
 alone%>%
   slice(1:10)%>%
   gt()%>%
-  tab_options(table.width = pct(100))%>%
-  tab_header(title = "Alone dataset",
+   gt_theme_pff(divider = name, rank_col = season )%>%
+   tab_header(title = "Alone dataset",
              subtitle = "seasons 1-9")%>%
   tab_style(style = list(cell_fill(color 
 = "#db735c",alpha = .35),cell_text(weight = "bold")),
@@ -73,44 +79,37 @@ alone%>%
             location = cells_body(columns = profession))%>%
   tab_style(style = list(cell_fill(color ="#87F28A",alpha = .35),cell_text(weight = "bold")),
             location = cells_body(columns = medically_evacuated))%>%
-  tab_source_note(source_note = "fig. 1") %>%
-  tab_style(
-    style = cell_text(
-      color = "#A9A9A9",
-      size = "small"
-    ),
-    locations = cells_source_notes()
+  tab_source_note(source_note = "fig. 1")%>%
+  tab_style(style = cell_text(size = "small"),locations = cells_source_notes()
   )
-```
+  
+       
+  
+``` 
 
-
-
-
-
-
-# Data exploration.
+## Data exploration
 
 I found that age, gender, and where someone was located did not have any significance during the first round of exploring. I then decided to narrow down my scope to find out the survival rate between gender and professions. 
 
 
-## point out
+### point out
+```{r, fig.cap= "fig. 2"}
+tb <- table(alone$gender,alone$season)
 
- * While exploring the quantifying aspect of the data set I first noticed there were almost 3 times as much gendered males then female. In fig.2 the columns represent the seasons and the rows represent how many males and females participated. 
-```{r}
-table(alone$gender,alone$season)
+names(dimnames(tb))<- c("Gender", "Seasons")
+tb
 
 ```
 
-However, even though there is an unbalance in gender I was able to use the column to for survival analysis, and find the average days lasted for both genders. 
+ * While exploring the quantifying aspect of the data set I first noticed there were almost 3 times as much gendered males then female.
+
+* However, even though there is an unbalance in gender I was able to use the data by bar charts and survival analysis.
 
 
-# Gender, how well they did each season and their days lasted, as well as what place they recived (results)
+## Bar plot Gender v Season, Gender v Rank
 
 
-```{r}
-library(ggplot2)
-library(gridExtra)
-
+```{r, fig.cap= "fig. 3: Since there were no gendered females on season 1, there is no results." }
 
 plot1<-alone%>%
   mutate(season = as.factor(season))%>%
@@ -132,14 +131,12 @@ plot2<-alone%>%
 grid.arrange(plot1,plot2)
 
 ```
-* Since there were no gendered females on season 1, there is no results. 
-
-
 
 
 # Survival Rate
+Further exploring, I decided to work survival rates between gendered females and males using a [Kaplan-Meier Curve](https://bookdown.org/mpfoley1973/survival/km.html) to show the survival rate of gender by either medically evacuated, left for medical health, and for personal or family reasons. I found an significance in the survival rate of leaving for family and personal reasons by gendered males. The probability of males survival is lower due to family and person reasons than gendered females. 
 
-```{r}
+```{r,include=FALSE}
 
 
 alone1 = alone%>%
@@ -167,13 +164,9 @@ ggtheme = theme_minimal()) +
 
 ```
 
-Further exploring, I decided to work survival rates between gendered females and males by either medically evacuated, left for medical health, personal, or family reasons. I found minor significants in the survival rate of (.....
-......)
 
 
-Lastly, since was not satisfied with my exploration I thought that I would drop gender,age,and where contestant lived and  decided to bin them by  categorized the professions into white-collar, outdoor survivalists, blue-collar tradesmen, armed forces, and others, mostly entrepreneurs. As I know this cause some bias, and I made sure to do the best of my abilities I could, with the research and global knowledge I have
-
-```{r}
+```{r,include=FALSE}
 
 alone2 = alone%>%
     mutate(status = ifelse(reason_category == "Medical / health",1,0))
@@ -197,7 +190,7 @@ legend="right",legend.title = "Gender",legend.labs = c("female","male"),ggtheme 
 
 ```
 
-```{r}
+```{r, fig.cap= "fig. 4: Survival rate of gender and reason for leaving: family or personal"}
 
 alone3 = alone%>%
     mutate(status = ifelse(reason_category == "Family / personal",1,0))
@@ -218,21 +211,14 @@ legend="right",legend.title = "Gender",legend.labs = c("female","male"),ggtheme 
     )
  
 
-
-```
-
-
-```{r}
-mod1
-mod2
 mod3
 ```
 
+Lastly, since was not satisfied with my exploration I thought that I would drop gender,age,and where contestant lived and  decided to bin them by  categorized the professions into white-collar, outdoor survivalists, blue-collar tradesmen, armed forces, and others, mostly entrepreneurs. As I know this cause some bias, and I made sure to do the best of my abilities I could, with the research and global knowledge I have.
 
-
-
-```{r}
+```{r fig.cap= "fig. 5: Bar chart/Survival rate of professions and days lasted"}
 alonedf<-alone2%>%
+  mutate(left=days_lasted,right=ifelse(status==1,days_lasted,NA))%>%
   mutate(profcat =
  case_when(alone2$profession %in% c( "Corrections Officer",
 "US Army Guard and Former US Coast Guard",
@@ -313,15 +299,37 @@ alone2$profession %in% c("Butcher",
 
 table(alonedf$profcat)
 
-ggplot(alonedf, aes(days_lasted,profcat))+
-  geom_col()
-  
+ggplot(alonedf, aes(x = days_lasted,y=profcat))+
+ facet_wrap(~gender, scales = "free_x")+
+   geom_bar(stat = "identity", position = "dodge",alpha = 0.35)+
+  labs(y = "Profession")
+
+km4 = survfit(survObject3~alonedf$profcat)
+
+mod4 <- ggsurvplot(fit=km4, data=alonedf,risk.table = F,conf.int=F,surv.median.line = "hv",
+legend="right",legend.title = "Profession",legend.labs = c("Arm Forces","Blue/trades","other","surv/outdoor","white collar"),ggtheme = theme_minimal())+ labs(
+        title="Survival time until Survivalist left",
+        subtitle = "categorized by their professions",
+        x="Days in which survivalist lasted in days"
+    )  
+mod4
 
 ```
+## Findings
 
-# Conclusion
-After exploring the Alone Tidy Tuesday data set, I conducted an analysis to determine the survival rate of male and female participants. I examined the reasons why contestants were either medically evacuated or left for medical health or personal family reasons, and checked if there was any significant difference in the arrival rate between males and females. However, I did not find any interesting findings related to survival rate.
+ * Gendered females have a higher probability of surviving longer than identified males for reasons of missing family or personal reason. 
 
-Therefore, I decided to investigate the professions of the contestants and see if there were any significant differences in the survival rate among different professions. I categorized the professions into white-collar, outdoor survivalists, blue-collar tradesmen, armed forces, and others, mostly entrepreneurs. I found that outdoor survivalists and blue-collar tradesmen were more likely to survive longer than armed forces and white-collar workers. This was an interesting finding as it confirmed some assumptions that people might have about survival skills, and it was exciting to have an analysis that could prove these assumptions.
+* Professions that are Blue Collar, Trades or Survivalist ended up lasting longer than White color or Previously in the army or in armed forces. 
+ 
+   * There could be more discussion on why armed forces professions are less likely to survive alone. 
+  
+
+
+## Conclusion
+
+
+After exploring the Alone Tidy Tuesday data set, I conducted an analysis to determine the survival rate of male and female participants. I examined the reasons why contestants were either medically evacuated or left for medical health or personal family reasons, and checked if there was any significant difference in the arrival rate between males and females. I did find that the is a 50% chance that gender females last longer then males (approx. 60 days) due to family or personal reason. I found this insightful and full of potential discussions. Please comment bellow to discuss more in detail.
+
+Furthermore, I decided to investigate the professions of the contestants and see if there were any significant differences in the survival rate among different professions. I categorized the professions into white-collar, outdoor survivalists, blue-collar tradesmen, armed forces, and others, mostly entrepreneurs. I found that outdoor survivalists and blue-collar tradesmen were more likely to survive longer than armed forces and white-collar workers. This was an interesting finding as it confirmed some assumptions that people might have about survival skills, and it was exciting to have an analysis that could prove these assumptions.
 
 During this data exploration, I was aware of the potential biases that could arise from categorizing the professions, so I tried to make sure that I did it in the most ethical way possible. When there were things that I didn't know, I put them into the "Other" category to avoid any unintentional biases. Overall, this project provided a great opportunity for me to use my data wrangling, visualization, and analysis skills, and I learned a lot from this experience.
