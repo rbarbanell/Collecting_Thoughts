@@ -27,8 +27,7 @@ website:
         href: https://www.linkedin.com/in/rebeccabarbanell/
       - href: Rebecca_Resume.pdf
         text: Resume
-    
-
+        
 format:
  html:
     toc: true
@@ -42,6 +41,7 @@ format:
     css: styles.css
     code-fold: true
     code-summary: "Check out the Code!"
+    link-external-newwindow: true
     
 
 
