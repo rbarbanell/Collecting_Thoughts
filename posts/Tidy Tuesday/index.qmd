@@ -50,7 +50,7 @@ Tidy Tuesday is a weekly social data project in the R programming language commu
 
 ## What data I decided to use for one of the Tidy Tuesday?
 
-The Tidy Tuesday I decided to investigate is the Alone data set.This dataset contains information about the participants and their progress in the Alone TV series. The data set includes 8 seasons of the show, with each season consisting of a different set of contestants who are dropped off in a remote wilderness location and must survive alone. The data set includes information such as the contestant's name, age, gender, occupation, location, survival equipment, and duration of their stay.  The project provided a valuable opportunity for me to practice their data wrangling, visualization, and analysis skills using real-world data in a fun and engaging way.
+The Tidy Tuesday I decided to investigate is the Alone data set.This dataset contains information about the participants and their progress in the Alone TV series. The data set includes 8 seasons of the show, with each season consisting of a different set of participants who are dropped off in a remote wilderness location and must survive alone. The data set includes information such as the participant's name, age, gender, occupation, location, survival equipment, and duration of their stay.  The project provided a valuable opportunity for me to practice their data wrangling, visualization, and analysis skills using real-world data in a fun and engaging way.
 
 ## Peering into the Data Frame
 
@@ -184,7 +184,7 @@ km2=survfit(survObject2~al2$gender) # over all, give table.
 mod2<-ggsurvplot(fit=km2, data=al2,risk.table = F,conf.int=F,surv.median.line = "hv",
 legend="right",legend.title = "Gender",legend.labs = c("female","male"),ggtheme = theme_minimal()) +
   labs(
-        title="Survival time until Survivalist left because of a medical and or health issue",
+        title="Survival time until survivalist left because of a medical and or health issue",
         x="Days in which survivalist lasted in days"
     ) 
 
@@ -207,7 +207,7 @@ km3=survfit(survObject3~al3$gender) # over all, give table.
 
 mod3<-ggsurvplot(fit=km3, data=al3,risk.table = F,conf.int=F,surv.median.line = "hv",
 legend="right",legend.title = "Gender",legend.labs = c("female","male"),ggtheme = theme_minimal())+ labs(
-        title="Survival time until Survivalist left for Family or personal reasons",
+        title="Survival time until survivalist left for Family or personal reasons",
         x="Days in which survivalist lasted in days"
     )
  
@@ -215,7 +215,7 @@ legend="right",legend.title = "Gender",legend.labs = c("female","male"),ggtheme 
 mod3
 ```
 
-Lastly, since was not satisfied with my exploration I thought that I would drop gender,age,and where contestant lived and  decided to bin them by  categorized the professions into white-collar, outdoor survivalists, blue-collar tradesmen, armed forces, and others, mostly entrepreneurs. As I know this cause some bias, and I made sure to do the best of my abilities I could, with the research and global knowledge I have.
+Lastly, I decided to bin the participants by profession by categorized the professions into white-collar, outdoor survivalists, blue-collar tradesmen, armed forces, and others, which consist of mostly entrepreneurs. As I know this cause some bias, and I made sure to do the best of my abilities I could, with the research and global knowledge I have.
 
 ```{r fig.cap= "fig. 5: Bar chart/Survival rate of professions and days lasted"}
 alonedf<-alone2%>%
@@ -308,8 +308,8 @@ ggplot(alonedf, aes(x = days_lasted,y=profcat))+
 km4 = survfit(survObject3~alonedf$profcat)
 
 mod4 <- ggsurvplot(fit=km4, data=alonedf,risk.table = F,conf.int=F,surv.median.line = "hv",
-legend="right",legend.title = "Profession",legend.labs = c("Arm Forces","Blue/trades","other","surv/outdoor","white collar"),ggtheme = theme_minimal())+ labs(
-        title="Survival time until Survivalist left",
+legend="right",legend.title = "Profession",legend.labs = c("Arm Forces","Blue/Trades","Other","Surv/Outdoor","White Collar"),ggtheme = theme_minimal())+ labs(
+        title="Survival time until survivalist left",
         subtitle = "categorized by their professions",
         x="Days in which survivalist lasted in days"
     )  
@@ -323,6 +323,8 @@ mod4
 * Professions that are Blue Collar, Trades or Survivalist ended up lasting longer than White color or Previously in the army or in armed forces. 
  
    * There could be more discussion on why armed forces professions are less likely to survive alone. 
+
+* Even if the probability of participants 
   
 
 
@@ -331,6 +333,6 @@ mod4
 
 After exploring the Alone Tidy Tuesday data set, I conducted an analysis to determine the survival rate of male and female participants. I examined the reasons why contestants were either medically evacuated or left for medical health or personal family reasons, and checked if there was any significant difference in the arrival rate between males and females. I did find that the is a 50% chance that gender females last longer then males (approx. 60 days) due to family or personal reason. I found this insightful and full of potential discussions. Please comment bellow to discuss more in detail.
 
-Furthermore, I decided to investigate the professions of the contestants and see if there were any significant differences in the survival rate among different professions. I categorized the professions into white-collar, outdoor survivalists, blue-collar tradesmen, armed forces, and others, mostly entrepreneurs. I found that outdoor survivalists and blue-collar tradesmen were more likely to survive longer than armed forces and white-collar workers. This was an interesting finding as it confirmed some assumptions that people might have about survival skills, and it was exciting to have an analysis that could prove these assumptions.
+Furthermore, I decided to investigate the professions of the participants and see if there were any significant differences in the survival rate among different professions. I categorized the professions into white-collar, outdoor survivalists, blue-collar tradesmen, armed forces, and others, mostly entrepreneurs. I found that outdoor survivalists and blue-collar tradesmen were more likely to survive longer than armed forces and white-collar workers. This was an interesting finding as it confirmed some assumptions that people might have about survival skills, and it was exciting to have an analysis that could prove these assumptions.
 
 During this data exploration, I was aware of the potential biases that could arise from categorizing the professions, so I tried to make sure that I did it in the most ethical way possible. When there were things that I didn't know, I put them into the "Other" category to avoid any unintentional biases. Overall, this project provided a great opportunity for me to use my data wrangling, visualization, and analysis skills, and I learned a lot from this experience.
