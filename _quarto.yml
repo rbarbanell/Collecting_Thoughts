@@ -31,6 +31,10 @@ website:
 
 format:
  html:
+    toc: true
+    toc-location: right
+    html-math-method: katex
+    page-layout: full
     theme: sandstone
     mainfont: system-ui
     fontsize: 0.9em
@@ -38,10 +42,6 @@ format:
     css: styles.css
     code-fold: true
     code-summary: "Check out the Code!"
-    toc: true
-    toc-location: right
-    html-math-method: katex
-    page-layout: full
-
+    
 
 

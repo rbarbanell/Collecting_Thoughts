@@ -1,5 +1,19 @@
 [
   {
+    "objectID": "posts/index.html",
+    "href": "posts/index.html",
+    "title": "Inquiring Minds Want to Know",
+    "section": "",
+    "text": "Hello"
+  },
+  {
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "Becca Barbanell : Data Portfolio",
+    "section": "",
+    "text": "BLM:TRAVELING THE USA\n\n\n\n\n\n\n\nBLM\n\n\nTRAVELING\n\n\n\n\n\n\n\n\n\n\n\nApr 3, 2023\n\n\nBecca Barbanell\n\n\n\n\n\n\n  \n\n\n\n\nTidy Tuesday : Reality of being Alone\n\n\n\n\n\n\n\nTidy Tuesday\n\n\nReality TV\n\n\n\n\n\n\n\n\n\n\n\nMar 20, 2023\n\n\nBecca Barbanell\n\n\n\n\n\n\n  \n\n\n\n\nNess of Brodgar a Neoglithic Archeology Site in Orkney Scotland\n\n\n\n\n\n\n\nRShiny\n\n\nArcheology\n\n\nDatabase\n\n\nScotland\n\n\nNeoglithic\n\n\n\n\n\n\n\n\n\n\n\nFeb 27, 2023\n\n\nBecca Barbanell\n\n\n\n\n\n\n  \n\n\n\n\nThe Quest for the GOAT\n\n\n\n\n\n\n\nRShiny\n\n\nSports\n\n\n\n\n\n\n\n\n\n\n\nJan 30, 2023\n\n\nBecca Barbanell & Jennifer Rana\n\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "Resume",
@@ -33,13 +47,6 @@
     "title": "Inquiring Minds Want to Know",
     "section": "Reach out!",
     "text": "Reach out!"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Who am I",
-    "section": "",
-    "text": "LinkedIn\n  \n  \n    \n     Github\n  \n\n  \n  \nRebecca Barbanell is a data scientist who approaches her work holistically and values a humanistic perspective in technology. She is currently pursuing a Masters in Data Science at Willamette University and holds a B.S in Data Science from the same institution. Previously, she worked as a Data Engineer Intern for the Ness of Brodgar archaeological dig in Scotland, where she generated and managed geo-chemical data for soil samples. Before that, she worked as a mathematics tutor at Seattle Central College, where she specialized in simplifying math concepts and coaching students to think critically. Rebecca is also a dedicated leader and volunteer, having served as President of the Women in Science and Engineering Club and Treasurer of the Society for Advancement of Chicanos/Hispanics and Native Americans in Science. In her free time, Rebecca enjoys exploring nature with her partner and her dog, snow boarding, making food, playing music, and having fun.\n\n\nWillamette University | Portland, OR | Masters in Data Science | August 2021 - August 2023\nWillamette University | Salem, OR | B.S in Data Science | August 2021 - May 2023\nSeattle Central College | Seattle, WA | A.S Associate in Science Transfer| March 2020\n\n\n\nNess of Brodgar with Willamette University | Data Engineer Intern |Orkney Island, Scotland | July 2022 - present\n\nGenerated geo-chemical data of the major and minor trace elements of soil samples of various date ranges in collaboration with an archaeological dig.\nTracked and managed results data for 200 + soil samples.\nImplemented python program to discover inconsistencies and ensure clean and accurate data.\nStreamlined data collection and storage by creating a system of naming and compiling information for easier accessibility and data analysis.\n\nSeattle Central College | Mathematics Tutor | Seattle, WA | October 2019 - August 2021\n\nSpecialize as an individual tutor, simplify math concepts, and coach students to think critically to solve problems.\nImprove tutee comprehension and increased competence while fostering confidence for success. Maintained a 98% tutee satisfaction rating.\n\nCultivate a fun and interesting learning environment which encourages questions and discussion.\n\n\n\n\nPresident of WiSE Club | Women in Science and Engineering | Seattle Central College| February 2019 – March 2020\n\nCoordinated fifteen professional engineers and three Seattle Central alumni and 30 volunteers and a student audience of 165+ for Engineering Mentor Night.\nPlanned, created, and implemented highly effective club plans and agendas while informing club members."
   },
   {
     "objectID": "posts/NOB/index.html",
@@ -138,36 +145,5 @@
     "title": "The Quest for the GOAT",
     "section": "BPM: Individual Player",
     "text": "BPM: Individual Player\n\n\nCheck out the Code!\nteam_colors <- c(\"#CE1141\", \"#FDB927\", \"#6f263d\")\n\nallgroup<-goat %>%\n  ggplot(aes(x=year, y=overallbpm, color=player))+\n    geom_jitter(size=2)+\n    scale_colour_manual(values = team_colors,\n                        breaks=c('Michael Jordan', 'Kobe Bryant', 'Lebron James'),\n                        labels=c('Michael Jordan', 'Kobe Bryant', 'LeBron James'))+\n    theme_bw()+\n    geom_hline(yintercept = 15, linetype=\"dotted\")+\n    labs(\n      title=\"Box Plus/Minus (BPM): Michael Jordan v. Kobe Bryant v. Lebron James\",\n      caption=\"Box Plus/Minus (BPM) is a basketball box score-based \n      metric that estimates a basketball player's contribution to the \n      team when that player is on the court.\",\n      y=\"BPM\",\n      x=\"\"\n    )\n\n\n\n\nCheck out the Code!\nggplotly(allgroup)\n\n\n\n\n\n\n\n\nCheck out the Code!\nregmj <- filter(goat, player == \"Michael Jordan\" , gametype == \"Regular Season\")\n\nmj_regnum <- tibble::rowid_to_column(regmj,\"num_year\")\n\nplaymj<-filter(goat, player == \"Michael Jordan\" , gametype == \"Playoffs\")\n\nmj_playnum <- tibble::rowid_to_column(playmj,\"num_year\")\n\nregkb<-filter(goat, player == \"Kobe Bryant\" , gametype == \"Regular Season\")\n\nkb_regnum <- tibble::rowid_to_column(regkb,\"num_year\")\n\nplaykb <- filter(goat, player == \"Kobe Bryant\" , gametype == \"Playoffs\")\n\nkb_playnum <- tibble::rowid_to_column(playkb,\"num_year\")\n\n\nreglj<-filter(goat, player == \"Lebron James\", gametype == \"Regular Season\")\n\n\nlj_regnum <- tibble::rowid_to_column(reglj,\"num_year\")\n\nplaylj<-filter(goat, player == \"Lebron James\", gametype == \"Playoffs\")\n\nlj_playnum <- tibble::rowid_to_column(playlj,\"num_year\")\n\nindex_goat <- rbind(mj_regnum, mj_playnum,kb_regnum,kb_playnum,lj_regnum,lj_playnum)\n\n\n\n\nCheck out the Code!\ntabgoat <- index_goat %>%\n  select(player,gametype,overallbpm,year)\nlibrary(DT)\n\n\n\nplayer: Michael Jordanplayer: Kobe Bryantplayer: Lebron James\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCheck out the Code!\nplayer_playBMI<- index_goat %>% filter(gametype == \"Playoffs\")%>%\n  ggplot(aes(x=num_year, y=overallbpm, color = player))+\n    geom_line( alpha = .8)+\n    geom_point()+\n    scale_colour_manual(values = team_colors,\n                        breaks=c('Michael Jordan', 'Kobe Bryant', 'Lebron James'),\n                        labels=c('Michael Jordan', 'Kobe Bryant', 'LeBron James'))+\n    theme_bw()+\n    theme(\n      plot.caption=element_text(size=8,hjust = 0))+\n    scale_x_continuous(breaks = seq(0,24,2))+\n    labs(\n      title=\"Michael Jordan v. Kobe Bryant v. Lebron James\",\n      subtitle=\"Box Plus/Minus (Playoffs BPM) - how do they compare?\",\n      caption=\"Box Plus/Minus (Playoffs BPM) is a basketball box score-based metric that estimates a basketball player's contribution\n                to the team when that player is on the court for the playoffs.s.\",\n      color=\"Player\",\n      y=\"Playoffs BPM\",\n      x=\"years played\"\n    )\n\nplayer_regBMI<- index_goat %>% filter(gametype == \"Regular Season\")%>%\n  ggplot(aes(x=num_year, y=overallbpm, color = player))+\n    geom_line( alpha = .8)+\n    geom_point()+\n    scale_colour_manual(values = team_colors,\n                        breaks=c('Michael Jordan', 'Kobe Bryant', 'Lebron James'),\n                        labels=c('Michael Jordan', 'Kobe Bryant', 'LeBron James'))+\n    scale_x_continuous(breaks = seq(0,24,2))+\n    theme_bw()+\n    theme(\n      plot.caption=element_text(size=8,hjust = 0)\n    )+\n    labs(\n      title=\"Michael Jordan v. Kobe Bryant v. Lebron James\",\n      subtitle=\"Box Plus/Minus (Regular Season BPM) - how do they compare?\",\n      caption=\"Box Plus/Minus (Regular Season BPM) is a basketball box score-based metric that estimates a basketball player's contribution\n      to the team when that player is on the court for the Regular Season\",\n      color=\"Player\",\n      y=\"Regular Season BPM\",\n      x=\"years played\"\n    )\nggplotly(player_playBMI)"
-  },
-  {
-    "objectID": "posts.html",
-    "href": "posts.html",
-    "title": "Becca Barbanell : Data Portfolio",
-    "section": "",
-    "text": "BLM:TRAVELING THE USA\n\n\n\n\n\n\n\nBLM\n\n\nTRAVELING\n\n\n\n\n\n\n\n\n\n\n\nApr 3, 2023\n\n\nBecca Barbanell\n\n\n\n\n\n\n  \n\n\n\n\nTidy Tuesday : Reality of being Alone\n\n\n\n\n\n\n\nTidy Tuesday\n\n\nReality TV\n\n\n\n\n\n\n\n\n\n\n\nMar 20, 2023\n\n\nBecca Barbanell\n\n\n\n\n\n\n  \n\n\n\n\nNess of Brodgar a Neoglithic Archeology Site in Orkney Scotland\n\n\n\n\n\n\n\nRShiny\n\n\nArcheology\n\n\nDatabase\n\n\nScotland\n\n\nNeoglithic\n\n\n\n\n\n\n\n\n\n\n\nFeb 27, 2023\n\n\nBecca Barbanell\n\n\n\n\n\n\n  \n\n\n\n\nThe Quest for the GOAT\n\n\n\n\n\n\n\nRShiny\n\n\nSports\n\n\n\n\n\n\n\n\n\n\n\nJan 30, 2023\n\n\nBecca Barbanell & Jennifer Rana\n\n\n\n\n\n\nNo matching items"
-<<<<<<< HEAD
-=======
-  },
-  {
-    "objectID": "docs/posts/TT/index.html",
-    "href": "docs/posts/TT/index.html",
-    "title": "Tidy Tuesday : Reality of being Alone",
-    "section": "",
-    "text": "On Average Days Lasted\n39 days is the average days lasted on the show alone\n\n\nCheck out the Code!\nsurvivalists%>% \nsummarise(num_patients = n(),)\n\n\n# A tibble: 1 × 1\n  num_patients\n         <int>\n1           94\n\n\nCheck out the Code!\ntable(survivalists$gender)\n\n\n\nFemale   Male \n    20     74 \n\n\nCheck out the Code!\ntable(survivalists$age)\n\n\n\n19 22 23 24 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 \n 2  2  2  3  1  1  2  1  4  7  3  3  3  4  5  3  1  3  6  3  2  4  6  5  4  3 \n48 49 50 53 55 57 61 \n 2  2  2  1  2  1  1 \n\n\nCheck out the Code!\nagegen<- lm(days_lasted~gender ,survivalists)\nsummary(agegen)\n\n\n\nCall:\nlm(formula = days_lasted ~ gender, data = survivalists)\n\nResiduals:\n   Min     1Q Median     3Q    Max \n-44.45 -27.73  -0.84  23.36  63.77 \n\nCoefficients:\n            Estimate Std. Error t value Pr(>|t|)    \n(Intercept)   49.450      6.140   8.053 2.79e-12 ***\ngenderMale   -13.220      6.921  -1.910   0.0592 .  \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 27.46 on 92 degrees of freedom\nMultiple R-squared:  0.03815,   Adjusted R-squared:  0.0277 \nF-statistic: 3.649 on 1 and 92 DF,  p-value: 0.05922\n\n\nCheck out the Code!\nalone<- survivalists%>%\n  mutate(gender = ifelse(gender ==\"Female\",1,0))\n\ngen_avg<-survivalists%>%\n  select(gender, days_lasted)%>%\n  group_by(gender)%>%\n  summarise(med_last = median(days_lasted))\n  \ngen_avg\n\n\n# A tibble: 2 × 2\n  gender med_last\n  <chr>     <dbl>\n1 Female     50.5\n2 Male       35  \n\n\nCheck out the Code!\n  ggplot(gen_avg,aes(gender,med_last,fill=gender))+\n  geom_bar(stat=\"identity\") +\n  theme_minimal()+\n    ylab(\"Median of days someone last\")+\n  labs(\n        title=\"The difference in median of females vs. males\",\n        subtitle = \"How many days they lasted in the show Alone\",\n        x=\" male and females lasted in days\")"
-  },
-  {
-    "objectID": "posts/Tidy Tuesday/index.html",
-    "href": "posts/Tidy Tuesday/index.html",
-    "title": "Tidy Tuesday : Reality of being Alone",
-    "section": "",
-    "text": "Tidy Tuesday is a weekly social data project in the R programming language community, created by R for Data Science authors Hadley Wickham and Mara Averick. The project involves posting a new dataset on the Tidy Tuesday gitHub repository every Tuesday, along with a set of questions or challenges related to the data. The aim of Tidy Tuesday is to provide a fun and collaborative way for R users to improve their data analysis and visualization skills, and to share their work with the broader community."
-  },
-  {
-    "objectID": "posts/Tidy Tuesday/index.html#point-out",
-    "href": "posts/Tidy Tuesday/index.html#point-out",
-    "title": "Tidy Tuesday : Reality of being Alone",
-    "section": "point out",
-    "text": "point out\n\nWhile exploring the quantifying aspect of the data set I first noticed there were almost 3 times as much gendered males then female. In fig.2 the columns represent the seasons and the rows represent how many males and females participated.\n\n\n\nCheck out the Code!\ntable(alone$gender,alone$season)\n\n\n        \n          1  2  3  4  5  6  7  8  9\n  Female  0  3  3  1  3  3  2  3  2\n  Male   10  7  7 13  7  7  8  7  8\n\n\nHowever, even though there is an unbalance in gender I was able to use the column to for survival analysis, and find the average days lasted for both genders."
->>>>>>> 637214b27a989105bd9d11a8ab05546ad4882ba2
   }
 ]
