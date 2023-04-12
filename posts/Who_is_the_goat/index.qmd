@@ -298,25 +298,7 @@ index_goat <- rbind(mj_regnum, mj_playnum,kb_regnum,kb_playnum,lj_regnum,lj_play
 
 ```
 
-```{r}
-tabgoat <- index_goat %>%
-  select(player,gametype,overallbpm,year)
-library(DT)
 
-```
-
-::: {.panel-tabset}
-```{r}
-#| results: asis
-
-htmltools::tagList(datatable(tabgoat))
-
-for(i in c("Michael Jordan","Kobe Bryant", "Lebron James")){
-  cat(sprintf("\n### player: %s\n\n", i))
-  print(htmltools::tagList(datatable(tabgoat %>% filter(player == i))))
-}
-
-```
 ```{r}
 
 player_playBMI<- index_goat %>% filter(gametype == "Playoffs")%>%
@@ -362,6 +344,26 @@ player_regBMI<- index_goat %>% filter(gametype == "Regular Season")%>%
       x="years played"
     )
 ggplotly(player_playBMI)
+
+```
+
+```{r}
+tabgoat <- index_goat %>%
+  select(player,gametype,overallbpm,year)
+library(DT)
+
+```
+
+::: {.panel-tabset}
+```{r}
+#| results: asis
+
+htmltools::tagList(datatable(tabgoat))
+
+for(i in c("Michael Jordan","Kobe Bryant", "Lebron James")){
+  cat(sprintf("\n### player: %s\n\n", i))
+  print(htmltools::tagList(datatable(tabgoat %>% filter(player == i))))
+}
 
 ```
 :::
