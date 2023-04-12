@@ -90,7 +90,7 @@ alone%>%
 
 ## Data exploration
 
-I found that age, gender, and where someone was located did not have any significance during the first round of exploring. I then decided to narrow down my scope to find out the survival rate between gender and professions. 
+I did a linear regression  model to see if age, gender, and where someone was located was dependent on how many days someone lasted, and come to find out, the did not have any significance during the first round of exploring. I then decided to narrow down my scope to find out the survival rate between gender and professions. 
 
 
 ### point out
@@ -324,7 +324,7 @@ mod4
  
    * There could be more discussion on why armed forces professions are less likely to survive alone. 
 
-* Even if the probability of participants 
+* The probability of survival of participants lasting alone is quite impressive. 
   
 
 
