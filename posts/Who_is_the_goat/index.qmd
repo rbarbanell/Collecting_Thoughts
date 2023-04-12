@@ -170,7 +170,7 @@ mj<-fullnba %>%
       y="BPM",
       x="Season (Starting Year)"
     )
-
+plot(mj)
 #Kobe Bryant
 kb<-fullnba %>%
   filter(Player != "Kobe Bryant", Tm == "LAL", between(Year, 1996, 2015)) %>%
@@ -201,7 +201,7 @@ kb<-fullnba %>%
       y="BPM",
       x="Season (Starting Year)"
     )
-
+plot(kb)
 
 #LeBron James
 lj<-cavbpm %>%
@@ -231,16 +231,9 @@ lj<-cavbpm %>%
       y="BPM",
       x="Season (Starting Year)"
     )
-    
-```
-
-```{r, message=FALSE}
-#| layout: [[45,-10, 45]]
-#Show plots
-plot(mj)
-plot(kb)
 plot(lj)
 ```
+
 
 ## BPM: Individual Player {background-color="rgba(223,187,133,.6)"}
 
