@@ -2,7 +2,7 @@
 title: "The Quest for the GOAT"
 author: "Becca Barbanell & Jennifer Rana"
 date: "2023-01-30"
-categories: [Interactive Plot, Sports, datatable]
+categories: [Interactive Plot, Sports, Datatable]
 image: "three.jpg"
 comments: 
     utterances: 
