@@ -33,6 +33,7 @@ format:
     toc: true
     toc-location: right
     html-math-method: katex
+    category: true
     page-layout: full
     theme: sandstone
     mainfont: system-ui
