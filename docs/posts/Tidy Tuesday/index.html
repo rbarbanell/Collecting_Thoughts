@@ -265,7 +265,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The columns that are highlighted is what I used during my data analysis.</p>
 <div class="cell">
 <details>
-<summary>Check out the Code!</summary>
+<summary>click to see code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>dust <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"#555555"</span>,<span class="st">"#db735c"</span>, <span class="st">"#EFA86E"</span>, <span class="st">"#9A8A76"</span> ,<span class="st">"#F3C57B"</span> ,<span class="st">"#7A6752"</span>, <span class="st">"#2A91A2"</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>alone<span class="sc">%&gt;%</span></span>
@@ -993,7 +993,7 @@ html {
 <h3 class="anchored" data-anchor-id="point-out">point out</h3>
 <div class="cell">
 <details>
-<summary>Check out the Code!</summary>
+<summary>click to see code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>tb <span class="ot">&lt;-</span> <span class="fu">table</span>(alone<span class="sc">$</span>gender,alone<span class="sc">$</span>season)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(<span class="fu">dimnames</span>(tb))<span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Gender"</span>, <span class="st">"Seasons"</span>)</span>
@@ -1016,7 +1016,7 @@ Gender    1  2  3  4  5  6  7  8  9
 <h2 class="anchored" data-anchor-id="bar-plot-gender-v-season-gender-v-rank">Bar plot Gender v Season, Gender v Rank</h2>
 <div class="cell">
 <details>
-<summary>Check out the Code!</summary>
+<summary>click to see code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plot1<span class="ot">&lt;-</span>alone<span class="sc">%&gt;%</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">season =</span> <span class="fu">as.factor</span>(season))<span class="sc">%&gt;%</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(season, days_lasted, <span class="at">fill =</span> gender))<span class="sc">+</span></span>
@@ -1051,7 +1051,7 @@ Gender    1  2  3  4  5  6  7  8  9
 <p>Further exploring, I decided to work survival rates between gendered females and males using a <a href="https://bookdown.org/mpfoley1973/survival/km.html">Kaplan-Meier Curve</a> to show the survival rate of gender by either medically evacuated, left for medical health, and for personal or family reasons. I found an significance in the survival rate of leaving for family and personal reasons by gendered males. The probability of males survival is lower due to family and person reasons than gendered females.</p>
 <div class="cell">
 <details>
-<summary>Check out the Code!</summary>
+<summary>click to see code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>alone3 <span class="ot">=</span> alone<span class="sc">%&gt;%</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">status =</span> <span class="fu">ifelse</span>(reason_category <span class="sc">==</span> <span class="st">"Family / personal"</span>,<span class="dv">1</span>,<span class="dv">0</span>))</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1085,7 +1085,7 @@ Gender    1  2  3  4  5  6  7  8  9
 <p>Lastly, I decided to bin the participants by profession by categorized the professions into white-collar, outdoor survivalists, blue-collar tradesmen, armed forces, and others, which consist of mostly entrepreneurs. As I know this cause some bias, and I made sure to do the best of my abilities I could, with the research and global knowledge I have.</p>
 <div class="cell">
 <details>
-<summary>Check out the Code!</summary>
+<summary>click to see code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>alonedf<span class="ot">&lt;-</span>alone2<span class="sc">%&gt;%</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">left=</span>days_lasted,<span class="at">right=</span><span class="fu">ifelse</span>(status<span class="sc">==</span><span class="dv">1</span>,days_lasted,<span class="cn">NA</span>))<span class="sc">%&gt;%</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">profcat =</span></span>
@@ -1174,7 +1174,7 @@ Gender    1  2  3  4  5  6  7  8  9
          13          30          12          23          16 </code></pre>
 </div>
 <details>
-<summary>Check out the Code!</summary>
+<summary>click to see code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(alonedf, <span class="fu">aes</span>(<span class="at">x =</span> days_lasted,<span class="at">y=</span>profcat))<span class="sc">+</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">facet_wrap</span>(<span class="sc">~</span>gender, <span class="at">scales =</span> <span class="st">"free_x"</span>)<span class="sc">+</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>,<span class="at">alpha =</span> <span class="fl">0.35</span>)<span class="sc">+</span></span>
@@ -1189,7 +1189,7 @@ Gender    1  2  3  4  5  6  7  8  9
 </div>
 </div>
 <details>
-<summary>Check out the Code!</summary>
+<summary>click to see code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>km4 <span class="ot">=</span> <span class="fu">survfit</span>(survObject3<span class="sc">~</span>alonedf<span class="sc">$</span>profcat)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>mod4 <span class="ot">&lt;-</span> <span class="fu">ggsurvplot</span>(<span class="at">fit=</span>km4, <span class="at">data=</span>alonedf,<span class="at">risk.table =</span> F,<span class="at">conf.int=</span>F,<span class="at">surv.median.line =</span> <span class="st">"hv"</span>,</span>
