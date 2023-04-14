@@ -35,7 +35,6 @@ format:
     html-math-method: katex
     category: true
     page-layout: full
-    theme: sandstone
     mainfont: system-ui
     fontsize: 1.0 em
     linestretch: 1.7
