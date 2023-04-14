@@ -230,18 +230,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-is-tidy-tuesday" id="toc-what-is-tidy-tuesday" class="nav-link active" data-scroll-target="#what-is-tidy-tuesday">What is Tidy Tuesday?</a></li>
-  <li><a href="#what-data-i-decided-to-use-for-one-of-the-tidy-tuesday" id="toc-what-data-i-decided-to-use-for-one-of-the-tidy-tuesday" class="nav-link" data-scroll-target="#what-data-i-decided-to-use-for-one-of-the-tidy-tuesday">What data I decided to use for one of the Tidy Tuesday?</a></li>
-  <li><a href="#peering-into-the-data-frame" id="toc-peering-into-the-data-frame" class="nav-link" data-scroll-target="#peering-into-the-data-frame">Peering into the Data Frame</a></li>
-  <li><a href="#data-exploration" id="toc-data-exploration" class="nav-link" data-scroll-target="#data-exploration">Data exploration</a>
+  <li><a href="#what-is-tidy-tuesday" id="toc-what-is-tidy-tuesday" class="nav-link active" data-scroll-target="#what-is-tidy-tuesday"><span class="toc-section-number">0.1</span>  What is Tidy Tuesday?</a></li>
+  <li><a href="#what-data-i-decided-to-use-for-one-of-the-tidy-tuesday" id="toc-what-data-i-decided-to-use-for-one-of-the-tidy-tuesday" class="nav-link" data-scroll-target="#what-data-i-decided-to-use-for-one-of-the-tidy-tuesday"><span class="toc-section-number">0.2</span>  What data I decided to use for one of the Tidy Tuesday?</a></li>
+  <li><a href="#peering-into-the-data-frame" id="toc-peering-into-the-data-frame" class="nav-link" data-scroll-target="#peering-into-the-data-frame"><span class="toc-section-number">0.3</span>  Peering into the Data Frame</a></li>
+  <li><a href="#data-exploration" id="toc-data-exploration" class="nav-link" data-scroll-target="#data-exploration"><span class="toc-section-number">0.4</span>  Data exploration</a>
   <ul class="collapse">
-  <li><a href="#point-out" id="toc-point-out" class="nav-link" data-scroll-target="#point-out">point out</a></li>
+  <li><a href="#point-out" id="toc-point-out" class="nav-link" data-scroll-target="#point-out"><span class="toc-section-number">0.4.1</span>  point out</a></li>
   </ul></li>
-  <li><a href="#bar-plot-gender-v-season-gender-v-rank" id="toc-bar-plot-gender-v-season-gender-v-rank" class="nav-link" data-scroll-target="#bar-plot-gender-v-season-gender-v-rank">Bar plot Gender v Season, Gender v Rank</a></li>
-  <li><a href="#survival-rate" id="toc-survival-rate" class="nav-link" data-scroll-target="#survival-rate">Survival Rate</a>
+  <li><a href="#bar-plot-gender-v-season-gender-v-rank" id="toc-bar-plot-gender-v-season-gender-v-rank" class="nav-link" data-scroll-target="#bar-plot-gender-v-season-gender-v-rank"><span class="toc-section-number">0.5</span>  Bar plot Gender v Season, Gender v Rank</a></li>
+  <li><a href="#survival-rate" id="toc-survival-rate" class="nav-link" data-scroll-target="#survival-rate"><span class="toc-section-number">1</span>  Survival Rate</a>
   <ul class="collapse">
-  <li><a href="#findings" id="toc-findings" class="nav-link" data-scroll-target="#findings">Findings</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#findings" id="toc-findings" class="nav-link" data-scroll-target="#findings"><span class="toc-section-number">1.1</span>  Findings</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="toc-section-number">1.2</span>  Conclusion</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -252,16 +252,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<section id="what-is-tidy-tuesday" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-tidy-tuesday">What is Tidy Tuesday?</h2>
+<section id="what-is-tidy-tuesday" class="level2" data-number="0.1">
+<h2 data-number="0.1" class="anchored" data-anchor-id="what-is-tidy-tuesday"><span class="header-section-number">0.1</span> What is Tidy Tuesday?</h2>
 <p>Tidy Tuesday is a weekly social data project in the R programming language community, created by R for Data Science authors Hadley Wickham and Mara Averick. The project involves posting a new dataset on the Tidy Tuesday gitHub repository every Tuesday, along with a set of questions or challenges related to the data. The aim of Tidy Tuesday is to provide a fun and collaborative way for R users to improve their data analysis and visualization skills, and to share their work with the broader community.</p>
 </section>
-<section id="what-data-i-decided-to-use-for-one-of-the-tidy-tuesday" class="level2">
-<h2 class="anchored" data-anchor-id="what-data-i-decided-to-use-for-one-of-the-tidy-tuesday">What data I decided to use for one of the Tidy Tuesday?</h2>
+<section id="what-data-i-decided-to-use-for-one-of-the-tidy-tuesday" class="level2" data-number="0.2">
+<h2 data-number="0.2" class="anchored" data-anchor-id="what-data-i-decided-to-use-for-one-of-the-tidy-tuesday"><span class="header-section-number">0.2</span> What data I decided to use for one of the Tidy Tuesday?</h2>
 <p>The Tidy Tuesday I decided to investigate is the Alone data set.This dataset contains information about the participants and their progress in the Alone TV series. The data set includes 8 seasons of the show, with each season consisting of a different set of participants who are dropped off in a remote wilderness location and must survive alone. The data set includes information such as the participant’s name, age, gender, occupation, location, survival equipment, and duration of their stay. The project provided a valuable opportunity for me to practice their data wrangling, visualization, and analysis skills using real-world data in a fun and engaging way.</p>
 </section>
-<section id="peering-into-the-data-frame" class="level2">
-<h2 class="anchored" data-anchor-id="peering-into-the-data-frame">Peering into the Data Frame</h2>
+<section id="peering-into-the-data-frame" class="level2" data-number="0.3">
+<h2 data-number="0.3" class="anchored" data-anchor-id="peering-into-the-data-frame"><span class="header-section-number">0.3</span> Peering into the Data Frame</h2>
 <p>The columns that are highlighted is what I used during my data analysis.</p>
 <div class="cell">
 <details>
@@ -986,11 +986,11 @@ html {
 </div>
 </div>
 </section>
-<section id="data-exploration" class="level2">
-<h2 class="anchored" data-anchor-id="data-exploration">Data exploration</h2>
+<section id="data-exploration" class="level2" data-number="0.4">
+<h2 data-number="0.4" class="anchored" data-anchor-id="data-exploration"><span class="header-section-number">0.4</span> Data exploration</h2>
 <p>I did a linear regression model to see if age, gender, and where someone was located was dependent on how many days someone lasted, and come to find out, the did not have any significance during the first round of exploring. I then decided to narrow down my scope to find out the survival rate between gender and professions.</p>
-<section id="point-out" class="level3">
-<h3 class="anchored" data-anchor-id="point-out">point out</h3>
+<section id="point-out" class="level3" data-number="0.4.1">
+<h3 data-number="0.4.1" class="anchored" data-anchor-id="point-out"><span class="header-section-number">0.4.1</span> point out</h3>
 <div class="cell">
 <details>
 <summary>click to see code</summary>
@@ -1012,8 +1012,8 @@ Gender    1  2  3  4  5  6  7  8  9
 </ul>
 </section>
 </section>
-<section id="bar-plot-gender-v-season-gender-v-rank" class="level2">
-<h2 class="anchored" data-anchor-id="bar-plot-gender-v-season-gender-v-rank">Bar plot Gender v Season, Gender v Rank</h2>
+<section id="bar-plot-gender-v-season-gender-v-rank" class="level2" data-number="0.5">
+<h2 data-number="0.5" class="anchored" data-anchor-id="bar-plot-gender-v-season-gender-v-rank"><span class="header-section-number">0.5</span> Bar plot Gender v Season, Gender v Rank</h2>
 <div class="cell">
 <details>
 <summary>click to see code</summary>
@@ -1046,8 +1046,8 @@ Gender    1  2  3  4  5  6  7  8  9
 </div>
 </div>
 </section>
-<section id="survival-rate" class="level1">
-<h1>Survival Rate</h1>
+<section id="survival-rate" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Survival Rate</h1>
 <p>Further exploring, I decided to work survival rates between gendered females and males using a <a href="https://bookdown.org/mpfoley1973/survival/km.html">Kaplan-Meier Curve</a> to show the survival rate of gender by either medically evacuated, left for medical health, and for personal or family reasons. I found an significance in the survival rate of leaving for family and personal reasons by gendered males. The probability of males survival is lower due to family and person reasons than gendered females.</p>
 <div class="cell">
 <details>
@@ -1209,8 +1209,8 @@ Gender    1  2  3  4  5  6  7  8  9
 </div>
 </div>
 </div>
-<section id="findings" class="level2">
-<h2 class="anchored" data-anchor-id="findings">Findings</h2>
+<section id="findings" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="findings"><span class="header-section-number">1.1</span> Findings</h2>
 <ul>
 <li><p>Gendered females have a higher probability of surviving longer than identified males for reasons of missing family or personal reason.</p></li>
 <li><p>Professions that are Blue Collar, Trades or Survivalist ended up lasting longer than White color or Previously in the army or in armed forces.</p>
@@ -1220,8 +1220,8 @@ Gender    1  2  3  4  5  6  7  8  9
 <li><p>The probability of survival of participants lasting alone is quite impressive.</p></li>
 </ul>
 </section>
-<section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<section id="conclusion" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">1.2</span> Conclusion</h2>
 <p>After exploring the Alone Tidy Tuesday data set, I conducted an analysis to determine the survival rate of male and female participants. I examined the reasons why contestants were either medically evacuated or left for medical health or personal family reasons, and checked if there was any significant difference in the arrival rate between males and females. I did find that the is a 50% chance that gender females last longer then males (approx. 60 days) due to family or personal reason. I found this insightful and full of potential discussions. Please comment bellow to discuss more in detail.</p>
 <p>Furthermore, I decided to investigate the professions of the participants and see if there were any significant differences in the survival rate among different professions. I categorized the professions into white-collar, outdoor survivalists, blue-collar tradesmen, armed forces, and others, mostly entrepreneurs. I found that outdoor survivalists and blue-collar tradesmen were more likely to survive longer than armed forces and white-collar workers. This was an interesting finding as it confirmed some assumptions that people might have about survival skills, and it was exciting to have an analysis that could prove these assumptions.</p>
 <p>During this data exploration, I was aware of the potential biases that could arise from categorizing the professions, so I tried to make sure that I did it in the most ethical way possible. When there were things that I didn’t know, I put them into the “Other” category to avoid any unintentional biases. Overall, this project provided a great opportunity for me to use my data wrangling, visualization, and analysis skills, and I learned a lot from this experience.</p>
