@@ -30,6 +30,7 @@ website:
         
 format:
  html:
+    theme: sandstone
     toc: true
     toc-location: right
     html-math-method: katex
