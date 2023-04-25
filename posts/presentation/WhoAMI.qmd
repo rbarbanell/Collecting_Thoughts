@@ -15,7 +15,6 @@ editor: visual
 - I love number
 - I love problem solving
 
-![](image.jpg){.absolute bottom = 0 right = 50 width="150" height="100"}
 
 :::
 
@@ -34,4 +33,5 @@ Finance and Marketing are not the only needs for data science
 ::: {.fragment .fade-in}
 There are so many other fields that need your help!
 :::
+
 
