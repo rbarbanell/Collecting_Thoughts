@@ -1,0 +1,37 @@
+---
+title: "Who am I"
+format: 
+  revealjs:
+    theme: blood
+editor: visual
+---
+
+
+::: {.incremental}
+
+- My name is Becca Barbanell
+- I am a recent Master Student Graduate a Willamette
+- Masters Degree in Data Science
+- I love number
+- I love problem solving
+
+![](image.jpg){.absolute bottom = 0 left=100 width="350" height="300"}
+
+:::
+
+## {auto-animate=true}
+
+::: {style="margin-top: 100px;"}
+Finance and Marketing are not the only needs for data science
+:::
+
+## {auto-animate=true}
+
+::: {style="margin-top: 200px; font-size: 3em; color: pink;"}
+Finance and Marketing are not the only needs for data science
+:::
+
+::: {.fragment .fade-in}
+There are so many other fields that need your help!
+:::
+
