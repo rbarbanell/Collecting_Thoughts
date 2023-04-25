@@ -15,7 +15,7 @@ editor: visual
 - I love number
 - I love problem solving
 
-![](image.jpg){.absolute bottom = 0 left=100 width="350" height="300"}
+![](image.jpg){.absolute bottom = 0 left=100 width="150" height="100"}
 
 :::
 
@@ -27,7 +27,7 @@ Finance and Marketing are not the only needs for data science
 
 ## {auto-animate=true}
 
-::: {style="margin-top: 200px; font-size: 3em; color: pink;"}
+::: {style="margin-top: 200px; font-size: 2em; color: pink;"}
 Finance and Marketing are not the only needs for data science
 :::
 
