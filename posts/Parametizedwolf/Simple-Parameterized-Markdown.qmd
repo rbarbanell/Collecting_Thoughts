@@ -1,6 +1,7 @@
 ---
 title: "A Parameterized Quarto From Robert Walkers Code"
 author: "Rebecca Barbanell"
+output: html_document
 params:
   name: "John the Wolf"
 format: 
