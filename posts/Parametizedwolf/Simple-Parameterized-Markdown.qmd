@@ -1,5 +1,5 @@
 ---
-title: "A Parameterized Markdown From Robert Walkers Code"
+title: "A Parameterized Quarto From Robert Walkers Code"
 author: "Rebecca Barbanell"
 params:
   name: "John the Wolf"
