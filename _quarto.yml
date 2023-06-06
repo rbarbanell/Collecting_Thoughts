@@ -42,7 +42,7 @@ format:
     linestretch: 1.7
     css: styles.css
     code-fold: true
-    code-summary: "click to see code"
+    code-summary: "Code"
     link-external-newwindow: true
     
 

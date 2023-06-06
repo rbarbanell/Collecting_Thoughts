@@ -20,6 +20,7 @@ html:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 devtools::install_github('Mikata-Project/ggthemr', force = TRUE)
+library(Rtools)
 library(tidyverse)
 library(gridExtra)
 library(ggplot2)
@@ -90,7 +91,7 @@ alone%>%
 
 ## Data exploration
 
-I did a linear regression  model to see if age, gender, and where someone was located was dependent on how many days someone lasted, and come to find out, the did not have any significance during the first round of exploring. I then decided to narrow down my scope to find out the survival rate between gender and professions. 
+I used a linear regression model to determine whether factors such as age, gender, and location affected how long a person endured. As it turned out, these factors had no bearing on the beginning stages of investigation. I therefore made the decision to focus on evaluating the probability of various professions and sexes by using survival analysis.  
 
 
 ### point out
@@ -102,10 +103,9 @@ tb
 
 ```
 
- * While exploring the quantifying aspect of the data set I first noticed there were almost 3 times as much gendered males then female.
+* When I looked at the quantifiable part of the data set, I first noticed there were roughly three times as many men as there were women.
 
-* However, even though there is an unbalance in gender I was able to use the data by bar charts and survival analysis.
-
+* I was still able to use the data using bar graphs and survival analysis despite the gender disparity.
 
 ## Bar plot Gender v Season, Gender v Rank
 
@@ -135,7 +135,8 @@ grid.arrange(plot1,plot2)
 
 
 # Survival Rate
-Further exploring, I decided to work survival rates between gendered females and males using a [Kaplan-Meier Curve](https://bookdown.org/mpfoley1973/survival/km.html) to show the survival rate of gender by either medically evacuated, left for medical health, and for personal or family reasons. I found an significance in the survival rate of leaving for family and personal reasons by gendered males. The probability of males survival is lower due to family and person reasons than gendered females. 
+
+In my continued exploration, I wanted to investigate the survival rates between men and women using a [Kaplan-Meier Curve](https://bookdown.org/mpfoley1973/survival/km.html). I focused on three categories: medically evacuated, departed for medical health, and left for personal or family reasons. As I delved into the data, I discovered a significant difference in survival rates specifically related to leaving for personal or family reasons among men. It became evident that men in these situations had a lower chance of survival compared to women. This finding suggests that leaving for personal or family reasons might have different impacts on survival for men and women. To gain a deeper understanding of why this difference exists, further research is needed.
 
 ```{r,include=FALSE}
 
@@ -214,8 +215,7 @@ legend="right",legend.title = "Gender",legend.labs = c("female","male"),ggtheme 
 
 mod3
 ```
-
-Lastly, I decided to bin the participants by profession by categorized the professions into white-collar, outdoor survivalists, blue-collar tradesmen, armed forces, and others, which consist of mostly entrepreneurs. As I know this cause some bias, and I made sure to do the best of my abilities I could, with the research and global knowledge I have.
+Finally, I made the decision to group the participants by occupation. I divided the occupations into white-collar, outdoor survivalists, blue-collar tradesmen, members of the armed services, and others, which mostly include entrepreneurs. I took care to use my research and extensive knowledge of the world to the best of my ability because I am aware that this causes some prejudice.
 
 ```{r fig.cap= "fig. 5: Bar chart/Survival rate of professions and days lasted"}
 alonedf<-alone2%>%
@@ -318,11 +318,11 @@ mod4
 ```
 ## Findings
 
- * Gendered females have a higher probability of surviving longer than identified males for reasons of missing family or personal reason. 
+* Women are more likely than men to survive longer due to variables such as missing family or other personal factors. 
 
-* Professions that are Blue Collar, Trades or Survivalist ended up lasting longer than White color or Previously in the army or in armed forces. 
+* Careers in the blue collar, trades, or survivalist sectors lasted longer than those in the white collar, former army, or armed forces sectors. 
  
-   * There could be more discussion on why armed forces professions are less likely to survive alone. 
+* There may be more discussion of the factors that make military careers less likely to last for an extended period on their own. 
 
 * The probability of survival of participants lasting alone is quite impressive. 
   
@@ -331,8 +331,8 @@ mod4
 ## Conclusion
 
 
-After exploring the Alone Tidy Tuesday data set, I conducted an analysis to determine the survival rate of male and female participants. I examined the reasons why contestants were either medically evacuated or left for medical health or personal family reasons, and checked if there was any significant difference in the arrival rate between males and females. I did find that the is a 50% chance that gender females last longer then males (approx. 60 days) due to family or personal reason. I found this insightful and full of potential discussions. Please comment bellow to discuss more in detail.
+After diving into the Alone Tidy Tuesday data set, I conducted an analysis to examine the survival rate of men and women participants. I specifically looked at the reasons behind contestants being medically evacuated or leaving for medical health or personal family reasons, and investigated if there were any significant differences in survival rates between genders. Interestingly, I found that there was a 50% higher chance for female participants to outlast males (approximately 60 days longer) due to family or personal reasons. This finding sparked my curiosity and I believe it opens up potential discussions. I encourage you to share your thoughts below so that we can delve into more detailed analysis.
 
-Furthermore, I decided to investigate the professions of the participants and see if there were any significant differences in the survival rate among different professions. I categorized the professions into white-collar, outdoor survivalists, blue-collar tradesmen, armed forces, and others, mostly entrepreneurs. I found that outdoor survivalists and blue-collar tradesmen were more likely to survive longer than armed forces and white-collar workers. This was an interesting finding as it confirmed some assumptions that people might have about survival skills, and it was exciting to have an analysis that could prove these assumptions.
+Additionally, I decided to explore the professions of the participants and investigate if there were any notable disparities in survival rates among different occupational categories. I classified the professions into white-collar workers, outdoor survivalists, blue-collar tradesmen, armed forces, and others, predominantly entrepreneurs. The analysis revealed that outdoor survivalists and blue-collar tradesmen had a higher likelihood of surviving longer compared to armed forces and white-collar workers. This finding was fascinating as it validated certain assumptions about survival skills, and I was thrilled to have data-backed evidence supporting these assumptions.
 
-During this data exploration, I was aware of the potential biases that could arise from categorizing the professions, so I tried to make sure that I did it in the most ethical way possible. When there were things that I didn't know, I put them into the "Other" category to avoid any unintentional biases. Overall, this project provided a great opportunity for me to use my data wrangling, visualization, and analysis skills, and I learned a lot from this experience.
+Throughout this data exploration, I was mindful of potential biases that could arise from categorizing the professions. I made a conscious effort to ensure ethical considerations by placing unknowns into the "Other" category to prevent unintentional biases. Overall, this project provided an excellent opportunity for me to apply my skills in data wrangling, visualization, and analysis. I gained valuable insights from this experience and expanded my knowledge in the process.
