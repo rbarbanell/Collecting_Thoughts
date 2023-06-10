@@ -5,6 +5,7 @@ author: "Becca Barbanell "
 date: "2023-02-27"
 categories: [RShiny, Archeology, Database, Scotland, Neoglithic]
 image: "17a.jpg"
+cite-method: biblatex
 comments: 
     utterances: 
       repo: quarto-dev/quarto-web

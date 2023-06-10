@@ -2,8 +2,12 @@
 title: "Tidy Tuesday : Reality of being Alone"
 author: "Becca Barbanell"
 date: "2023-03-20"
-categories: [Tidy Tuesday, Reality TV, Datatable, Survival Analysis]
+categories: [R,Tidy Tuesday, Reality TV, Datatable, Survival Analysis]
 image: "alonelogo.jpg"
+bibliography: "bibliography.bib"
+number-sections: false
+nocite: |
+     @*
 comments: 
     utterances: 
       repo: quarto-dev/quarto-web
@@ -11,9 +15,11 @@ comments:
       issue-term: title
 html:    
     toc: true
+    toc-depth: 2
     toc-location: right
     html-math-method: katex
     page-layout: full
+    output: html_document
     link-external-newwindow: true
 ---
 
@@ -32,6 +38,7 @@ library(survminer)
 library(fitdistrplus)
 library(visR)
 library(gtExtras)
+
 survivalists <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-01-24/survivalists.csv')
 
 seasons <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-01-24/seasons.csv')
@@ -44,17 +51,17 @@ ggthemr('dust')
 
 ```
 
-# What is tidy Tuesday?
+## What is Tidy Tuesday?
 
 [Tidy tuesday](https://www.tidytuesday.com/) is a weekly social data project in the R programming language community, created by R for Data Science authors Hadley Wickham and Mara Averick. The project involves posting a new dataset on the Tidy Tuesday gitHub repository every Tuesday, along with a set of questions or challenges related to the data. The aim of Tidy Tuesday is to provide a fun and collaborative way for R users to improve their data analysis and visualization skills, and to share their work with the broader community.
 
-## Data I used from tidy Tuesday
+## Data I used from Tidy Tuesday
 
 The Tidy Tuesday I decided to investigate is the Alone data set. This dataset contains information about the participants and their progress in the Alone TV series. The data set includes 8 seasons of the show, with each season consisting of a different set of participants who are dropped off in a remote wilderness location and must survive alone. The data set includes information such as the participant's name, age, gender, occupation, location, survival equipment, and duration of their stay.  The project provided a valuable opportunity for me to practice their data wrangling, visualization, and analysis skills using real-world data in a fun and engaging way.
 
 
 
-# Data exploration
+## Data exploration
 
 I used a linear regression model to determine whether factors such as age, gender, and location affected how long a person endured. As it turned out, these factors had no bearing on the beginning stages of investigation. I therefore made the decision to focus on evaluating the probability of various professions and sexes by using survival analysis.  
 
@@ -99,7 +106,7 @@ grid.arrange(plot1,plot2)
 ```
 
 
-# Survival rate
+## Survival rate
 
 In my continued exploration, I wanted to investigate the survival rates between men and women using a [Kaplan-Meier Curve](https://bookdown.org/mpfoley1973/survival/km.html). I focused on three categories: medically evacuated, departed for medical health, and left for personal or family reasons. As I delved into the data,I used right censoring of the survival time of men and women and found significance specifically related to leaving for personal or family reasons among men. It became evident that men in these situations had a lower chance of survival compared to women. This finding suggests that leaving for personal or family reasons might have different impacts on survival for men and women. To gain a deeper understanding of why this difference exists, further research is needed.
 
@@ -283,7 +290,7 @@ legend="right",legend.title = "Profession",legend.labs = c("Arm Forces","Blue/Tr
 mod4
 
 ```
-# Findings
+## Findings
 
 * Women are more likely than men to survive longer due to variables such as missing family or other personal factors. 
 
@@ -295,7 +302,7 @@ mod4
   
 
 
-# Conclusion
+## Conclusion
 
 
 After diving into the Alone Tidy Tuesday data set, I conducted an analysis to examine the survival rate of men and women participants. I specifically looked at the reasons behind contestants being medically evacuated or leaving for medical health or personal family reasons, and investigated if there were any significant differences in survival rates between genders. Interestingly, I found that there was a 50% higher chance for female participants to outlast males (approximately 60 days longer) due to family or personal reasons. This finding sparked my curiosity and I believe it opens up potential discussions. I encourage you to share your thoughts below so that we can delve into more detailed analysis.
@@ -303,3 +310,13 @@ After diving into the Alone Tidy Tuesday data set, I conducted an analysis to ex
 Additionally, I decided to explore the professions of the participants and investigate if there were any notable disparities in survival rates among different occupational categories. I classified the professions into white-collar workers, outdoor survivalists, blue-collar tradesmen, armed forces, and others, predominantly entrepreneurs. The analysis revealed that outdoor survivalists and blue-collar tradesmen had a higher likelihood of surviving longer compared to armed forces and white-collar workers. This finding was fascinating as it validated certain assumptions about survival skills, and I was thrilled to have data-backed evidence supporting these assumptions.
 
 Throughout this data exploration, I was mindful of potential biases that could arise from categorizing the professions. I made a conscious effort to ensure ethical considerations by placing unknowns into the "Other" category to prevent unintentional biases. Overall, this project provided an excellent opportunity for me to apply my skills in data wrangling, visualization, and analysis. I gained valuable insights from this experience and expanded my knowledge in the process.
+
+## References
+
+```{r, echo=FALSE}
+knitr::write_bib(names(sessionInfo()$otherPkgs), file = "bibliography.bib")
+
+
+```
+
+
