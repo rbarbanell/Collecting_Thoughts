@@ -4,6 +4,9 @@ author: "Becca Barbanell"
 date: "2023-06-09"
 categories: [R,Tidy Tuesday, Video Game]
 image: "mariokart.jpg"
+
+number-sections: false
+
 comments: 
     utterances: 
       repo: quarto-dev/quarto-web

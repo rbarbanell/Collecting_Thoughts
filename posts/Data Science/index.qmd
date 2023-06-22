@@ -1,0 +1,34 @@
+---
+title: "What is Data Science to Me?"
+author: "Becca Barbanell"
+date: "2023-06-09"
+categories: [Opinion]
+image: "data.jpg"
+
+number-sections: false
+
+comments: 
+    utterances: 
+      repo: quarto-dev/quarto-web
+      theme: gruvbox-dark
+      issue-term: title
+html:    
+    toc: true
+    toc-location: right
+    html-math-method: katex
+    page-layout: full
+    link-external-newwindow: true
+---
+
+## What is Data Science to Me 
+
+Data science encompasses diverse information and data-related disciplines, offering multiple perspectives on its nature and scope. While interpretations of data science may vary, there are certain considerations to bear in mind when developing your viewpoint and utilizing data science tools.
+
+In today's world, it is essential to recognize the empowering potential of data science. By providing information, it enables us to perceive, construct, and analyze data, leading to better decision-making for the future. Moreover, data science facilitates the availability of data for further research, which can contribute to the development of improved systems and deepen our understanding of society and the global world.
+
+Data science is commonly perceived as a multidomain field, including finance, marketing, business, HR, government, and more. Its purpose is to utilize data to extract insights and knowledge that can address problems and guide decision-making. This involves organizing and analyzing data to derive valuable information and draw meaningful conclusions. Ultimately, data science aims to uncover patterns, trends, and correlations within data to generate predictions and enhance decision-making processes.
+
+I would like to see data science take a step further of using data science as a system to recognizing and addressing the gaps in technological accuracy within our world and where our biases come from. By Allocating time and resources to disciplines like earth sciences, social sciences, and other disciplines can foster a more equitable cultural knowledge and transparency. It is important to recognize the vast potential and positive impact that data science bring to our world. By embracing these tools and disciplines, we can drive positive change, empower individuals and communities, and create a future that is more informed, inclusive, and prosperous for all in the exponential growth of technological advancements.
+
+
+** Disclaimer that these word and context can change as I continue to learn and grow. Looking for thoughts and conversations around these topics. **

@@ -3,6 +3,7 @@
     "listing": "/posts.html",
     "items": [
       "/posts/index.html",
+      "/posts/Data Science/index.html",
       "/posts/Mario Kart/index.html",
       "/posts/Tidy Tuesday/index.html",
       "/posts/NOB/index.html",

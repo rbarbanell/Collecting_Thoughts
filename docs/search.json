@@ -151,7 +151,7 @@
     "href": "posts.html",
     "title": "Becca Barbanell : Data Portfolio",
     "section": "",
-    "text": "Tidy Tuesday : Mario Cart World Records\n\n\n\n\n\n\n\nR\n\n\nTidy Tuesday\n\n\nVideo Game\n\n\n\n\n\n\n\n\n\n\n\nJun 9, 2023\n\n\nBecca Barbanell\n\n\n\n\n\n\n  \n\n\n\n\nTidy Tuesday : Reality of being Alone\n\n\n\n\n\n\n\nR\n\n\nTidy Tuesday\n\n\nReality TV\n\n\nDatatable\n\n\nSurvival Analysis\n\n\n\n\n\n\n\n\n\n\n\nMar 20, 2023\n\n\nBecca Barbanell\n\n\n\n\n\n\n  \n\n\n\n\nNess of Brodgar a Neoglithic Archeology Site in Orkney Scotland\n\n\n\n\n\n\n\nRShiny\n\n\nArcheology\n\n\nDatabase\n\n\nScotland\n\n\nNeoglithic\n\n\n\n\n\n\n\n\n\n\n\nFeb 27, 2023\n\n\nBecca Barbanell\n\n\n\n\n\n\n  \n\n\n\n\nThe Quest for the GOAT\n\n\n\n\n\n\n\nInteractive Plot\n\n\nSports\n\n\nDatatable\n\n\n\n\n\n\n\n\n\n\n\nJan 30, 2023\n\n\nBecca Barbanell & Jennifer Rana\n\n\n\n\n\n\nNo matching items"
+    "text": "What is Data Science to Me?\n\n\n\n\n\n\n\nOpinion\n\n\n\n\n\n\n\n\n\n\n\nJun 9, 2023\n\n\nBecca Barbanell\n\n\n\n\n\n\n  \n\n\n\n\nTidy Tuesday : Mario Cart World Records\n\n\n\n\n\n\n\nR\n\n\nTidy Tuesday\n\n\nVideo Game\n\n\n\n\n\n\n\n\n\n\n\nJun 9, 2023\n\n\nBecca Barbanell\n\n\n\n\n\n\n  \n\n\n\n\nTidy Tuesday : Reality of being Alone\n\n\n\n\n\n\n\nR\n\n\nTidy Tuesday\n\n\nReality TV\n\n\nDatatable\n\n\nSurvival Analysis\n\n\n\n\n\n\n\n\n\n\n\nMar 20, 2023\n\n\nBecca Barbanell\n\n\n\n\n\n\n  \n\n\n\n\nNess of Brodgar a Neoglithic Archeology Site in Orkney Scotland\n\n\n\n\n\n\n\nRShiny\n\n\nArcheology\n\n\nDatabase\n\n\nScotland\n\n\nNeoglithic\n\n\n\n\n\n\n\n\n\n\n\nFeb 27, 2023\n\n\nBecca Barbanell\n\n\n\n\n\n\n  \n\n\n\n\nThe Quest for the GOAT\n\n\n\n\n\n\n\nInteractive Plot\n\n\nSports\n\n\nDatatable\n\n\n\n\n\n\n\n\n\n\n\nJan 30, 2023\n\n\nBecca Barbanell & Jennifer Rana\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/presentation/WhoAMI.html#section",
@@ -215,5 +215,19 @@
     "title": "Tidy Tuesday : Reality of being Alone",
     "section": "References",
     "text": "References"
+  },
+  {
+    "objectID": "posts/Data Science/index.html",
+    "href": "posts/Data Science/index.html",
+    "title": "What is Data Science to Me?",
+    "section": "",
+    "text": "Data science encompasses diverse information and data-related disciplines, offering multiple perspectives on its nature and scope. While interpretations of data science may vary, there are certain considerations to bear in mind when developing your viewpoint and utilizing data science tools.\nIn today’s world, it is essential to recognize the empowering potential of data science. By providing information, it enables us to perceive, construct, and analyze data, leading to better decision-making for the future. Moreover, data science facilitates the availability of data for further research, which can contribute to the development of improved systems and deepen our understanding of society and the global world.\nData science is commonly perceived as a multidomain field, including finance, marketing, business, HR, government, and more. Its purpose is to utilize data to extract insights and knowledge that can address problems and guide decision-making. This involves organizing and analyzing data to derive valuable information and draw meaningful conclusions. Ultimately, data science aims to uncover patterns, trends, and correlations within data to generate predictions and enhance decision-making processes.\nI would like to see data science take a step further of using data science as a system to recognizing and addressing the gaps in technological accuracy within our world and where our biases come from. By Allocating time and resources to disciplines like earth sciences, social sciences, and other disciplines can foster a more equitable cultural knowledge and transparency. It is important to recognize the vast potential and positive impact that data science bring to our world. By embracing these tools and disciplines, we can drive positive change, empower individuals and communities, and create a future that is more informed, inclusive, and prosperous for all in the exponential growth of technological advancements.\n** Disclaimer that these word and context can change as I continue to learn and grow. Looking for thoughts and conversations around these topics. **"
+  },
+  {
+    "objectID": "posts/Data Science/index.html#what-is-data-engineering",
+    "href": "posts/Data Science/index.html#what-is-data-engineering",
+    "title": "What is Data Science: What do you really need to know?",
+    "section": "What is Data Engineering",
+    "text": "What is Data Engineering\nData engineering involves the development, maintenance, and optimization of systems and infrastructure used to store, process, and manage data. It is essentially the foundation of data science as it provides the necessary tools and technologies to collect, transform, and integrate data from multiple sources into a format that can be easily analyzed. Data engineering ensures that data is clean, organized, and easily accessible for analytics and machine learning models. In simpler terms, data engineering focuses on the development and maintenance of the technology and systems that allow data to be easily managed and analyzed."
   }
 ]

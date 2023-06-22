@@ -1,6 +1,7 @@
 ---
 title: "Resume"
 image: pic.JPG
+number-sections: false
 about:
   id: boss-heading
   template: trestles
