@@ -1,12 +1,14 @@
 ---
-title: "Ness of Brodgar a Neoglithic Archeology Site in Orkney Scotland"
- 
+title:  Willamette University Master Capstone Project 2023 
+subtitle: Ness of Brodgar a Neoglithic Archeology Site in Orkney Scotland
+
 author: "Becca Barbanell "
 date: "2023-02-27"
-categories: [RShiny, Archeology, Database, Scotland, Neoglithic]
+categories: [RShiny, Archeology, Database, Scotland, Neoglithic, Capstone]
 image: "17a.jpg"
 
 number-sections: false
+title-block-banner: true
 
 cite-method: biblatex
 comments: 
@@ -16,6 +18,22 @@ comments:
       issue-term: title
       
 ---
+
+
+## What is Ness of Brodgar
+
+
+The Ness of Brodgar is a massive complex of monumental Neolithic buildings located in Orkney, Scotland that has been under excavation since 2004. It is a three-hectare site filled with huge stone structures containing spectacular finds. The site is important because the rich artifacts found within the buildings and the location of the site between the two stone circles indicate that the Ness of Brodgar was very significant culturally and religiously to the Neolithic people of Orkney.
+
+
+##  Why does it matter?
+
+
+It is also one of the most important archaeological excavations in the world today, changing our of the beliefs of Neolithic Orkney and shining a new light on the prehistory of northern Europe.
+
+
+
+
 
 
 

@@ -1,1 +1,15 @@
 /* css styles */
+
+.title {
+  font-size: 60px;
+  font-variant: small-caps;
+  text-align: center;
+}
+
+
+.subtitle {
+  font-size: 50px;
+  font-family: Monospace;
+  font-variant: small-caps;
+  text-align: center;
+}
