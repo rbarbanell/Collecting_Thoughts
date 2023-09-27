@@ -243,5 +243,75 @@
     "title": "Willamette University Master Capstone Project 2023",
     "section": "Why does it matter?",
     "text": "Why does it matter?\nIt is also one of the most important archaeological excavations in the world today, changing our of the beliefs of Neolithic Orkney and shining a new light on the prehistory of northern Europe.\n\n\n\nProfessor Scott Pike, Soil collection of Hearth Structure 8, fig.1\n\n\n\n\n\nProfessor Scott Pike,Soil Soil collection of Hearth Structure 8, fig. 2"
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "Resume",
+    "section": "",
+    "text": "Willamette University | Portland, OR | Masters in Data Science | August 2021 - August 2023\nWillamette University | Salem, OR | B.S in Data Science | August 2021 - May 2023\nSeattle Central College | Seattle, WA | A.S Associate in Science Transfer| March 2020"
+  },
+  {
+    "objectID": "about.html#experience",
+    "href": "about.html#experience",
+    "title": "Resume",
+    "section": "",
+    "text": "Ness of Brodgar with Willamette University | Data Engineer Intern |Orkney Island, Scotland | July 2022 - present\n\nGenerated geo-chemical data of the major and minor trace elements of soil samples of various date ranges in collaboration with an archaeological dig.\nTracked and managed results data for 200 + soil samples.\nImplemented python program to discover inconsistencies and ensure clean and accurate data.\nStreamlined data collection and storage by creating a system of naming and compiling information for easier accessibility and data analysis.\n\nSeattle Central College | Mathematics Tutor | Seattle, WA | October 2019 - August 2021\n\nSpecialize as an individual tutor, simplify math concepts, and coach students to think critically to solve problems.\nImprove tutee comprehension and increased competence while fostering confidence for success. Maintained a 98% tutee satisfaction rating.\n\nCultivate a fun and interesting learning environment which encourages questions and discussion."
+  },
+  {
+    "objectID": "about.html#leadership-volunteering",
+    "href": "about.html#leadership-volunteering",
+    "title": "Resume",
+    "section": "",
+    "text": "President of WiSE Club | Women in Science and Engineering | Seattle Central College| February 2019 – March 2020\n\nCoordinated fifteen professional engineers and three Seattle Central alumni and 30 volunteers and a student audience of 165+ for Engineering Mentor Night.\nPlanned, created, and implemented highly effective club plans and agendas while informing club members."
+  },
+  {
+    "objectID": "resume.html",
+    "href": "resume.html",
+    "title": "Rebecca Barbanell",
+    "section": "",
+    "text": "Picture, etc.\n\n\nbbarbanell@willamette.edu, phone number, …\n\n\n\n\nOne\nTwo\nThree\n\n\n\n\nA footer in the sidebar."
+  },
+  {
+    "objectID": "resume.html#contact-info",
+    "href": "resume.html#contact-info",
+    "title": "Rebecca Barbanell",
+    "section": "",
+    "text": "bbarbanell@willamette.edu, phone number, …"
+  },
+  {
+    "objectID": "resume.html#skills",
+    "href": "resume.html#skills",
+    "title": "Rebecca Barbanell",
+    "section": "",
+    "text": "One\nTwo\nThree"
+  },
+  {
+    "objectID": "resume.html#disclaimer",
+    "href": "resume.html#disclaimer",
+    "title": "Rebecca Barbanell",
+    "section": "",
+    "text": "A footer in the sidebar."
+  },
+  {
+    "objectID": "resume.html#title",
+    "href": "resume.html#title",
+    "title": "Rebecca Barbanell",
+    "section": "2.1 Your Name",
+    "text": "2.1 Your Name\nArbitrary content."
+  },
+  {
+    "objectID": "resume.html#education",
+    "href": "resume.html#education",
+    "title": "Rebecca Barbanell",
+    "section": "2.2 Education",
+    "text": "2.2 Education\n\n2.2.1 University One\nTitle\nLocation\nYear\nArbitrary content\n\n\n2.2.2 University Two\n\n\nTaught R language to beginners.\nWrote Shiny app demos.\nConverted statistical tutorials from SPSS to R language."
+  },
+  {
+    "objectID": "resume.html#section",
+    "href": "resume.html#section",
+    "title": "Rebecca Barbanell",
+    "section": "2.3 Section",
+    "text": "2.3 Section\n\n2.3.1 Subsection\nTitle\nLocation\nYear\nMore info\n\n\n\n\nSome notes in the sidebar."
   }
 ]
