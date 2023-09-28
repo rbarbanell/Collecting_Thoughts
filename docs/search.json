@@ -39,7 +39,7 @@
     "href": "index.html",
     "title": "Who am I",
     "section": "",
-    "text": "LinkedIn\n  \n  \n    \n     Github\n  \n\n  \n  \nRebecca Barbanell is a data scientist who approaches her work holistically and values a humanistic perspective in technology. She is currently pursuing a Masters in Data Science at Willamette University and holds a B.S in Data Science from the same institution. Previously, she worked as a Data Engineer Intern for the Ness of Brodgar archaeological dig in Scotland, where she generated and managed geo-chemical data for soil samples. Before that, she worked as a mathematics tutor at Seattle Central College, where she specialized in simplifying math concepts and coaching students to think critically. Rebecca is also a dedicated leader and volunteer, having served as President of the Women in Science and Engineering Club and Treasurer of the Society for Advancement of Chicanos/Hispanics and Native Americans in Science. In her free time, Rebecca enjoys exploring nature with her partner and her dog, snow boarding, making food, playing music, and having fun.\n\n\nWillamette University | Portland, OR | Masters in Data Science | August 2021 - August 2023\nWillamette University | Salem, OR | B.S in Data Science | August 2021 - May 2023\nSeattle Central College | Seattle, WA | A.S Associate in Science Transfer| March 2020\n\n\n\nNess of Brodgar with Willamette University | Data Engineer Intern |Orkney Island, Scotland | July 2022 - present\n\nGenerated geo-chemical data of the major and minor trace elements of soil samples of various date ranges in collaboration with an archaeological dig.\nTracked and managed results data for 200 + soil samples.\nImplemented python program to discover inconsistencies and ensure clean and accurate data.\nStreamlined data collection and storage by creating a system of naming and compiling information for easier accessibility and data analysis.\n\nSeattle Central College | Mathematics Tutor | Seattle, WA | October 2019 - August 2021\n\nSpecialize as an individual tutor, simplify math concepts, and coach students to think critically to solve problems.\nImprove tutee comprehension and increased competence while fostering confidence for success. Maintained a 98% tutee satisfaction rating.\n\nCultivate a fun and interesting learning environment which encourages questions and discussion.\n\n\n\n\nPresident of WiSE Club | Women in Science and Engineering | Seattle Central College| February 2019 – March 2020\n\nCoordinated fifteen professional engineers and three Seattle Central alumni and 30 volunteers and a student audience of 165+ for Engineering Mentor Night.\nPlanned, created, and implemented highly effective club plans and agendas while informing club members."
+    "text": "Becca Barbanell’s background as a visual artist, her extensive travels, and her previous career as a polarity therapy practitioner have all contributed to her holistic perspective on data science. Her ability to see the bigger picture, think creatively, and appreciate diverse viewpoints makes her a well-rounded and innovative data scientist.\nWhen not investigating and implementing innovative data structures, Becca enjoys spending time with her dog, Theta Squared, and her partner, exploring nature, preparing food, having fun, and playing music."
   },
   {
     "objectID": "posts/NOB/index.html",
@@ -320,5 +320,33 @@
     "title": "Resume",
     "section": "",
     "text": "High-Performance Computing Bootcamp | Sustainable Horizons Institute | Lawrence Berkeley National Laboratory | August 2023\n\nUsed jupyter notebook and IRIS API tokens to log into Permitter supercomputer at Lawrence Berkeley National Laboratory to conduct analysis of large data sets.\nHands on experience on python code to make data driven choices by analyzing energy consumption of different super computers around the world.\nLearned about power infrastructure and reinforced my commitment to promoting energy justice and environmental sustainability in computing.\n\nAny past work and projects please refer to my linkedin."
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Who am I",
+    "section": "Education",
+    "text": "Education\nWillamette University | Portland, OR | Masters in Data Science | August 2023\nWillamette University | Salem, OR | B.S in Data Science | May 2023\nSeattle Central College | Seattle, WA | A.S Associate in Science Transfer | March 2020"
+  },
+  {
+    "objectID": "index.html#experience",
+    "href": "index.html#experience",
+    "title": "Who am I",
+    "section": "Experience",
+    "text": "Experience\nNess of Brodgar with Willamette University | Data Engineer Intern | Orkney Island, Scotland | July 2022 - present\n\nGenerated geo-chemical data of the major and minor trace elements of soil samples of various date ranges in collaboration with an archaeological dig.\nTracked and managed results data for 200 + soil samples.\nImplemented python program to discover inconsistencies and ensure clean and accurate data.\nStreamlined data collection and storage by creating a system of naming and compiling information for easier accessibility and data analysis.\n\nSeattle Central College | Mathematics Tutor | Seattle, WA | October 2019 - August 2021\n\nSpecialize as an individual tutor, simplify math concepts, and coach students to think critically to solve problems.\nImprove tutee comprehension and increased competence while fostering confidence for success. Maintained a 98% tutee satisfaction rating.\n\nCultivate a fun and interesting learning environment which encourages questions and discussion."
+  },
+  {
+    "objectID": "index.html#leadership-volunteering",
+    "href": "index.html#leadership-volunteering",
+    "title": "Who am I",
+    "section": "Leadership + Volunteering",
+    "text": "Leadership + Volunteering\nPresident of WiSE Club | Women in Science and Engineering | Seattle Central College| February 2019 – March 2020\n\nCoordinated fifteen professional engineers and three Seattle Central alumni and 30 volunteers and a student audience of 165+ for Engineering Mentor Night.\nPlanned, created, and implemented highly effective club plans and agendas while informing club members."
+  },
+  {
+    "objectID": "index.html#projects",
+    "href": "index.html#projects",
+    "title": "Who am I",
+    "section": "Projects",
+    "text": "Projects\nHigh-Performance Computing Bootcamp | Sustainable Horizons Institute | Lawrence Berkeley National Laboratory | August 2023\n\nUsed jupyter notebook and IRIS API tokens to log into Permitter supercomputer at Lawrence Berkeley National Laboratory to conduct analysis of large data sets.\nHands on experience on python code to make data driven choices by analyzing energy consumption of different super computers around the world.\nLearned about power infrastructure and reinforced my commitment to promoting energy justice and environmental sustainability in computing.\n\nAny past work and projects please refer to my linkedin. :::"
   }
 ]
