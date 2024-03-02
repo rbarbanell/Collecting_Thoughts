@@ -3,6 +3,7 @@
     "listing": "/posts.html",
     "items": [
       "/posts/index.html",
+      "/posts/NOB_images/index.html",
       "/posts/Data Science/index.html",
       "/posts/Tidy Tuesday/index.html",
       "/posts/Data Management/index.html",

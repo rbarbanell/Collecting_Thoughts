@@ -2,12 +2,14 @@ project:
   type: website
   output-dir: docs
 
+
 website:
   comments: 
     utterances: 
       repo: quarto-dev/quarto-web
       theme: gruvbox-dark
   title: "Inquiring Minds Want to Know"
+  
   navbar:
     right:
       - href: index.qmd
