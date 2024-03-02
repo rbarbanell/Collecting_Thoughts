@@ -1,0 +1,20 @@
+---
+title:  Willamette University Master Capstone Project 2023 
+subtitle: Ness of Brodgar a Neoglithic Archeology Site in Orkney Scotland
+
+author: "Becca Barbanell "
+date: "2023-02-27"
+categories: [Database,]
+image: "17a.jpg"
+
+number-sections: false
+title-block-banner: true
+
+cite-method: biblatex
+comments: 
+    utterances: 
+      repo: quarto-dev/quarto-web
+      theme: gruvbox-dark
+      issue-term: title
+      
+---
