@@ -19,7 +19,7 @@ website:
       - text: Ness of Brodgar
         menu:
           - text: NOB Photographs
-          href: NOB.qmd
+            href: NOB.qmd
       - text: Side Project
         menu: 
           - text: Dang's Design

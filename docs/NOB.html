@@ -70,9 +70,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-author","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -136,10 +136,17 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="./posts.html" rel="" target="">
  <span class="menu-text">Data Profolio</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="./NOB.html" rel="" target="" aria-current="page">
- <span class="menu-text">NOB Photographs</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-ness-of-brodgar" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Ness of Brodgar</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-ness-of-brodgar">    
+        <li>
+    <a class="dropdown-item" href="./NOB.html" rel="" target="">
+ <span class="dropdown-text">NOB Photographs</span></a>
   </li>  
+    </ul>
+  </li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-side-project" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
  <span class="menu-text">Side Project</span>
@@ -182,7 +189,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Archeology">Archeology <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Capstone">Capstone <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Database">Database <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Datatable">Datatable <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Neoglithic">Neoglithic <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Opinion">Opinion <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R">R <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RShiny">RShiny <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Reality TV">Reality TV <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Scotland">Scotland <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Survival Analysis">Survival Analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Tidy Tuesday">Tidy Tuesday <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content column-page-left" id="quarto-document-content">
 
@@ -207,194 +214,24 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1680913189132" data-listing-reading-time-sort="0">
-<div class="thumbnail">
-<p><a href="./posts/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
-</div>
-<div class="body">
-<a href="./posts/index.html">
-<h3 class="no-anchor listing-title">
-</h3>
-<div class="listing-subtitle">
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1709434615214" data-listing-reading-time-sort="0">
+<a href="./NOB/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<div class="card-text listing-description">
 
 </div>
-<div class="listing-description">
-
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/index.html"> </a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="Opinion" data-listing-date-sort="1686294000000" data-listing-file-modified-sort="1687474328362" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
-<div class="thumbnail">
-<p><a href="./posts/Data Science/index.html"> <img src="./posts/Data Science/data.jpg" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/Data Science/index.html">
-<h3 class="no-anchor listing-title">
-What is Data Science to Me?
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Opinion'); return false;">
-Opinion
-</div>
-</div>
-<a href="./posts/Data Science/index.html">
-<div class="listing-description">
-Data science encompasses diverse information and data-related disciplines, offering multiple perspectives on its…
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/Data Science/index.html">
-<div class="listing-date">
-Jun 9, 2023
-</div>
+<div class="card-attribution card-text-small start">
 <div class="listing-author">
-Becca Barbanell
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="R,Tidy Tuesday,Reality TV,Datatable,Survival Analysis" data-listing-date-sort="1679295600000" data-listing-file-modified-sort="1686428827931" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8">
-<div class="thumbnail">
-<p><a href="./posts/Tidy Tuesday/index.html"> <img src="./posts/Tidy Tuesday/alonelogo.jpg" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/Tidy Tuesday/index.html">
-<h3 class="no-anchor listing-title">
-Tidy Tuesday : Reality of being Alone
-</h3>
-<div class="listing-subtitle">
 
 </div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
-R
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Tidy Tuesday'); return false;">
-Tidy Tuesday
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Reality TV'); return false;">
-Reality TV
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Datatable'); return false;">
-Datatable
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Survival Analysis'); return false;">
-Survival Analysis
 </div>
 </div>
-<a href="./posts/Tidy Tuesday/index.html">
-<div class="listing-description">
-Tidy tuesday is a weekly social data project in the R programming language community, created by R for Data Science authors Hadley Wickham and Mara Averick. The project involves posting…
 </div>
 </a>
-</div>
-<div class="metadata">
-<a href="./posts/Tidy Tuesday/index.html">
-<div class="listing-date">
-Mar 20, 2023
-</div>
-<div class="listing-author">
-Becca Barbanell
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="Database" data-listing-date-sort="1677481200000" data-listing-file-modified-sort="1699897213821" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
-<div class="thumbnail">
-<p><a href="./posts/Data Management/index.html"> <img src="./posts/Data Management/17a.jpg" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/Data Management/index.html">
-<h3 class="no-anchor listing-title">
-Willamette University Master Capstone Project 2023
-</h3>
-<div class="listing-subtitle">
-Ness of Brodgar a Neoglithic Archeology Site in Orkney Scotland
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Database'); return false;">
-Database
-</div>
-</div>
-<a href="./posts/Data Management/index.html">
-<div class="listing-description">
-
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/Data Management/index.html">
-<div class="listing-date">
-Feb 27, 2023
-</div>
-<div class="listing-author">
-Becca Barbanell
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="RShiny,Archeology,Database,Scotland,Neoglithic,Capstone" data-listing-date-sort="1677481200000" data-listing-file-modified-sort="1709412159473" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
-<div class="thumbnail">
-<p><a href="./posts/NOB/index.html"> <img src="./posts/NOB/17a.jpg" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/NOB/index.html">
-<h3 class="no-anchor listing-title">
-Willamette University Master Capstone Project 2023
-</h3>
-<div class="listing-subtitle">
-UNESCO World Heritage archaeological site, Ness of Brodgar based in Orkney Scotland
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('RShiny'); return false;">
-RShiny
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Archeology'); return false;">
-Archeology
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Database'); return false;">
-Database
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Scotland'); return false;">
-Scotland
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Neoglithic'); return false;">
-Neoglithic
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Capstone'); return false;">
-Capstone
-</div>
-</div>
-<a href="./posts/NOB/index.html">
-<div class="listing-description">
-The Ness of Brodgar is a massive complex of monumental Neolithic buildings located in Orkney, Scotland that has been under excavation since 2004. It is a three-hectare site…
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/NOB/index.html">
-<div class="listing-date">
-Feb 27, 2023
-</div>
-<div class="listing-author">
-Becca Barbanell
-</div>
-</a>
-</div>
 </div>
 </div>
 <div class="listing-no-matching d-none">
