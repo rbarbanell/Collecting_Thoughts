@@ -354,6 +354,6 @@
     "href": "posts/NOB_images/index.html",
     "title": "Personal Photography Gallery",
     "section": "",
-    "text": "Skara Brae"
+    "text": "Skara Brae\n#| column: screen-inset-shaded #| layout-nrow: 1"
   }
 ]

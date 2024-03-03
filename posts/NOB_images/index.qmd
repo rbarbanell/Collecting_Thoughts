@@ -28,8 +28,11 @@ comments:
 
 ### Skara Brae
 
+#| column: screen-inset-shaded
+#| layout-nrow: 1
 
 ![1](101s.jpg){group="skarabrae"}
 ![1](102s.jpg){group="skarabrae"}
 ![1](103s.jpg){group="skarabrae"}
 ![1](104s.jpg){group="skarabrae"}
+![1](105a.jpg){group="skarabrae"}
