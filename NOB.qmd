@@ -7,6 +7,19 @@ lightbox:
   effect: fade
   desc-position: bottom
   loop: true
+format: 
+  html:
+    page-layout: custom
 ---
 
-![A Lovely Image](NOB_images/101s.jpg)
+::: {layout-ncol=4}
+
+**Skara Brae**
+
+![A Lovely Image](NOB_images/101s.jpg){group="Skara Brae"}
+
+![A  Image](NOB_images/102s.jpg){group="Skara Brae"}
+![ Image](NOB_images/103s.jpg){group="Skara Brae"}
+![A ](NOB_images/104s.jpg){group="Skara Brae"}
+![A Lovely Image](NOB_images/105a.jpg){group="Skara Brae"}
+:::
