@@ -1,13 +1,12 @@
 ---
-title: "Becca Barbanell : NOB Gallery"
-format: 
-  html: 
-    smooth-scroll: true
-listing:
-  sort: "date desc"
-  type: grid
-  categories: true
-  sort-ui: false
-  filter-ui: false
-page-layout: full
+title: "Data Gallery"
+filters:
+   - lightbox
+lightbox: 
+  match: auto
+  effect: fade
+  desc-position: bottom
+  loop: true
 ---
+
+![A Lovely Image](NOB_images/101s.jpg)
