@@ -12,7 +12,7 @@ format:
     page-layout: custom
 ---
 
-::: {layout-ncol=3}
+::: {layout-nrow=7}
 
 **Skara Brae**
 
