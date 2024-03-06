@@ -1,6 +1,6 @@
 ---
 title:  Willamette University Master Capstone Project 2023 
-subtitle: UNESCO World Heritage archaeological site, Ness of Brodgar based in Orkney Scotland
+description: UNESCO World Heritage archaeological site, Ness of Brodgar based in Orkney Scotland
 
 author: "Becca Barbanell "
 date: "2023-02-27"

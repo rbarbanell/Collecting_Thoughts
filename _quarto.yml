@@ -4,6 +4,9 @@ project:
 
 
 website:
+  search:
+    location: navbar
+    type: overlay
   comments: 
     utterances: 
       repo: quarto-dev/quarto-web
