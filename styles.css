@@ -13,3 +13,10 @@
   font-variant: small-caps;
   text-align: center;
 }
+
+.description {
+  font-size: 30px;
+  font-family: Monospace;
+  font-variant: small-caps;
+  text-align: center;
+}
