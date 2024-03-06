@@ -12,14 +12,91 @@ format:
     page-layout: custom
 ---
 
-::: {layout-ncol=4}
+::: {layout-ncol=1}
 
 **Skara Brae**
 
-![A Lovely Image](NOB_images/101s.jpg){group="Skara Brae"}
+![A Lovely Image with the crew](NOB_images/101s.jpg){group="Skara Brae"}
 
 ![A  Image](NOB_images/102s.jpg){group="Skara Brae"}
-![ Image](NOB_images/103s.jpg){group="Skara Brae"}
-![A ](NOB_images/104s.jpg){group="Skara Brae"}
-![A Lovely Image](NOB_images/105a.jpg){group="Skara Brae"}
+![Distance group activity](NOB_images/103s.jpg){group="Skara Brae"}
+![A room](NOB_images/104s.jpg){group="Skara Brae"}
+![Nick Card explaining about Skara Brae](NOB_images/105a.jpg){group="Skara Brae"}
+
+
+
+
+![A  Image](NOB_images/106a.jpg){group="Skara Brae"}
+![A  Image](NOB_images/107a.jpg){group="Skara Brae"}
+![A  Image](NOB_images/108a.jpg){group="Skara Brae"}
+![A  Image](NOB_images/109a.jpg){group="Skara Brae"}
+![A  Image](NOB_images/111B.jpg){group="Skara Brae"}
+![A  Image](NOB_images/112B.jpg){group="Skara Brae"}
+![A  Image](NOB_images/113B.jpg){group="Skara Brae"}
+![A  Image](NOB_images/114B.jpg){group="Skara Brae"}
+![A  Image](NOB_images/116B.jpg){group="Skara Brae"}
+![A  Image](NOB_images/118B.jpg){group="Skara Brae"}
+![A  Image](NOB_images/119B.jpg){group="Skara Brae"}
+![A  Image](NOB_images/124B.jpg){group="Skara Brae"}
+![A  Image](NOB_images/126B.jpg){group="Skara Brae"}
+![A  Image](NOB_images/127a.jpg){group="Ring of Brodgar"}
+![A  Image](NOB_images/128a.jpg){group="Ring of Brodgar}
+![A  Image](NOB_images/129a.jpg){group="Ring of Brodgar"}
+![A  Image](NOB_images/130a.jpg){group="Ring of Brodgar"}
+![A  Image](NOB_images/131a.jpg){group="Ring of Brodgar"}
+![A  Image](NOB_images/132a.jpg){group="NOB"}
+![A  Image](NOB_images/133a.jpg){group="NOB"}
+![A  Image](NOB_images/134a.jpg){group="NOB"}
+![A  Image](NOB_images/135a.jpg){group="NOB"}
+![A  Image](NOB_images/201a.jpg)
+![A  Image](NOB_images/202a.jpg){group="Shop Week"}
+![A  Image](NOB_images/203a.jpg){group="Shop Week"}
+![A  Image](NOB_images/204a.jpg){group="Shop Week"}
+![A  Image](NOB_images/205a.jpg){group="Shop Week"}
+![A  Image](NOB_images/206a.jpg){group="Shop Week"}
+![A  Image](NOB_images/207a.jpg){group="Shop Week"}
+![A  Image](NOB_images/208a.jpg){group="Shop Week"}
+![A  Image](NOB_images/209a.jpg){group="Shop Week"}
+![A  Image](NOB_images/210a.jpg){group="Shop Week"}
+![A  Image](NOB_images/211a.jpg){group="Shop Week"}
+![A  Image](NOB_images/212a.jpg){group="Shop Week"}
+![A  Image](NOB_images/213a.jpg){group="Shop Week"}
+![A  Image](NOB_images/214a.jpg){group="Shop Week"}
+![A  Image](NOB_images/216a.jpg){group="Shop Week"}
+![A  Image](NOB_images/225a.jpg)
+![A  Image](NOB_images/229a.jpg){group="Field Trip"}
+![A  Image](NOB_images/230a.jpg){group="Field Trip"}
+![A  Image](NOB_images/231a.jpg){group="Field Trip"}
+![A  Image](NOB_images/232a.jpg){group="Field Trip"}
+![A  Image](NOB_images/233a.jpg){group="Field Trip"}
+![A  Image](NOB_images/234a.jpg){group="Field Trip"}
+![A  Image](NOB_images/235a.jpg){group="Field Trip"}
+![A  Image](NOB_images/236a.jpg){group="Field Trip"}
+
+![A  Image](NOB_images/401a.jpg){group="Field Trip"}
+![A  Image](NOB_images/401a.jpg){group="Field Trip"}
+![A  Image](NOB_images/402a.jpg){group="Field Trip"}
+![A  Image](NOB_images/403a.jpg){group="Field Trip"}
+![A  Image](NOB_images/404a.jpg){group="Field Trip"}
+![A  Image](NOB_images/405a.jpg){group="Field Trip"}
+![A  Image](NOB_images/406a.jpg){group="Field Trip"}
+![A  Image](NOB_images/407a.jpg){group="Field Trip"}
+![A  Image](NOB_images/408a.jpg){group="Field Trip"}
+![A  Image](NOB_images/409a.jpg){group="NOB"}
+![A  Image](NOB_images/410a.jpg){group="NOB"}
+![A  Image](NOB_images/411a.jpg){group="NOB"}
+![A  Image](NOB_images/412a.jpg){group="NOB"}
+![A  Image](NOB_images/413a.jpg){group="NOB"}
+![A  Image](NOB_images/414a.jpg){group="NOB"}
+![A  Image](NOB_images/415a.jpg){group="NOB"}
+![A  Image](NOB_images/416a.jpg){group="NOB"}
+![A  Image](NOB_images/416a.jpg){group="NOB"}
+![A  Image](NOB_images/417a.jpg){group="NOB"}
+![A  Image](NOB_images/418a.jpg){group="NOB"}
+![A  Image](NOB_images/419a.jpg){group="NOB"}
+![A  Image](NOB_images/420a.jpg){group="NOB"}
+![A  Image](NOB_images/421a.jpg){group="NOB"}
+![A  Image](NOB_images/422a.jpg){group="NOB"}
+![A  Image](NOB_images/426a.jpg){group="NOB"}
+![A  Image](NOB_images/421a.jpg){group="NOB"}
 :::
