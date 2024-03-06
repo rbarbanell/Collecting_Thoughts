@@ -20,6 +20,8 @@ website:
         menu:
           - text: NOB Photographs
             href: NOB.qmd
+          - text: Capstone 2023
+            href: posts/NOB/index.qmd
       - text: Side Project
         menu: 
           - text: Dang's Design
