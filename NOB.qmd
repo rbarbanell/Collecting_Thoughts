@@ -12,6 +12,17 @@ format:
     page-layout: custom
 ---
 
+
+Step back in time and uncover the mysteries of ancient Scotland at Skara Brae, a captivating Neolithic village nestled on the windswept shores of the Orkney Islands by the Bay of Skaill. Dating back over 5,000 years, maybe more, Skara Brae offers a rare glimpse into the lives of distant ancestors.
+
+Imagine wandering through a remarkably preserved village, where stone-built houses stand stoically against the elements, their interiors revealing the intimate details of everyday life. Stone beds, communal hearths, and intricately carved furniture hint at a thriving community's existence, bound by shared rituals and traditions.
+
+But what sets Skara Brae apart isn't just its age; it's the sheer marvel of its preservation. Unearthed by a storm in the 19th century, this Neolithic gem has weathered the ages, offering archaeologists and visitors alike a window into prehistoric Scotland.
+
+Listed as a UNESCO World Heritage Site, Skara Brae beckons adventurers and history enthusiasts from across the globe to unravel its secrets. Whether you're drawn by the allure of ancient civilizations or simply seeking a journey through time, where the echoes of the past resonate with every step.
+
+
+
 ::: {layout-ncol=1}
 
 **Skara Brae**
@@ -25,44 +36,35 @@ format:
 
 
 
-
-![A  Image](NOB_images/106a.jpg){group="Skara Brae"}
-![A  Image](NOB_images/107a.jpg){group="Skara Brae"}
-![A  Image](NOB_images/108a.jpg){group="Skara Brae"}
-![A  Image](NOB_images/109a.jpg){group="Skara Brae"}
-![A  Image](NOB_images/111B.jpg){group="Skara Brae"}
 ![A  Image](NOB_images/112B.jpg){group="Skara Brae"}
 ![A  Image](NOB_images/113B.jpg){group="Skara Brae"}
+![A  Image](NOB_images/111B.jpg){group="Skara Brae"}
+
 ![A  Image](NOB_images/114B.jpg){group="Skara Brae"}
 ![A  Image](NOB_images/116B.jpg){group="Skara Brae"}
 ![A  Image](NOB_images/118B.jpg){group="Skara Brae"}
 ![A  Image](NOB_images/119B.jpg){group="Skara Brae"}
 ![A  Image](NOB_images/124B.jpg){group="Skara Brae"}
 ![A  Image](NOB_images/126B.jpg){group="Skara Brae"}
+
+
+
+![A  Image](NOB_images/106a.jpg){group="Birsay Earl's Palace"}
+![A  Image](NOB_images/107a.jpg){group="Birsay Earl's Palace"}
+![A  Image](NOB_images/108a.jpg){group="Birsay Earl's Palace"}
+![A  Image](NOB_images/109a.jpg){group="Birsay Earl's Palace"}
+
+
+
 ![A  Image](NOB_images/127a.jpg){group="Ring of Brodgar"}
 ![A  Image](NOB_images/128a.jpg){group="Ring of Brodgar}
 ![A  Image](NOB_images/129a.jpg){group="Ring of Brodgar"}
 ![A  Image](NOB_images/130a.jpg){group="Ring of Brodgar"}
 ![A  Image](NOB_images/131a.jpg){group="Ring of Brodgar"}
-![A  Image](NOB_images/132a.jpg){group="NOB"}
-![A  Image](NOB_images/133a.jpg){group="NOB"}
-![A  Image](NOB_images/134a.jpg){group="NOB"}
-![A  Image](NOB_images/135a.jpg){group="NOB"}
+
 ![A  Image](NOB_images/201a.jpg)
-![A  Image](NOB_images/202a.jpg){group="Shop Week"}
-![A  Image](NOB_images/203a.jpg){group="Shop Week"}
-![A  Image](NOB_images/204a.jpg){group="Shop Week"}
-![A  Image](NOB_images/205a.jpg){group="Shop Week"}
-![A  Image](NOB_images/206a.jpg){group="Shop Week"}
-![A  Image](NOB_images/207a.jpg){group="Shop Week"}
-![A  Image](NOB_images/208a.jpg){group="Shop Week"}
-![A  Image](NOB_images/209a.jpg){group="Shop Week"}
-![A  Image](NOB_images/210a.jpg){group="Shop Week"}
-![A  Image](NOB_images/211a.jpg){group="Shop Week"}
-![A  Image](NOB_images/212a.jpg){group="Shop Week"}
-![A  Image](NOB_images/213a.jpg){group="Shop Week"}
-![A  Image](NOB_images/214a.jpg){group="Shop Week"}
-![A  Image](NOB_images/216a.jpg){group="Shop Week"}
+
+
 ![A  Image](NOB_images/225a.jpg)
 ![A  Image](NOB_images/229a.jpg){group="Field Trip"}
 ![A  Image](NOB_images/230a.jpg){group="Field Trip"}
@@ -82,6 +84,11 @@ format:
 ![A  Image](NOB_images/406a.jpg){group="Field Trip"}
 ![A  Image](NOB_images/407a.jpg){group="Field Trip"}
 ![A  Image](NOB_images/408a.jpg){group="Field Trip"}
+
+![A  Image](NOB_images/132a.jpg){group="NOB"}
+![A  Image](NOB_images/133a.jpg){group="NOB"}
+![A  Image](NOB_images/134a.jpg){group="NOB"}
+![A  Image](NOB_images/135a.jpg){group="NOB"}
 ![A  Image](NOB_images/409a.jpg){group="NOB"}
 ![A  Image](NOB_images/410a.jpg){group="NOB"}
 ![A  Image](NOB_images/411a.jpg){group="NOB"}
@@ -97,6 +104,20 @@ format:
 ![A  Image](NOB_images/420a.jpg){group="NOB"}
 ![A  Image](NOB_images/421a.jpg){group="NOB"}
 ![A  Image](NOB_images/422a.jpg){group="NOB"}
-![A  Image](NOB_images/426a.jpg){group="NOB"}
+
 ![A  Image](NOB_images/421a.jpg){group="NOB"}
+![A  Image](NOB_images/202a.jpg){group="Shop Week"}
+![A  Image](NOB_images/203a.jpg){group="Shop Week"}
+![A  Image](NOB_images/204a.jpg){group="Shop Week"}
+![A  Image](NOB_images/205a.jpg){group="Shop Week"}
+![A  Image](NOB_images/206a.jpg){group="Shop Week"}
+![A  Image](NOB_images/207a.jpg){group="Shop Week"}
+![A  Image](NOB_images/208a.jpg){group="Shop Week"}
+![A  Image](NOB_images/209a.jpg){group="Shop Week"}
+![A  Image](NOB_images/210a.jpg){group="Shop Week"}
+![A  Image](NOB_images/211a.jpg){group="Shop Week"}
+![A  Image](NOB_images/212a.jpg){group="Shop Week"}
+![A  Image](NOB_images/213a.jpg){group="Shop Week"}
+![A  Image](NOB_images/214a.jpg){group="Shop Week"}
+![A  Image](NOB_images/216a.jpg){group="Shop Week"}
 :::
