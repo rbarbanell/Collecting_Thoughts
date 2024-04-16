@@ -31,12 +31,16 @@ Listed as a UNESCO World Heritage Site, Skara Brae beckons adventurers and histo
 
 ![A  Image](NOB_images/102s.jpg){group="Skara Brae"}
 ![Distance group activity](NOB_images/103s.jpg){group="Skara Brae"}
+![A  Image](NOB_images/436a.jpg){group="Skara Brae"}
+
 ![A room](NOB_images/104s.jpg){group="Skara Brae"}
 ![Nick Card explaining about Skara Brae](NOB_images/105a.jpg){group="Skara Brae"}
 
 
 
 ![A  Image](NOB_images/112B.jpg){group="Skara Brae"}
+
+
 ![A  Image](NOB_images/113B.jpg){group="Skara Brae"}
 ![A  Image](NOB_images/111B.jpg){group="Skara Brae"}
 
@@ -63,6 +67,9 @@ Listed as a UNESCO World Heritage Site, Skara Brae beckons adventurers and histo
 ![A  Image](NOB_images/131a.jpg){group="Ring of Brodgar"}
 
 ![A  Image](NOB_images/201a.jpg)
+![A  Image](NOB_images/428a.jpg)
+![A  Image](NOB_images/429a.jpg)
+![A  Image](NOB_images/431a.jpg)
 
 
 ![A  Image](NOB_images/225a.jpg)
@@ -120,4 +127,17 @@ Listed as a UNESCO World Heritage Site, Skara Brae beckons adventurers and histo
 ![A  Image](NOB_images/213a.jpg){group="Shop Week"}
 ![A  Image](NOB_images/214a.jpg){group="Shop Week"}
 ![A  Image](NOB_images/216a.jpg){group="Shop Week"}
+**Some of NOB crew, Trench T crew, and Willamette**
+![A  Image](NOB_images/516a.jpg){group="NOB"}
+![A  Image](NOB_images/517a.jpg){group="NOB"}
+![A  Image](NOB_images/518a.jpg){group="NOB"}
+![A  Image](NOB_images/519a.jpg){group="NOB"}
+![A  Image](NOB_images/520a.jpg){group="NOB"}
+![A  Image](NOB_images/523a.jpg){group="NOB"}
+![A  Image](NOB_images/524a.jpg){group="NOB"}
+![A  Image](NOB_images/525a.jpg){group="NOB"}
+![A  Image](NOB_images/526a.jpg){group="NOB"}
+![A  Image](NOB_images/528a.jpg){group="NOB"}
+
+
 :::
