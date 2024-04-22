@@ -1,0 +1,13 @@
+---
+title: "Willamette Gallery"
+filters:
+   - lightbox
+lightbox: 
+  match: auto
+  effect: fade
+  desc-position: bottom
+  loop: true
+format: 
+  html:
+    page-layout: custom
+---
