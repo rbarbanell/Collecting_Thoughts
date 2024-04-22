@@ -27,117 +27,132 @@ Listed as a UNESCO World Heritage Site, Skara Brae beckons adventurers and histo
 
 **Skara Brae**
 
-![A Lovely Image with the crew](NOB_images/101s.jpg){group="Skara Brae"}
+![](NOB_images/101s.jpg){group="Skara Brae"}
 
-![A  Image](NOB_images/102s.jpg){group="Skara Brae"}
-![Distance group activity](NOB_images/103s.jpg){group="Skara Brae"}
-![A  Image](NOB_images/436a.jpg){group="Skara Brae"}
+![Willamette Students arriving at Skara Brae](NOB_images/102s.jpg){group="Skara Brae"}
+![](NOB_images/103s.jpg){group="Skara Brae"}
+![](NOB_images/436a.jpg){group="Skara Brae"}
 
-![A room](NOB_images/104s.jpg){group="Skara Brae"}
-![Nick Card explaining about Skara Brae](NOB_images/105a.jpg){group="Skara Brae"}
-
-
-
-![A  Image](NOB_images/112B.jpg){group="Skara Brae"}
+![Nick Card and Willamette Students](NOB_images/104s.jpg){group="Skara Brae"}
+![Make a Wish](NOB_images/105a.jpg){group="Skara Brae"}
+**Exploring the Enchanting Skerries: Southbound on the West Coast Walk from Skara Brae**
 
 
-![A  Image](NOB_images/113B.jpg){group="Skara Brae"}
-![A  Image](NOB_images/111B.jpg){group="Skara Brae"}
-
-![A  Image](NOB_images/114B.jpg){group="Skara Brae"}
-![A  Image](NOB_images/116B.jpg){group="Skara Brae"}
-![A  Image](NOB_images/118B.jpg){group="Skara Brae"}
-![A  Image](NOB_images/119B.jpg){group="Skara Brae"}
-![A  Image](NOB_images/124B.jpg){group="Skara Brae"}
-![A  Image](NOB_images/126B.jpg){group="Skara Brae"}
+![](NOB_images/112B.jpg){group="Field Trip"}
 
 
+![inprint in Birsay](NOB_images/113B.jpg){group="Field Trip"}
+![Birsay](NOB_images/111B.jpg){group="Field Trip"}
 
-![A  Image](NOB_images/106a.jpg){group="Birsay Earl's Palace"}
-![A  Image](NOB_images/107a.jpg){group="Birsay Earl's Palace"}
-![A  Image](NOB_images/108a.jpg){group="Birsay Earl's Palace"}
-![A  Image](NOB_images/109a.jpg){group="Birsay Earl's Palace"}
+![seaweed in Birsay](NOB_images/114B.jpg){group="Field Trip"}
+![Birsay](NOB_images/116B.jpg){group="Field Trip"}
+![Cliffs of Birsay](NOB_images/118B.jpg){group="Field Trip"}
+![Puffins of Birsay](NOB_images/119B.jpg){group="Field Trip"}
+![Cliffs of Birsay](NOB_images/124B.jpg){group="Birsay"}
+![Birsay](NOB_images/126B.jpg){group="Field Trip"}
 
+**Discovering Earl's Palace - A Window into Orkney's Renaissance Era**
 
-
-![A  Image](NOB_images/127a.jpg){group="Ring of Brodgar"}
-![A  Image](NOB_images/128a.jpg){group="Ring of Brodgar}
-![A  Image](NOB_images/129a.jpg){group="Ring of Brodgar"}
-![A  Image](NOB_images/130a.jpg){group="Ring of Brodgar"}
-![A  Image](NOB_images/131a.jpg){group="Ring of Brodgar"}
-
-![A  Image](NOB_images/201a.jpg)
-![A  Image](NOB_images/428a.jpg)
-![A  Image](NOB_images/429a.jpg)
-![A  Image](NOB_images/431a.jpg)
+![Wishing Well of Birsay Earl's Palace](NOB_images/106a.jpg){group="Field Trip"}
+![Texture in Birsay Earl's Palace](NOB_images/107a.jpg){group="Field Trip"}
+![Birsay Earl's Palace](NOB_images/108a.jpg){group="Field Trip"}
+![Birsay Earl's Palace](NOB_images/109a.jpg){group="Field Trip"}
 
 
-![A  Image](NOB_images/225a.jpg)
-![A  Image](NOB_images/229a.jpg){group="Field Trip"}
-![A  Image](NOB_images/230a.jpg){group="Field Trip"}
-![A  Image](NOB_images/231a.jpg){group="Field Trip"}
-![A  Image](NOB_images/232a.jpg){group="Field Trip"}
-![A  Image](NOB_images/233a.jpg){group="Field Trip"}
-![A  Image](NOB_images/234a.jpg){group="Field Trip"}
-![A  Image](NOB_images/235a.jpg){group="Field Trip"}
-![A  Image](NOB_images/236a.jpg){group="Field Trip"}
+**Ring of Brodgar**
 
-![A  Image](NOB_images/401a.jpg){group="Field Trip"}
-![A  Image](NOB_images/401a.jpg){group="Field Trip"}
-![A  Image](NOB_images/402a.jpg){group="Field Trip"}
-![A  Image](NOB_images/403a.jpg){group="Field Trip"}
-![A  Image](NOB_images/404a.jpg){group="Field Trip"}
-![A  Image](NOB_images/405a.jpg){group="Field Trip"}
-![A  Image](NOB_images/406a.jpg){group="Field Trip"}
-![A  Image](NOB_images/407a.jpg){group="Field Trip"}
-![A  Image](NOB_images/408a.jpg){group="Field Trip"}
+![Ring Prospective](NOB_images/127a.jpg){group="Ring of Brodgar"}
+![A Prospective](NOB_images/128a.jpg){group="Ring of Brodgar"}
+![](NOB_images/129a.jpg){group="Ring of Brodgar"}
+![](NOB_images/130a.jpg){group="Ring of Brodgar"}
+![](NOB_images/131a.jpg){group="Ring of Brodgar"}
+**Story Telling with Tom Muir**
 
-![A  Image](NOB_images/132a.jpg){group="NOB"}
-![A  Image](NOB_images/133a.jpg){group="NOB"}
-![A  Image](NOB_images/134a.jpg){group="NOB"}
-![A  Image](NOB_images/135a.jpg){group="NOB"}
-![A  Image](NOB_images/409a.jpg){group="NOB"}
-![A  Image](NOB_images/410a.jpg){group="NOB"}
-![A  Image](NOB_images/411a.jpg){group="NOB"}
-![A  Image](NOB_images/412a.jpg){group="NOB"}
-![A  Image](NOB_images/413a.jpg){group="NOB"}
-![A  Image](NOB_images/414a.jpg){group="NOB"}
-![A  Image](NOB_images/415a.jpg){group="NOB"}
-![A  Image](NOB_images/416a.jpg){group="NOB"}
-![A  Image](NOB_images/416a.jpg){group="NOB"}
-![A  Image](NOB_images/417a.jpg){group="NOB"}
-![A  Image](NOB_images/418a.jpg){group="NOB"}
-![A  Image](NOB_images/419a.jpg){group="NOB"}
-![A  Image](NOB_images/420a.jpg){group="NOB"}
-![A  Image](NOB_images/421a.jpg){group="NOB"}
-![A  Image](NOB_images/422a.jpg){group="NOB"}
+![Story Telling](NOB_images/201a.jpg)
+![](NOB_images/428a.jpg)
+![](NOB_images/429a.jpg)
+![A Visit to Tom Muir's Home](NOB_images/431a.jpg)
 
-![A  Image](NOB_images/421a.jpg){group="NOB"}
-![A  Image](NOB_images/202a.jpg){group="Shop Week"}
-![A  Image](NOB_images/203a.jpg){group="Shop Week"}
-![A  Image](NOB_images/204a.jpg){group="Shop Week"}
-![A  Image](NOB_images/205a.jpg){group="Shop Week"}
-![A  Image](NOB_images/206a.jpg){group="Shop Week"}
-![A  Image](NOB_images/207a.jpg){group="Shop Week"}
-![A  Image](NOB_images/208a.jpg){group="Shop Week"}
-![A  Image](NOB_images/209a.jpg){group="Shop Week"}
-![A  Image](NOB_images/210a.jpg){group="Shop Week"}
-![A  Image](NOB_images/211a.jpg){group="Shop Week"}
-![A  Image](NOB_images/212a.jpg){group="Shop Week"}
-![A  Image](NOB_images/213a.jpg){group="Shop Week"}
-![A  Image](NOB_images/214a.jpg){group="Shop Week"}
-![A  Image](NOB_images/216a.jpg){group="Shop Week"}
-**Some of NOB crew, Trench T crew, and Willamette**
-![A  Image](NOB_images/516a.jpg){group="NOB"}
-![A  Image](NOB_images/517a.jpg){group="NOB"}
-![A  Image](NOB_images/518a.jpg){group="NOB"}
-![A  Image](NOB_images/519a.jpg){group="NOB"}
-![A  Image](NOB_images/520a.jpg){group="NOB"}
-![A  Image](NOB_images/523a.jpg){group="NOB"}
-![A  Image](NOB_images/524a.jpg){group="NOB"}
-![A  Image](NOB_images/525a.jpg){group="NOB"}
-![A  Image](NOB_images/526a.jpg){group="NOB"}
-![A  Image](NOB_images/528a.jpg){group="NOB"}
+**Blackhammer Cairn - A Portal to Neolithic Rousay**
+
+![Blackhammer cairn on Rousay](NOB_images/229a.jpg){group="Field Trip"}
+![Blackhammer cairn on Rousay](NOB_images/230a.jpg){group="Field Trip"}
+
+![Blackhammer cairn view from inside](NOB_images/232a.jpg){group="Field Trip"}
+**Ness WW2 Battery**
+![Ness battery](NOB_images/233a.jpg){group="Field Trip"}
+
+**Exploring the Magnificent Midhowe Broch**
+
+![Traveling to Midhowe Broch](NOB_images/234a.jpg){group="Field Trip"}
+![Traveling Views](NOB_images/235a.jpg){group="Field Trip"}
+![Midhowe Broch](NOB_images/236a.jpg){group="Field Trip"}
+
+
+![Views](NOB_images/401a.jpg){group="Field Trip"}
+![A Blockade of Midhowe Broch](NOB_images/402a.jpg){group="Field Trip"}
+![Midhowe Broch](NOB_images/403a.jpg){group="Field Trip"}
+
+**Time Travel Through Agriculture: Skaill Farm**
+
+![Travel to Skaill Farm](NOB_images/404a.jpg){group="Field Trip"}
+![Skaill Farm](NOB_images/405a.jpg){group="Field Trip"}
+![Skaill Farm](NOB_images/406a.jpg){group="Field Trip"}
+
+**On our way to Knowe of Swandro**
+![Travel to Knowe of Swandro](NOB_images/407a.jpg){group="Field Trip"}
+![Travel to Knowe of Swandro](NOB_images/408a.jpg){group="Field Trip"}
+**Ness Of Brodgar Site: Trench T Willamette Students quadrant**
+![NOB Layers](NOB_images/132a.jpg){group="NOB"}
+![Trench T](NOB_images/133a.jpg){group="NOB"}
+![Stacked Tires](NOB_images/134a.jpg){group="NOB"}
+![Tea Time](NOB_images/135a.jpg){group="NOB"}
+![Pottery Piece](NOB_images/409a.jpg){group="NOB"}
+![Animal Vertebrae](NOB_images/410a.jpg){group="NOB"}
+![Trench T](NOB_images/411a.jpg){group="NOB"}
+![Trench T](NOB_images/412a.jpg){group="NOB"}
+![Trench T](NOB_images/413a.jpg){group="NOB"}
+![Trench T](NOB_images/414a.jpg){group="NOB"}
+![Trench T](NOB_images/415a.jpg){group="NOB"}
+![Trench T](NOB_images/416a.jpg){group="NOB"}
+**Samples of Hearth : Structure 8 **
+![Scott Pike with Structure 8 Hearth](NOB_images/417a.jpg){group="NOB"}
+![Structure 8 Hearth](NOB_images/418a.jpg){group="NOB"}
+![Samples](NOB_images/419a.jpg){group="NOB"}
+![Viewing Pleasure](NOB_images/420a.jpg){group="NOB"}
+![Structure 8 Hearth](NOB_images/421a.jpg){group="NOB"}
+![Structure 8 Hearth](NOB_images/422a.jpg){group="NOB"}
+
+![Hearth](NOB_images/421a.jpg){group="NOB"}
+**Parade: A Vibrant Tour of Stromness' Shop Week**
+![](NOB_images/202a.jpg){group="Shop Week"}
+![](NOB_images/203a.jpg){group="Shop Week"}
+![](NOB_images/204a.jpg){group="Shop Week"}
+![](NOB_images/205a.jpg){group="Shop Week"}
+![](NOB_images/206a.jpg){group="Shop Week"}
+![](NOB_images/207a.jpg){group="Shop Week"}
+![](NOB_images/208a.jpg){group="Shop Week"}
+![](NOB_images/209a.jpg){group="Shop Week"}
+![](NOB_images/210a.jpg){group="Shop Week"}
+![](NOB_images/211a.jpg){group="Shop Week"}
+![](NOB_images/212a.jpg){group="Shop Week"}
+![](NOB_images/213a.jpg){group="Shop Week"}
+![](NOB_images/214a.jpg){group="Shop Week"}
+![](NOB_images/216a.jpg){group="Shop Week"}
+![Celebration](NOB_images/225a.jpg)
+
+
+**2022 Ness of Brodgars glimps of goodbye era**
+![Tams](NOB_images/516a.jpg){group="NOB"}
+![Willamette Crew](NOB_images/517a.jpg){group="NOB"}
+![Trench T Crew with Willamette Students](NOB_images/518a.jpg){group="NOB"}
+![Say Cheese](NOB_images/519a.jpg){group="NOB"}
+![](NOB_images/520a.jpg){group="NOB"}
+![](NOB_images/523a.jpg){group="NOB"}
+![](NOB_images/524a.jpg){group="NOB"}
+![](NOB_images/525a.jpg){group="NOB"}
+![](NOB_images/526a.jpg){group="NOB"}
+![](NOB_images/528a.jpg){group="NOB"}
 
 
 :::
