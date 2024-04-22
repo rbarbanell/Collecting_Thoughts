@@ -14,22 +14,35 @@ format:
 
 **2022 Year Book Pictures of Willamette University at Ness Of Brodgar**
 
-![John Campi](NOB_images/02a.jpg){group="Crew"}
-![Eva Morath](NOB_images/03a.jpg){group="Crew"}
-![Kristina McDonough](NOB_images/04a.jpg){group="Crew"}
-![Nick Wilde](NOB_images/05a.jpg){group="Crew"}
-![Katharine "Kat" Fitch](NOB_images/06a.jpg){group="Crew"}
-![Scott Pike](NOB_images/09a.jpg){group="Crew"}
-![Nick Card](NOB_images/15a.jpg){group="Crew"}
-![Sigurd Towrie](NOB_images/11a.jpg){group="Crew"}
-![Ruth Brenton](NOB_images/10a.jpg){group="Crew"}
-![Abigail "Abby" House](NOB_images/13a.jpg){group="Crew"}
 
-![Aidan Gallagher](NOB_images/29a.jpg){group="Crew"}
-![Ruby Blake](NOB_images/36a.jpg){group="Crew"}
-![Emma Canchola](NOB_images/32a.jpg){group="Crew"}
-![Olivia Reinhart](NOB_images/33a.jpg){group="Crew"}
+![Katharine "Kat" Fitch](NOB_images/06a.jpg)
 
-![Megan Rodgers](NOB_images/34a.jpg){group="Crew"}
-![Rowan Barton](NOB_images/35a.jpg){group="Crew"}
 
+![Scott Pike](NOB_images/09a.jpg)
+
+
+![Nick Card](NOB_images/15a.jpg)
+
+![Sigurd Towrie](NOB_images/11a.jpg)
+
+![Ruth Brenton](NOB_images/10a.jpg)
+
+![John Campi](NOB_images/02a.jpg)
+
+![Eva Morath](NOB_images/03a.jpg)
+
+![Kristina McDonough](NOB_images/04a.jpg)
+
+![Nick Wilde](NOB_images/05a.jpg)
+
+![Aidan Gallagher](NOB_images/29a.jpg)
+
+![Ruby Blake](NOB_images/36a.jpg)
+
+![Emma Canchola](NOB_images/32a.jpg)
+
+![Olivia Reinhart](NOB_images/33a.jpg)
+
+![Megan Rodgers](NOB_images/34a.jpg)
+
+![Rowan Barton](NOB_images/35a.jpg)
