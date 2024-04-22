@@ -12,16 +12,7 @@ format:
     page-layout: custom
 ---
 
-
-Step back in time and uncover the mysteries of ancient Scotland at Skara Brae, a captivating Neolithic village nestled on the windswept shores of the Orkney Islands by the Bay of Skaill. Dating back over 5,000 years, maybe more, Skara Brae offers a rare glimpse into the lives of distant ancestors.
-
-Imagine wandering through a remarkably preserved village, where stone-built houses stand stoically against the elements, their interiors revealing the intimate details of everyday life. Stone beds, communal hearths, and intricately carved furniture hint at a thriving community's existence, bound by shared rituals and traditions.
-
-But what sets Skara Brae apart isn't just its age; it's the sheer marvel of its preservation. Unearthed by a storm in the 19th century, this Neolithic gem has weathered the ages, offering archaeologists and visitors alike a window into prehistoric Scotland.
-
-Listed as a UNESCO World Heritage Site, Skara Brae beckons adventurers and history enthusiasts from across the globe to unravel its secrets. Whether you're drawn by the allure of ancient civilizations or simply seeking a journey through time, where the echoes of the past resonate with every step.
-
-
+Photos from my internship to Ness of Brodgar in 2022.
 
 ::: {layout-ncol=1}
 
