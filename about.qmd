@@ -33,10 +33,26 @@ Seattle Central College \| Seattle, WA \|<b> A.S Associate in Science Transfer</
 
 **Ness of Brodgar with Willamette University \| Data Engineer Intern \| Orkney Island, Scotland \| July 2022 - present**
 
--   Generated geo-chemical data of the major and minor trace elements of soil samples of various date ranges in collaboration with an archaeological dig.
--   Tracked and managed results data for 200 + soil samples.
--   Implemented python program to discover inconsistencies and ensure clean and accurate data.
--   Streamlined data collection and storage by creating a system of naming and compiling information for easier accessibility and data analysis.
+-	Designed, developed, and programmed methods and processes to consolidate unstructured data from bespoke sources, achieving a 75% increase in data collection efficiency.
+
+-	Engineered Python scripts to clean Excel data, ensuring precise analysis in the new standardized format.
+
+-	Utilized X-Ray Fluorescence spectrometer (XRF) for geochemical data on trace elements.
+
+-	Proficient in using GIS tools to manipulate and analyze geospatial data including raster’s, GeoTiIFF, ect.
+
+-	Experience with common geospatial Python libraries such as GeoPandas, XClim, Xarray, as well as R packages.
+
+-	Experience with remote sensing and satellite data (SAR, GEDI, RGB, and others).
+
+-	Produced denormalized tables and associated dashboards for efficient data visualization and analysis.
+
+-	Developed a reporting and analysis roadmap to guide the team in leveraging data insights effectively.
+
+-	Orchestrated successful communications, planning, and data modeling for a multidisciplinary team.
+
+-	Presented sessions on archaeological and data science concepts, heightening public awareness.
+
 
 **Seattle Central College \| Mathematics Tutor \| Seattle, WA \| October 2019 - August 2021**
 
